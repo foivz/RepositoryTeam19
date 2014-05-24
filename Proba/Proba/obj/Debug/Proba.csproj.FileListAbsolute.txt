@@ -1,0 +1,9 @@
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\bin\Debug\Proba.exe.config
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\bin\Debug\Proba.exe
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\bin\Debug\Proba.pdb
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\obj\Debug\Proba.csprojResolveAssemblyReference.cache
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\obj\Debug\Proba.Form1.resources
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\obj\Debug\Proba.Properties.Resources.resources
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\obj\Debug\Proba.csproj.GenerateResource.Cache
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\obj\Debug\Proba.exe
+C:\Users\Ivan\Desktop\PI-projekt_rezervacije\RepositoryTeam19\Proba\Proba\obj\Debug\Proba.pdb
