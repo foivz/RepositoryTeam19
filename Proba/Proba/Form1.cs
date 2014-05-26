@@ -35,5 +35,10 @@ namespace Proba
             txtRezultat.Text = " ";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtNoviTekst.Text = "Evo malo teksta.";
+        }
+
     }
 }

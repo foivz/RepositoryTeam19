@@ -37,6 +37,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnIzracun = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtNoviTekst = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // broj1
@@ -119,11 +121,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtNoviTekst
+            // 
+            this.txtNoviTekst.Location = new System.Drawing.Point(118, 179);
+            this.txtNoviTekst.Name = "txtNoviTekst";
+            this.txtNoviTekst.ReadOnly = true;
+            this.txtNoviTekst.Size = new System.Drawing.Size(140, 20);
+            this.txtNoviTekst.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(24, 179);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Daj tekst";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(284, 228);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtNoviTekst);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnIzracun);
             this.Controls.Add(this.label5);
@@ -151,6 +173,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnIzracun;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtNoviTekst;
+        private System.Windows.Forms.Button button2;
     }
 }
 
