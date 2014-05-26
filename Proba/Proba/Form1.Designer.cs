@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnIzracun = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // broj1
@@ -54,7 +55,7 @@
             // 
             // txtRezultat
             // 
-            this.txtRezultat.Location = new System.Drawing.Point(92, 94);
+            this.txtRezultat.Location = new System.Drawing.Point(92, 121);
             this.txtRezultat.Name = "txtRezultat";
             this.txtRezultat.ReadOnly = true;
             this.txtRezultat.Size = new System.Drawing.Size(100, 20);
@@ -92,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(128, 117);
+            this.label5.Location = new System.Drawing.Point(128, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 7;
@@ -100,7 +101,7 @@
             // 
             // btnIzracun
             // 
-            this.btnIzracun.Location = new System.Drawing.Point(101, 63);
+            this.btnIzracun.Location = new System.Drawing.Point(34, 65);
             this.btnIzracun.Name = "btnIzracun";
             this.btnIzracun.Size = new System.Drawing.Size(75, 23);
             this.btnIzracun.TabIndex = 8;
@@ -108,11 +109,22 @@
             this.btnIzracun.UseVisualStyleBackColor = true;
             this.btnIzracun.Click += new System.EventHandler(this.btnIzracun_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(172, 65);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Očisti";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 141);
+            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnIzracun);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -138,6 +150,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnIzracun;
+        private System.Windows.Forms.Button button1;
     }
 }
 
