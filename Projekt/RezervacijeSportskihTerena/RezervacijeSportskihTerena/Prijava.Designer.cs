@@ -118,6 +118,7 @@
             this.btnPotvrda.TabIndex = 7;
             this.btnPotvrda.Text = "Potvrdi";
             this.btnPotvrda.UseVisualStyleBackColor = false;
+            this.btnPotvrda.Click += new System.EventHandler(this.btnPotvrda_Click);
             // 
             // frmPrijava
             // 

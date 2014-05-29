@@ -16,5 +16,13 @@ namespace RezervacijeSportskihTerena
         {
             InitializeComponent();
         }
+
+        private void btnPotvrda_Click(object sender, EventArgs e)
+        {
+            Form glavniIzbornik = new frmGlavniIzbornik();
+            glavniIzbornik.Show();
+            
+            
+        }
     }
 }
