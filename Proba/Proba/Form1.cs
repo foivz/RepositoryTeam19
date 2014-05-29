@@ -35,5 +35,16 @@ namespace Proba
             txtRezultat.Text = " ";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtNoviTekst.Text = "Evo malo teksta.";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            MessageBox.Show("Ovo je poruka koju si trazio!");
+        }
+
     }
 }
