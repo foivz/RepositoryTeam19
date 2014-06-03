@@ -17,43 +17,60 @@ namespace RezervacijeSportskihTerena
             InitializeComponent();
         }
 
-        private void btnZaposlenici_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnRezervacije_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTereni_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTermini_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnIzvjestaji_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnStatistika_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOdjava_Click(object sender, EventArgs e)
+        private void tereniToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            frmPrijava prijava = new frmPrijava();
-            prijava.ShowDialog();
-            
-            
         }
+
+        private void unosPodatakaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Application.Restart();
+        }
+
+        private void lblPozdrav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tereniToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmTereni linkTereni = new frmTereni();
+            linkTereni.MdiParent = this;
+            linkTereni.Show();
+        }
+
+        private void frmGlavniIzbornik_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rezervacijeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRezervacije linkRezervacije = new frmRezervacije();
+            linkRezervacije.MdiParent = this;
+            linkRezervacije.Show();
+        }
+
+        private void statistikaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStatistika linkStatistika = new frmStatistika();
+            linkStatistika.MdiParent = this;
+            linkStatistika.Show();
+        }
+
+        private void izvještajToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIzvjestaj linkIzvjestaj = new frmIzvjestaj();
+            linkIzvjestaj.MdiParent = this;
+            linkIzvjestaj.Show();
+        }
+
     }
 }

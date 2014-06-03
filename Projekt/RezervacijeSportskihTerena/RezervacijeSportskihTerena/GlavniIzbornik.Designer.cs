@@ -28,111 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnZaposlenici = new System.Windows.Forms.Button();
-            this.btnRezervacije = new System.Windows.Forms.Button();
-            this.btnTereni = new System.Windows.Forms.Button();
-            this.btnIzvjestaji = new System.Windows.Forms.Button();
-            this.btnStatistika = new System.Windows.Forms.Button();
-            this.lblPozdrav = new System.Windows.Forms.Label();
-            this.txtTrenutniKorisnik = new System.Windows.Forms.TextBox();
-            this.btnOdjava = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGlavniIzbornik));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tereniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statistikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izvještajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnZaposlenici
+            // menuStrip1
             // 
-            this.btnZaposlenici.Location = new System.Drawing.Point(23, 62);
-            this.btnZaposlenici.Name = "btnZaposlenici";
-            this.btnZaposlenici.Size = new System.Drawing.Size(108, 41);
-            this.btnZaposlenici.TabIndex = 0;
-            this.btnZaposlenici.Text = "Zaposlenici";
-            this.btnZaposlenici.UseVisualStyleBackColor = true;
-            this.btnZaposlenici.Click += new System.EventHandler(this.btnZaposlenici_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tereniToolStripMenuItem,
+            this.rezervacijeToolStripMenuItem,
+            this.statistikaToolStripMenuItem,
+            this.izvještajToolStripMenuItem,
+            this.odjavaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(624, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnRezervacije
+            // tereniToolStripMenuItem
             // 
-            this.btnRezervacije.Location = new System.Drawing.Point(149, 62);
-            this.btnRezervacije.Name = "btnRezervacije";
-            this.btnRezervacije.Size = new System.Drawing.Size(108, 41);
-            this.btnRezervacije.TabIndex = 1;
-            this.btnRezervacije.Text = "Rezervacije";
-            this.btnRezervacije.UseVisualStyleBackColor = true;
-            this.btnRezervacije.Click += new System.EventHandler(this.btnRezervacije_Click);
+            this.tereniToolStripMenuItem.Name = "tereniToolStripMenuItem";
+            this.tereniToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.tereniToolStripMenuItem.Text = "&Tereni";
+            this.tereniToolStripMenuItem.Click += new System.EventHandler(this.tereniToolStripMenuItem_Click_1);
             // 
-            // btnTereni
+            // rezervacijeToolStripMenuItem
             // 
-            this.btnTereni.Location = new System.Drawing.Point(23, 126);
-            this.btnTereni.Name = "btnTereni";
-            this.btnTereni.Size = new System.Drawing.Size(108, 41);
-            this.btnTereni.TabIndex = 2;
-            this.btnTereni.Text = "Tereni";
-            this.btnTereni.UseVisualStyleBackColor = true;
-            this.btnTereni.Click += new System.EventHandler(this.btnTereni_Click);
+            this.rezervacijeToolStripMenuItem.Name = "rezervacijeToolStripMenuItem";
+            this.rezervacijeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.rezervacijeToolStripMenuItem.Text = "&Rezervacije";
+            this.rezervacijeToolStripMenuItem.Click += new System.EventHandler(this.rezervacijeToolStripMenuItem_Click);
             // 
-            // btnIzvjestaji
+            // statistikaToolStripMenuItem
             // 
-            this.btnIzvjestaji.Location = new System.Drawing.Point(149, 126);
-            this.btnIzvjestaji.Name = "btnIzvjestaji";
-            this.btnIzvjestaji.Size = new System.Drawing.Size(108, 41);
-            this.btnIzvjestaji.TabIndex = 4;
-            this.btnIzvjestaji.Text = "Izvještaji";
-            this.btnIzvjestaji.UseVisualStyleBackColor = true;
-            this.btnIzvjestaji.Click += new System.EventHandler(this.btnIzvjestaji_Click);
+            this.statistikaToolStripMenuItem.Name = "statistikaToolStripMenuItem";
+            this.statistikaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.statistikaToolStripMenuItem.Text = "&Statistika";
+            this.statistikaToolStripMenuItem.Click += new System.EventHandler(this.statistikaToolStripMenuItem_Click);
             // 
-            // btnStatistika
+            // izvještajToolStripMenuItem
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(79, 189);
-            this.btnStatistika.Name = "btnStatistika";
-            this.btnStatistika.Size = new System.Drawing.Size(108, 41);
-            this.btnStatistika.TabIndex = 5;
-            this.btnStatistika.Text = "Statistika";
-            this.btnStatistika.UseVisualStyleBackColor = true;
-            this.btnStatistika.Click += new System.EventHandler(this.btnStatistika_Click);
+            this.izvještajToolStripMenuItem.Name = "izvještajToolStripMenuItem";
+            this.izvještajToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.izvještajToolStripMenuItem.Text = "&Izvještaj";
+            this.izvještajToolStripMenuItem.Click += new System.EventHandler(this.izvještajToolStripMenuItem_Click);
             // 
-            // lblPozdrav
+            // odjavaToolStripMenuItem
             // 
-            this.lblPozdrav.AutoSize = true;
-            this.lblPozdrav.Location = new System.Drawing.Point(20, 19);
-            this.lblPozdrav.Name = "lblPozdrav";
-            this.lblPozdrav.Size = new System.Drawing.Size(92, 13);
-            this.lblPozdrav.TabIndex = 6;
-            this.lblPozdrav.Text = "Prijavljeni ste kao:";
+            this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.odjavaToolStripMenuItem.Text = "&Odjava";
+            this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 
-            // txtTrenutniKorisnik
+            // statusStrip1
             // 
-            this.txtTrenutniKorisnik.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTrenutniKorisnik.Location = new System.Drawing.Point(111, 19);
-            this.txtTrenutniKorisnik.Name = "txtTrenutniKorisnik";
-            this.txtTrenutniKorisnik.ReadOnly = true;
-            this.txtTrenutniKorisnik.Size = new System.Drawing.Size(100, 13);
-            this.txtTrenutniKorisnik.TabIndex = 7;
-            this.txtTrenutniKorisnik.Text = "Ime i prezime";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 420);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
+            this.statusStrip1.TabIndex = 12;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // btnOdjava
+            // toolStripStatusLabel1
             // 
-            this.btnOdjava.Location = new System.Drawing.Point(182, 12);
-            this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(75, 23);
-            this.btnOdjava.TabIndex = 8;
-            this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.UseVisualStyleBackColor = true;
-            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(101, 17);
+            this.toolStripStatusLabel1.Text = "Prijavljeni ste kao:";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(78, 17);
+            this.toolStripStatusLabel2.Text = "Ime i Prezime";
             // 
             // frmGlavniIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnOdjava);
-            this.Controls.Add(this.txtTrenutniKorisnik);
-            this.Controls.Add(this.lblPozdrav);
-            this.Controls.Add(this.btnStatistika);
-            this.Controls.Add(this.btnIzvjestaji);
-            this.Controls.Add(this.btnTereni);
-            this.Controls.Add(this.btnRezervacije);
-            this.Controls.Add(this.btnZaposlenici);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(624, 442);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmGlavniIzbornik";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Glavni izbornik";
+            this.Text = "Rezervacija Sportskih Terena";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmGlavniIzbornik_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,13 +140,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnZaposlenici;
-        private System.Windows.Forms.Button btnRezervacije;
-        private System.Windows.Forms.Button btnTereni;
-        private System.Windows.Forms.Button btnIzvjestaji;
-        private System.Windows.Forms.Button btnStatistika;
-        private System.Windows.Forms.Label lblPozdrav;
-        private System.Windows.Forms.TextBox txtTrenutniKorisnik;
-        private System.Windows.Forms.Button btnOdjava;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tereniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rezervacijeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statistikaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izvještajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

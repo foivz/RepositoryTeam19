@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrijava));
             this.lblPozdrav = new System.Windows.Forms.Label();
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
@@ -126,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RezervacijeSportskihTerena.Properties.Resources.dark_geometric;
-            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.ClientSize = new System.Drawing.Size(484, 362);
             this.Controls.Add(this.btnPotvrda);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtLozinka);
@@ -135,10 +136,11 @@
             this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.lblPozdrav);
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Prijava";
+            this.Text = "Rezervacija Sportskih Terena - Prijava";
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
