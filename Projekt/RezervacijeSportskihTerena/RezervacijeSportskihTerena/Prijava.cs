@@ -17,12 +17,18 @@ namespace RezervacijeSportskihTerena
             InitializeComponent();
         }
 
+        public bool UspjesnaPrijava = false;
         private void btnPotvrda_Click(object sender, EventArgs e)
         {
-            Form glavniIzbornik = new frmGlavniIzbornik();
-            glavniIzbornik.Show();
-            
-            
+            UspjesnaPrijava = true;
+            this.Close();
         }
+
+        private void txtLozinka_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+
     }
 }

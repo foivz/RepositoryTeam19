@@ -46,5 +46,14 @@ namespace RezervacijeSportskihTerena
         {
 
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            
+            frmPrijava prijava = new frmPrijava();
+            prijava.ShowDialog();
+            
+            
+        }
     }
 }

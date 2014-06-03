@@ -104,6 +104,7 @@
             this.txtLozinka.PasswordChar = '*';
             this.txtLozinka.Size = new System.Drawing.Size(150, 20);
             this.txtLozinka.TabIndex = 5;
+            this.txtLozinka.TextChanged += new System.EventHandler(this.txtLozinka_TextChanged);
             // 
             // btnPotvrda
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.lblPozdrav);
             this.HelpButton = true;
+            this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";

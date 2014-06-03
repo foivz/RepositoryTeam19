@@ -31,14 +31,16 @@
             this.btnZaposlenici = new System.Windows.Forms.Button();
             this.btnRezervacije = new System.Windows.Forms.Button();
             this.btnTereni = new System.Windows.Forms.Button();
-            this.btnTermini = new System.Windows.Forms.Button();
             this.btnIzvjestaji = new System.Windows.Forms.Button();
             this.btnStatistika = new System.Windows.Forms.Button();
+            this.lblPozdrav = new System.Windows.Forms.Label();
+            this.txtTrenutniKorisnik = new System.Windows.Forms.TextBox();
+            this.btnOdjava = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnZaposlenici
             // 
-            this.btnZaposlenici.Location = new System.Drawing.Point(26, 34);
+            this.btnZaposlenici.Location = new System.Drawing.Point(23, 62);
             this.btnZaposlenici.Name = "btnZaposlenici";
             this.btnZaposlenici.Size = new System.Drawing.Size(108, 41);
             this.btnZaposlenici.TabIndex = 0;
@@ -48,7 +50,7 @@
             // 
             // btnRezervacije
             // 
-            this.btnRezervacije.Location = new System.Drawing.Point(152, 34);
+            this.btnRezervacije.Location = new System.Drawing.Point(149, 62);
             this.btnRezervacije.Name = "btnRezervacije";
             this.btnRezervacije.Size = new System.Drawing.Size(108, 41);
             this.btnRezervacije.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             // btnTereni
             // 
-            this.btnTereni.Location = new System.Drawing.Point(26, 98);
+            this.btnTereni.Location = new System.Drawing.Point(23, 126);
             this.btnTereni.Name = "btnTereni";
             this.btnTereni.Size = new System.Drawing.Size(108, 41);
             this.btnTereni.TabIndex = 2;
@@ -66,19 +68,9 @@
             this.btnTereni.UseVisualStyleBackColor = true;
             this.btnTereni.Click += new System.EventHandler(this.btnTereni_Click);
             // 
-            // btnTermini
-            // 
-            this.btnTermini.Location = new System.Drawing.Point(152, 98);
-            this.btnTermini.Name = "btnTermini";
-            this.btnTermini.Size = new System.Drawing.Size(108, 41);
-            this.btnTermini.TabIndex = 3;
-            this.btnTermini.Text = "Termini";
-            this.btnTermini.UseVisualStyleBackColor = true;
-            this.btnTermini.Click += new System.EventHandler(this.btnTermini_Click);
-            // 
             // btnIzvjestaji
             // 
-            this.btnIzvjestaji.Location = new System.Drawing.Point(26, 160);
+            this.btnIzvjestaji.Location = new System.Drawing.Point(149, 126);
             this.btnIzvjestaji.Name = "btnIzvjestaji";
             this.btnIzvjestaji.Size = new System.Drawing.Size(108, 41);
             this.btnIzvjestaji.TabIndex = 4;
@@ -88,7 +80,7 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(152, 160);
+            this.btnStatistika.Location = new System.Drawing.Point(79, 189);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(108, 41);
             this.btnStatistika.TabIndex = 5;
@@ -96,14 +88,45 @@
             this.btnStatistika.UseVisualStyleBackColor = true;
             this.btnStatistika.Click += new System.EventHandler(this.btnStatistika_Click);
             // 
+            // lblPozdrav
+            // 
+            this.lblPozdrav.AutoSize = true;
+            this.lblPozdrav.Location = new System.Drawing.Point(20, 19);
+            this.lblPozdrav.Name = "lblPozdrav";
+            this.lblPozdrav.Size = new System.Drawing.Size(92, 13);
+            this.lblPozdrav.TabIndex = 6;
+            this.lblPozdrav.Text = "Prijavljeni ste kao:";
+            // 
+            // txtTrenutniKorisnik
+            // 
+            this.txtTrenutniKorisnik.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTrenutniKorisnik.Location = new System.Drawing.Point(111, 19);
+            this.txtTrenutniKorisnik.Name = "txtTrenutniKorisnik";
+            this.txtTrenutniKorisnik.ReadOnly = true;
+            this.txtTrenutniKorisnik.Size = new System.Drawing.Size(100, 13);
+            this.txtTrenutniKorisnik.TabIndex = 7;
+            this.txtTrenutniKorisnik.Text = "Ime i prezime";
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Location = new System.Drawing.Point(182, 12);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(75, 23);
+            this.btnOdjava.TabIndex = 8;
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
+            // 
             // frmGlavniIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnOdjava);
+            this.Controls.Add(this.txtTrenutniKorisnik);
+            this.Controls.Add(this.lblPozdrav);
             this.Controls.Add(this.btnStatistika);
             this.Controls.Add(this.btnIzvjestaji);
-            this.Controls.Add(this.btnTermini);
             this.Controls.Add(this.btnTereni);
             this.Controls.Add(this.btnRezervacije);
             this.Controls.Add(this.btnZaposlenici);
@@ -111,6 +134,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Glavni izbornik";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,8 +143,10 @@
         private System.Windows.Forms.Button btnZaposlenici;
         private System.Windows.Forms.Button btnRezervacije;
         private System.Windows.Forms.Button btnTereni;
-        private System.Windows.Forms.Button btnTermini;
         private System.Windows.Forms.Button btnIzvjestaji;
         private System.Windows.Forms.Button btnStatistika;
+        private System.Windows.Forms.Label lblPozdrav;
+        private System.Windows.Forms.TextBox txtTrenutniKorisnik;
+        private System.Windows.Forms.Button btnOdjava;
     }
 }
