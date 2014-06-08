@@ -16,28 +16,13 @@ namespace RezervacijeSportskihTerena
         {
             InitializeComponent();
         }
-
-
-        private void tereniToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void unosPodatakaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
             Application.Restart();
         }
 
-        private void lblPozdrav_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tereniToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -70,6 +55,13 @@ namespace RezervacijeSportskihTerena
             frmIzvjestaj linkIzvjestaj = new frmIzvjestaj();
             linkIzvjestaj.MdiParent = this;
             linkIzvjestaj.Show();
+        }
+
+        private void zaposleniciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmZaposlenici linkZaposlenici = new frmZaposlenici();
+            linkZaposlenici.MdiParent = this;
+            linkZaposlenici.Show();
         }
 
     }
