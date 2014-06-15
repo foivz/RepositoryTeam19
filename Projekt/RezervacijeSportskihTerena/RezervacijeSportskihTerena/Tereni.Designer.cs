@@ -39,6 +39,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTereni";
             this.Text = "Tereni";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTereni_FormClosing);
             this.ResumeLayout(false);
 
         }

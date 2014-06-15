@@ -26,37 +26,64 @@ namespace RezervacijeSportskihTerena
 
         private void tereniToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmTereni linkTereni = new frmTereni();
-            linkTereni.MdiParent = this;
-            linkTereni.Show();
+            /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
+            frmTereni obj = frmTereni.GetInstance();
+            obj.MdiParent = this;
+
+            if (!obj.Visible)
+                obj.Show();
+            else
+                obj.BringToFront();
         }
 
         private void rezervacijeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRezervacije linkRezervacije = new frmRezervacije();
-            linkRezervacije.MdiParent = this;
-            linkRezervacije.Show();
+            /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
+            frmRezervacije obj = frmRezervacije.GetInstance();
+            obj.MdiParent = this;
+
+            if (!obj.Visible)
+                obj.Show();
+            else
+                obj.BringToFront();
+
         }
 
         private void statistikaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmStatistika linkStatistika = new frmStatistika();
-            linkStatistika.MdiParent = this;
-            linkStatistika.Show();
+            /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
+            frmStatistika obj = frmStatistika.GetInstance();
+            obj.MdiParent = this;
+
+            if (!obj.Visible)
+                obj.Show();
+            else
+                obj.BringToFront();
         }
 
         private void izvještajToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIzvjestaj linkIzvjestaj = new frmIzvjestaj();
-            linkIzvjestaj.MdiParent = this;
-            linkIzvjestaj.Show();
+            /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
+            frmIzvjestaj obj = frmIzvjestaj.GetInstance();
+            obj.MdiParent = this;
+
+            if (!obj.Visible)
+                obj.Show();
+            else
+                obj.BringToFront();
         }
 
         private void zaposleniciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmZaposlenici linkZaposlenici = new frmZaposlenici();
-            linkZaposlenici.MdiParent = this;
-            linkZaposlenici.Show();
+            /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
+            frmZaposlenici obj = frmZaposlenici.GetInstance();
+            obj.MdiParent = this;
+
+            if (!obj.Visible)
+                obj.Show();
+            else
+                obj.BringToFront();
+            
         }
 
 

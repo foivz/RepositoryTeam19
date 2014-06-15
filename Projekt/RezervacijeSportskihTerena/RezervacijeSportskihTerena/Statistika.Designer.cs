@@ -39,6 +39,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStatistika";
             this.Text = "Statistika";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmStatistika_FormClosing);
             this.ResumeLayout(false);
 
         }

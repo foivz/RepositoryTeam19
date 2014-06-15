@@ -39,6 +39,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRezervacije";
             this.Text = "Rezervacije";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRezervacije_FormClosing);
             this.ResumeLayout(false);
 
         }

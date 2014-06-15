@@ -38,6 +38,7 @@
             // 
             // dgvZaposlenici
             // 
+            this.dgvZaposlenici.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvZaposlenici.Location = new System.Drawing.Point(12, 12);
             this.dgvZaposlenici.Name = "dgvZaposlenici";
@@ -46,6 +47,7 @@
             // 
             // btnObrisiZaposlenika
             // 
+            this.btnObrisiZaposlenika.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnObrisiZaposlenika.Location = new System.Drawing.Point(558, 269);
             this.btnObrisiZaposlenika.Name = "btnObrisiZaposlenika";
             this.btnObrisiZaposlenika.Size = new System.Drawing.Size(97, 35);
@@ -56,6 +58,7 @@
             // 
             // btnIzmjeniZaposlenika
             // 
+            this.btnIzmjeniZaposlenika.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnIzmjeniZaposlenika.Location = new System.Drawing.Point(456, 269);
             this.btnIzmjeniZaposlenika.Name = "btnIzmjeniZaposlenika";
             this.btnIzmjeniZaposlenika.Size = new System.Drawing.Size(96, 35);
@@ -66,6 +69,7 @@
             // 
             // btnNoviZaposlenik
             // 
+            this.btnNoviZaposlenik.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNoviZaposlenik.Location = new System.Drawing.Point(354, 269);
             this.btnNoviZaposlenik.Name = "btnNoviZaposlenik";
             this.btnNoviZaposlenik.Size = new System.Drawing.Size(96, 35);
@@ -85,7 +89,9 @@
             this.Controls.Add(this.dgvZaposlenici);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmZaposlenici";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaposlenici";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmZaposlenici_FormClosing);
             this.Load += new System.EventHandler(this.frmZaposlenici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).EndInit();
             this.ResumeLayout(false);

@@ -14,6 +14,15 @@ namespace RezervacijeSportskihTerena
 {
     public partial class frmZaposlenici : Form
     {
+        /* omogućeno kreiranje samo jedne instance određene forme */
+        private static frmZaposlenici instance;
+        /* provjera postoji li već instanca tražene forme */
+        public static frmZaposlenici GetInstance()
+        {
+            if (instance == null)
+                instance = new frmZaposlenici();
+            return instance;
+        }
         public frmZaposlenici()
         {
             InitializeComponent();
@@ -58,6 +67,11 @@ namespace RezervacijeSportskihTerena
                 }
             }
             OsvjeziZaposlenike();
+        }
+
+        private void frmZaposlenici_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            instance = null;
         }
     }
 }
