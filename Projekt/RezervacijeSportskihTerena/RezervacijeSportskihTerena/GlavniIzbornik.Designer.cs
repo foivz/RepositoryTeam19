@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGlavniIzbornik));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.zaposleniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tereniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izvještajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.zaposleniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,12 +53,20 @@
             this.rezervacijeToolStripMenuItem,
             this.statistikaToolStripMenuItem,
             this.izvještajToolStripMenuItem,
-            this.odjavaToolStripMenuItem});
+            this.odjavaToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(624, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // zaposleniciToolStripMenuItem
+            // 
+            this.zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
+            this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.zaposleniciToolStripMenuItem.Text = "&Zaposlenici";
+            this.zaposleniciToolStripMenuItem.Click += new System.EventHandler(this.zaposleniciToolStripMenuItem_Click);
             // 
             // tereniToolStripMenuItem
             // 
@@ -94,6 +103,11 @@
             this.odjavaToolStripMenuItem.Text = "&Odjava";
             this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -117,13 +131,6 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(78, 17);
             this.toolStripStatusLabel2.Text = "Ime i Prezime";
             // 
-            // zaposleniciToolStripMenuItem
-            // 
-            this.zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
-            this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.zaposleniciToolStripMenuItem.Text = "&Zaposlenici";
-            this.zaposleniciToolStripMenuItem.Click += new System.EventHandler(this.zaposleniciToolStripMenuItem_Click);
-            // 
             // frmGlavniIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,11 +141,12 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmGlavniIzbornik";
             this.Text = "Rezervacija Sportskih Terena";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmGlavniIzbornik_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGlavniIzbornik_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -160,5 +168,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem zaposleniciToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

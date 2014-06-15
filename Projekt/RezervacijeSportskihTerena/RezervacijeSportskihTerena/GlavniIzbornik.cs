@@ -31,11 +31,6 @@ namespace RezervacijeSportskihTerena
             linkTereni.Show();
         }
 
-        private void frmGlavniIzbornik_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void rezervacijeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRezervacije linkRezervacije = new frmRezervacije();
@@ -64,5 +59,30 @@ namespace RezervacijeSportskihTerena
             linkZaposlenici.Show();
         }
 
+
+        /// <summary>
+        /// Na pritisak tipke escape nudi izbor izlaza iz aplikacije ili povratak u meni.
+        /// </summary>
+        private void frmGlavniIzbornik_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult result1 = MessageBox.Show("Jeste li sigurni da želite izaći iz programa?","Izlaz iz programa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+ 
+                if (result1 == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+                if (result1 == DialogResult.No)
+                {
+                    return;
+                }               
+            }
+
+
+        }
     }
 }

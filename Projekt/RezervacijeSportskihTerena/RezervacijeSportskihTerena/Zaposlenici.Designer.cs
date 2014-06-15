@@ -29,20 +29,74 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmZaposlenici));
+            this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
+            this.btnObrisiZaposlenika = new System.Windows.Forms.Button();
+            this.btnIzmjeniZaposlenika = new System.Windows.Forms.Button();
+            this.btnNoviZaposlenik = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvZaposlenici
+            // 
+            this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvZaposlenici.Location = new System.Drawing.Point(12, 12);
+            this.dgvZaposlenici.Name = "dgvZaposlenici";
+            this.dgvZaposlenici.Size = new System.Drawing.Size(643, 251);
+            this.dgvZaposlenici.TabIndex = 0;
+            // 
+            // btnObrisiZaposlenika
+            // 
+            this.btnObrisiZaposlenika.Location = new System.Drawing.Point(558, 269);
+            this.btnObrisiZaposlenika.Name = "btnObrisiZaposlenika";
+            this.btnObrisiZaposlenika.Size = new System.Drawing.Size(97, 35);
+            this.btnObrisiZaposlenika.TabIndex = 1;
+            this.btnObrisiZaposlenika.Text = "Obriši";
+            this.btnObrisiZaposlenika.UseVisualStyleBackColor = true;
+            this.btnObrisiZaposlenika.Click += new System.EventHandler(this.btnObrisiZaposlenika_Click);
+            // 
+            // btnIzmjeniZaposlenika
+            // 
+            this.btnIzmjeniZaposlenika.Location = new System.Drawing.Point(456, 269);
+            this.btnIzmjeniZaposlenika.Name = "btnIzmjeniZaposlenika";
+            this.btnIzmjeniZaposlenika.Size = new System.Drawing.Size(96, 35);
+            this.btnIzmjeniZaposlenika.TabIndex = 2;
+            this.btnIzmjeniZaposlenika.Text = "Izmjeni";
+            this.btnIzmjeniZaposlenika.UseVisualStyleBackColor = true;
+            this.btnIzmjeniZaposlenika.Click += new System.EventHandler(this.btnIzmjeniZaposlenika_Click);
+            // 
+            // btnNoviZaposlenik
+            // 
+            this.btnNoviZaposlenik.Location = new System.Drawing.Point(354, 269);
+            this.btnNoviZaposlenik.Name = "btnNoviZaposlenik";
+            this.btnNoviZaposlenik.Size = new System.Drawing.Size(96, 35);
+            this.btnNoviZaposlenik.TabIndex = 3;
+            this.btnNoviZaposlenik.Text = "Dodaj zaposlenika";
+            this.btnNoviZaposlenik.UseVisualStyleBackColor = true;
+            this.btnNoviZaposlenik.Click += new System.EventHandler(this.btnNoviZaposlenik_Click);
             // 
             // frmZaposlenici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(666, 312);
+            this.Controls.Add(this.btnNoviZaposlenik);
+            this.Controls.Add(this.btnIzmjeniZaposlenika);
+            this.Controls.Add(this.btnObrisiZaposlenika);
+            this.Controls.Add(this.dgvZaposlenici);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmZaposlenici";
             this.Text = "Zaposlenici";
+            this.Load += new System.EventHandler(this.frmZaposlenici_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvZaposlenici;
+        private System.Windows.Forms.Button btnObrisiZaposlenika;
+        private System.Windows.Forms.Button btnIzmjeniZaposlenika;
+        private System.Windows.Forms.Button btnNoviZaposlenik;
     }
 }

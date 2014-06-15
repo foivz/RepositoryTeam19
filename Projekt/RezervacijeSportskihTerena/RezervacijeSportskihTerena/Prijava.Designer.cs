@@ -105,7 +105,6 @@
             this.txtLozinka.PasswordChar = '*';
             this.txtLozinka.Size = new System.Drawing.Size(150, 20);
             this.txtLozinka.TabIndex = 5;
-            this.txtLozinka.TextChanged += new System.EventHandler(this.txtLozinka_TextChanged);
             // 
             // btnPotvrda
             // 
@@ -137,10 +136,12 @@
             this.Controls.Add(this.lblPozdrav);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rezervacija Sportskih Terena - Prijava";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrijava_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
