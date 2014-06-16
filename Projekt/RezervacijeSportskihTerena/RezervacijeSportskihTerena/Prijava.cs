@@ -19,13 +19,15 @@ namespace RezervacijeSportskihTerena
         }
 
         public bool UspjesnaPrijava = false;
+        public string strImePrezime = null;
         private void btnPotvrda_Click(object sender, EventArgs e)
         {
-            string sqlUpit = "SELECT * FROM Zaposlenik WHERE korisnickoIme = '" + this.txtKorisnickoIme.Text + "' and lozinka = '" + this.txtLozinka.Text + "' ";
+            string sqlUpit = "SELECT imeZaposlenik,prezimeZaposlenik FROM Zaposlenik WHERE korisnickoIme = '" + this.txtKorisnickoIme.Text + "' and lozinka = '" + this.txtLozinka.Text + "' ";
             SQLiteDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
             int count = 0;
             while (dr.Read())
             {
+                strImePrezime = dr[0].ToString() + " " + dr[1].ToString();
                 count++;
             }
 

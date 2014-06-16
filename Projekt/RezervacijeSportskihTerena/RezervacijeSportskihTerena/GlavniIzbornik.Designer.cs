@@ -39,7 +39,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripImePrezime = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +112,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.toolStripImePrezime});
             this.statusStrip1.Location = new System.Drawing.Point(0, 420);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(624, 22);
@@ -125,11 +125,11 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(101, 17);
             this.toolStripStatusLabel1.Text = "Prijavljeni ste kao:";
             // 
-            // toolStripStatusLabel2
+            // toolStripImePrezime
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(78, 17);
-            this.toolStripStatusLabel2.Text = "Ime i Prezime";
+            this.toolStripImePrezime.Name = "toolStripImePrezime";
+            this.toolStripImePrezime.Size = new System.Drawing.Size(78, 17);
+            this.toolStripImePrezime.Text = "Ime i Prezime";
             // 
             // frmGlavniIzbornik
             // 
@@ -166,7 +166,7 @@
         private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripImePrezime;
         private System.Windows.Forms.ToolStripMenuItem zaposleniciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }

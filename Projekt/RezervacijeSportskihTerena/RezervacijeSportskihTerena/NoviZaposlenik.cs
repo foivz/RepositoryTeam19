@@ -45,5 +45,10 @@ namespace RezervacijeSportskihTerena
         {
             this.Close();
         }
+
+        private void frmNoviZaposlenik_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = txtImeZaposlenik;
+        }
     }
 }

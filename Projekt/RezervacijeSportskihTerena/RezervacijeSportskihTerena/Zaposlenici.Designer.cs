@@ -38,19 +38,19 @@
             // 
             // dgvZaposlenici
             // 
-            this.dgvZaposlenici.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvZaposlenici.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvZaposlenici.Location = new System.Drawing.Point(12, 12);
+            this.dgvZaposlenici.Location = new System.Drawing.Point(21, 12);
             this.dgvZaposlenici.Name = "dgvZaposlenici";
-            this.dgvZaposlenici.Size = new System.Drawing.Size(643, 251);
+            this.dgvZaposlenici.Size = new System.Drawing.Size(660, 250);
             this.dgvZaposlenici.TabIndex = 0;
             // 
             // btnObrisiZaposlenika
             // 
             this.btnObrisiZaposlenika.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnObrisiZaposlenika.Location = new System.Drawing.Point(558, 269);
+            this.btnObrisiZaposlenika.Location = new System.Drawing.Point(581, 269);
             this.btnObrisiZaposlenika.Name = "btnObrisiZaposlenika";
-            this.btnObrisiZaposlenika.Size = new System.Drawing.Size(97, 35);
+            this.btnObrisiZaposlenika.Size = new System.Drawing.Size(100, 35);
             this.btnObrisiZaposlenika.TabIndex = 1;
             this.btnObrisiZaposlenika.Text = "Obriši";
             this.btnObrisiZaposlenika.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // btnIzmjeniZaposlenika
             // 
             this.btnIzmjeniZaposlenika.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIzmjeniZaposlenika.Location = new System.Drawing.Point(456, 269);
+            this.btnIzmjeniZaposlenika.Location = new System.Drawing.Point(475, 269);
             this.btnIzmjeniZaposlenika.Name = "btnIzmjeniZaposlenika";
-            this.btnIzmjeniZaposlenika.Size = new System.Drawing.Size(96, 35);
+            this.btnIzmjeniZaposlenika.Size = new System.Drawing.Size(100, 35);
             this.btnIzmjeniZaposlenika.TabIndex = 2;
             this.btnIzmjeniZaposlenika.Text = "Izmjeni";
             this.btnIzmjeniZaposlenika.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // btnNoviZaposlenik
             // 
             this.btnNoviZaposlenik.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNoviZaposlenik.Location = new System.Drawing.Point(354, 269);
+            this.btnNoviZaposlenik.Location = new System.Drawing.Point(369, 269);
             this.btnNoviZaposlenik.Name = "btnNoviZaposlenik";
-            this.btnNoviZaposlenik.Size = new System.Drawing.Size(96, 35);
+            this.btnNoviZaposlenik.Size = new System.Drawing.Size(100, 35);
             this.btnNoviZaposlenik.TabIndex = 3;
             this.btnNoviZaposlenik.Text = "Dodaj zaposlenika";
             this.btnNoviZaposlenik.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 312);
+            this.ClientSize = new System.Drawing.Size(684, 312);
             this.Controls.Add(this.btnNoviZaposlenik);
             this.Controls.Add(this.btnIzmjeniZaposlenika);
             this.Controls.Add(this.btnObrisiZaposlenika);

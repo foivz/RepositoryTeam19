@@ -19,7 +19,7 @@ namespace RezervacijeSportskihTerena
         {
             if (dr != null)
             {
-                idZaposlenik = int.Parse(dr["idZaposlenik"].ToString());
+                IdZaposlenik = int.Parse(dr["idZaposlenik"].ToString());
                 ImeZaposlenik = dr["imeZaposlenik"].ToString();
                 PrezimeZaposlenik = dr["prezimeZaposlenik"].ToString();
                 KorisnickoIme = dr["korisnickoIme"].ToString();
@@ -29,53 +29,37 @@ namespace RezervacijeSportskihTerena
         }
 
         private int idZaposlenik;
+        private string imeZaposlenik;
+        private string prezimeZaposlenik;
+        private string korisnickoIme;
+        private string lozinka;
+        private string email;
+
         public int IdZaposlenik
         {
             get { return idZaposlenik; }
             set { idZaposlenik = value; }
         }
-
-        private string imeZaposlenik;
         public string ImeZaposlenik
         {
             get { return imeZaposlenik; }
             set { imeZaposlenik = value; }
         }
-
-        private string prezimeZaposlenik;
         public string PrezimeZaposlenik
         {
             get { return prezimeZaposlenik; }
             set { prezimeZaposlenik = value; }
         }
-
-        /// <summary>
-        /// Jedinstveno korisničko ime.
-        /// </summary>
-        private string korisnickoIme;
         public string KorisnickoIme
         {
-            get 
-            { 
-                return korisnickoIme; 
-            }
-            set 
-            {
-                if (korisnickoIme != value)
-                {
-                    korisnickoIme = value;
-                }
-            }
+            get { return korisnickoIme; }
+            set { korisnickoIme = value;}   
         }
-
-        private string lozinka;
         public string Lozinka
         {
             get { return lozinka; }
             set { lozinka = value; }
         }
-
-        private string email;
         public string Email
         {
             get { return email; }
@@ -99,7 +83,6 @@ namespace RezervacijeSportskihTerena
                 + "', lozinka = '" + Lozinka
                 + "', email = '" + Email
                 + "' WHERE idZaposlenik = " + IdZaposlenik;
-
             }
 
             return DB.Instance.IzvrsiUpit(sqlUpit);

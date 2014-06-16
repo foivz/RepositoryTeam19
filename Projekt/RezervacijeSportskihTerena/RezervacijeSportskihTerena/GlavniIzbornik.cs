@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SQLite;
 namespace RezervacijeSportskihTerena
 {
     public partial class frmGlavniIzbornik : Form
     {
-        public frmGlavniIzbornik()
+        public frmGlavniIzbornik(string strLogin)
         {
             InitializeComponent();
+            toolStripImePrezime.Text = strLogin;
         }
  
         private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -22,7 +23,6 @@ namespace RezervacijeSportskihTerena
             Application.Exit();
             Application.Restart();
         }
-
 
         private void tereniToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -108,8 +108,9 @@ namespace RezervacijeSportskihTerena
                     return;
                 }               
             }
-
-
         }
+
+            
+
     }
 }

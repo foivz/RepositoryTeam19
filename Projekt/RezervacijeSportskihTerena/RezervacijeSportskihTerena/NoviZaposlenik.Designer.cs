@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 46);
+            this.label1.Location = new System.Drawing.Point(164, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 0;
@@ -100,45 +100,45 @@
             // 
             // txtIdZaposlenik
             // 
-            this.txtIdZaposlenik.Location = new System.Drawing.Point(149, 43);
+            this.txtIdZaposlenik.Location = new System.Drawing.Point(264, 39);
             this.txtIdZaposlenik.Name = "txtIdZaposlenik";
             this.txtIdZaposlenik.ReadOnly = true;
-            this.txtIdZaposlenik.Size = new System.Drawing.Size(96, 20);
+            this.txtIdZaposlenik.Size = new System.Drawing.Size(75, 20);
             this.txtIdZaposlenik.TabIndex = 6;
             // 
             // txtImeZaposlenik
             // 
-            this.txtImeZaposlenik.Location = new System.Drawing.Point(149, 82);
+            this.txtImeZaposlenik.Location = new System.Drawing.Point(120, 82);
             this.txtImeZaposlenik.Name = "txtImeZaposlenik";
-            this.txtImeZaposlenik.Size = new System.Drawing.Size(190, 20);
+            this.txtImeZaposlenik.Size = new System.Drawing.Size(219, 20);
             this.txtImeZaposlenik.TabIndex = 7;
             // 
             // txtPrezimeZaposlenik
             // 
-            this.txtPrezimeZaposlenik.Location = new System.Drawing.Point(149, 123);
+            this.txtPrezimeZaposlenik.Location = new System.Drawing.Point(120, 123);
             this.txtPrezimeZaposlenik.Name = "txtPrezimeZaposlenik";
-            this.txtPrezimeZaposlenik.Size = new System.Drawing.Size(190, 20);
+            this.txtPrezimeZaposlenik.Size = new System.Drawing.Size(219, 20);
             this.txtPrezimeZaposlenik.TabIndex = 8;
             // 
             // txtKorisnickoIme
             // 
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(149, 167);
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(120, 167);
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
-            this.txtKorisnickoIme.Size = new System.Drawing.Size(190, 20);
+            this.txtKorisnickoIme.Size = new System.Drawing.Size(219, 20);
             this.txtKorisnickoIme.TabIndex = 9;
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(149, 208);
+            this.txtLozinka.Location = new System.Drawing.Point(120, 208);
             this.txtLozinka.Name = "txtLozinka";
-            this.txtLozinka.Size = new System.Drawing.Size(190, 20);
+            this.txtLozinka.Size = new System.Drawing.Size(219, 20);
             this.txtLozinka.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(149, 250);
+            this.txtEmail.Location = new System.Drawing.Point(120, 250);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(190, 20);
+            this.txtEmail.Size = new System.Drawing.Size(219, 20);
             this.txtEmail.TabIndex = 11;
             // 
             // btnSpremiZaposlenik
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 350);
+            this.ClientSize = new System.Drawing.Size(384, 352);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremiZaposlenik);
             this.Controls.Add(this.txtEmail);
@@ -181,7 +181,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmNoviZaposlenik";
-            this.Text = "NoviZaposlenik";
+            this.Text = "Novi Zaposlenik";
+            this.Load += new System.EventHandler(this.frmNoviZaposlenik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
