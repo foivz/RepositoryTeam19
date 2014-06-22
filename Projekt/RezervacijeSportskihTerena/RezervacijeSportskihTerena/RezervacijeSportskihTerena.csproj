@@ -63,6 +63,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KorisniciClass.cs" />
+    <Compile Include="NovaRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaRezervacija.Designer.cs">
+      <DependentUpon>NovaRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoviKorisnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoviKorisnik.Designer.cs">
+      <DependentUpon>NoviKorisnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="NoviTeren.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +138,12 @@
     <EmbeddedResource Include="Izvjestaj.resx">
       <DependentUpon>Izvjestaj.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaRezervacija.resx">
+      <DependentUpon>NovaRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoviKorisnik.resx">
+      <DependentUpon>NoviKorisnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoviTeren.resx">
       <DependentUpon>NoviTeren.cs</DependentUpon>

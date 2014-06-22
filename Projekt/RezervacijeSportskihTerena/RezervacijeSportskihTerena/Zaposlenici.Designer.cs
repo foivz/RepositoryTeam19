@@ -38,17 +38,22 @@
             // 
             // dgvZaposlenici
             // 
-            this.dgvZaposlenici.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvZaposlenici.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvZaposlenici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvZaposlenici.Location = new System.Drawing.Point(21, 12);
+            this.dgvZaposlenici.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvZaposlenici.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dgvZaposlenici.Location = new System.Drawing.Point(12, 13);
             this.dgvZaposlenici.Name = "dgvZaposlenici";
             this.dgvZaposlenici.Size = new System.Drawing.Size(660, 250);
             this.dgvZaposlenici.TabIndex = 0;
             // 
             // btnObrisiZaposlenika
             // 
-            this.btnObrisiZaposlenika.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnObrisiZaposlenika.Location = new System.Drawing.Point(581, 269);
+            this.btnObrisiZaposlenika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnObrisiZaposlenika.Location = new System.Drawing.Point(572, 269);
             this.btnObrisiZaposlenika.Name = "btnObrisiZaposlenika";
             this.btnObrisiZaposlenika.Size = new System.Drawing.Size(100, 35);
             this.btnObrisiZaposlenika.TabIndex = 1;
@@ -58,8 +63,8 @@
             // 
             // btnIzmjeniZaposlenika
             // 
-            this.btnIzmjeniZaposlenika.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIzmjeniZaposlenika.Location = new System.Drawing.Point(475, 269);
+            this.btnIzmjeniZaposlenika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIzmjeniZaposlenika.Location = new System.Drawing.Point(466, 269);
             this.btnIzmjeniZaposlenika.Name = "btnIzmjeniZaposlenika";
             this.btnIzmjeniZaposlenika.Size = new System.Drawing.Size(100, 35);
             this.btnIzmjeniZaposlenika.TabIndex = 2;
@@ -69,8 +74,8 @@
             // 
             // btnNoviZaposlenik
             // 
-            this.btnNoviZaposlenik.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNoviZaposlenik.Location = new System.Drawing.Point(369, 269);
+            this.btnNoviZaposlenik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNoviZaposlenik.Location = new System.Drawing.Point(360, 269);
             this.btnNoviZaposlenik.Name = "btnNoviZaposlenik";
             this.btnNoviZaposlenik.Size = new System.Drawing.Size(100, 35);
             this.btnNoviZaposlenik.TabIndex = 3;

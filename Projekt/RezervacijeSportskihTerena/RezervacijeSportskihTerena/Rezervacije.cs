@@ -30,5 +30,11 @@ namespace RezervacijeSportskihTerena
         {
             instance = null;
         }
+
+        private void btnNovaRezervacija_Click(object sender, EventArgs e)
+        {
+            frmNovaRezervacija rez = new frmNovaRezervacija();
+            rez.ShowDialog();
+        }
     }
 }

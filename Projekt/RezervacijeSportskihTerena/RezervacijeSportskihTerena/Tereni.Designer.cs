@@ -38,8 +38,12 @@
             // 
             // dgvTereni
             // 
-            this.dgvTereni.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvTereni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTereni.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTereni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTereni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTereni.Location = new System.Drawing.Point(12, 12);
             this.dgvTereni.Name = "dgvTereni";
             this.dgvTereni.Size = new System.Drawing.Size(760, 250);
@@ -47,6 +51,7 @@
             // 
             // btnObrisiTeren
             // 
+            this.btnObrisiTeren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnObrisiTeren.Location = new System.Drawing.Point(672, 268);
             this.btnObrisiTeren.Name = "btnObrisiTeren";
             this.btnObrisiTeren.Size = new System.Drawing.Size(100, 35);
@@ -57,6 +62,7 @@
             // 
             // btnIzmjeniTeren
             // 
+            this.btnIzmjeniTeren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIzmjeniTeren.Location = new System.Drawing.Point(566, 268);
             this.btnIzmjeniTeren.Name = "btnIzmjeniTeren";
             this.btnIzmjeniTeren.Size = new System.Drawing.Size(100, 35);
@@ -67,6 +73,7 @@
             // 
             // btnNoviTeren
             // 
+            this.btnNoviTeren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNoviTeren.Location = new System.Drawing.Point(460, 268);
             this.btnNoviTeren.Name = "btnNoviTeren";
             this.btnNoviTeren.Size = new System.Drawing.Size(100, 35);
