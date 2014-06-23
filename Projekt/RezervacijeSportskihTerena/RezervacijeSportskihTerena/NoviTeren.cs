@@ -48,11 +48,9 @@ namespace RezervacijeSportskihTerena
                 teren = new TereniClass();
             }
             teren.NazivTerena = txtNazivTerena.Text;
-            teren.VrstaTerena = txtVrstaTerena.Text;
-            teren.RadnoVrijeme = txtRadnoVrijeme.Text;
+            teren.Sport = txtVrstaTerena.Text;
             teren.Opis = txtOpis.Text;
             teren.CijenaSata = int.Parse(txtCijenaSata.Text);
-            teren.Dostupnost = provjeriDostupnost();
             teren.Spremi();
             this.Close();
         }

@@ -88,7 +88,9 @@
     <Compile Include="NoviZaposlenik.Designer.cs">
       <DependentUpon>NoviZaposlenik.cs</DependentUpon>
     </Compile>
+    <Compile Include="RezervacijeClass.cs" />
     <Compile Include="TereniClass.cs" />
+    <Compile Include="TerminiClass.cs" />
     <Compile Include="ZaposleniciClass.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Izvjestaj.cs">

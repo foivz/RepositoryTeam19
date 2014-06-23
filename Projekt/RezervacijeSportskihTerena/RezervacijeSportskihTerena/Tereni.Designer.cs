@@ -38,6 +38,8 @@
             // 
             // dgvTereni
             // 
+            this.dgvTereni.AllowUserToAddRows = false;
+            this.dgvTereni.AllowUserToDeleteRows = false;
             this.dgvTereni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -45,7 +47,10 @@
             this.dgvTereni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTereni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTereni.Location = new System.Drawing.Point(12, 12);
+            this.dgvTereni.MultiSelect = false;
             this.dgvTereni.Name = "dgvTereni";
+            this.dgvTereni.ReadOnly = true;
+            this.dgvTereni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTereni.Size = new System.Drawing.Size(760, 250);
             this.dgvTereni.TabIndex = 0;
             // 

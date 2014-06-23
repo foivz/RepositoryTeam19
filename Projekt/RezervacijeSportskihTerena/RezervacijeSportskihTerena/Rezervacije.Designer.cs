@@ -38,12 +38,18 @@
             // 
             // dgvRezervacije
             // 
+            this.dgvRezervacije.AllowUserToAddRows = false;
+            this.dgvRezervacije.AllowUserToDeleteRows = false;
             this.dgvRezervacije.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRezervacije.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRezervacije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRezervacije.Location = new System.Drawing.Point(12, 12);
+            this.dgvRezervacije.MultiSelect = false;
             this.dgvRezervacije.Name = "dgvRezervacije";
+            this.dgvRezervacije.ReadOnly = true;
+            this.dgvRezervacije.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRezervacije.Size = new System.Drawing.Size(1036, 418);
             this.dgvRezervacije.TabIndex = 0;
             // 
@@ -91,6 +97,7 @@
             this.Name = "frmRezervacije";
             this.Text = "Rezervacije";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRezervacije_FormClosing);
+            this.Load += new System.EventHandler(this.frmRezervacije_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).EndInit();
             this.ResumeLayout(false);
 

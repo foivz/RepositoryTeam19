@@ -10,9 +10,7 @@ namespace RezervacijeSportskihTerena
 {
     public class KorisniciClass
     {
-        public KorisniciClass()
-        {
-        }
+        public KorisniciClass() {}
 
         public KorisniciClass (SQLiteDataReader dr)
         {

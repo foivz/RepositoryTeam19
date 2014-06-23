@@ -26,6 +26,12 @@ namespace RezervacijeSportskihTerena
             InitializeComponent();
         }
 
+        public void OsvjeziRezervacije()
+        {
+            List<RezervacijeClass> listaRez = RezervacijeClass.DohvatiRezervacije();
+            dgvRezervacije.DataSource = listaRez;
+        }
+
         private void frmRezervacije_FormClosing(object sender, FormClosingEventArgs e)
         {
             instance = null;
@@ -35,6 +41,11 @@ namespace RezervacijeSportskihTerena
         {
             frmNovaRezervacija rez = new frmNovaRezervacija();
             rez.ShowDialog();
+        }
+
+        private void frmRezervacije_Load(object sender, EventArgs e)
+        {
+            OsvjeziRezervacije();
         }
     }
 }

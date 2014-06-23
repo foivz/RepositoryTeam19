@@ -20,21 +20,18 @@ namespace RezervacijeSportskihTerena
             {
                 IdTeren = int.Parse(dr["idTeren"].ToString());
                 NazivTerena = dr["nazivTerena"].ToString();
-                VrstaTerena = dr["vrstaTerena"].ToString();
-                RadnoVrijeme = dr["radnoVrijeme"].ToString();
+                Sport = dr["sport"].ToString();
                 Opis = dr["opis"].ToString();
                 CijenaSata = int.Parse(dr["cijenaSata"].ToString());
-                Dostupnost = bool.Parse(dr["dostupnost"].ToString());
             }
         }
 
         private int idTeren;
         private string nazivTerena;
-        private string vrstaTerena;
-        private string radnoVrijeme;
+        private string sport;
         private string opis;
         private int cijenaSata;
-        private bool dostupnost;
+
 
         public int IdTeren
          {
@@ -46,15 +43,10 @@ namespace RezervacijeSportskihTerena
             get { return nazivTerena; }
             set { nazivTerena = value; }
         }
-        public string VrstaTerena
+        public string Sport
         {
-            get { return vrstaTerena; }
-            set { vrstaTerena = value; }
-        }
-        public string RadnoVrijeme
-        {
-            get { return radnoVrijeme; }
-            set { radnoVrijeme = value; }
+            get { return sport; }
+            set { sport = value; }
         }
         public string Opis
         {
@@ -66,11 +58,6 @@ namespace RezervacijeSportskihTerena
             get { return cijenaSata; }
             set { cijenaSata = value; }
         }
-        public bool Dostupnost
-        {
-            get { return dostupnost; }
-            set { dostupnost = value; }
-        }
 
         public int Spremi()
         {
@@ -78,17 +65,15 @@ namespace RezervacijeSportskihTerena
 
             if (IdTeren == 0)        //Ako se radi o novokreiranom timu tada treba izvršiti INSERT
             {
-                sqlUpit = "INSERT INTO Teren (nazivTerena, vrstaTerena, radnoVrijeme, opis, cijenaSata, dostupnost) "
-                        + "VALUES ('" + NazivTerena + "','" + VrstaTerena + "','" + RadnoVrijeme + "','" + Opis + "','" + CijenaSata + "','" + Dostupnost + "')";
+                sqlUpit = "INSERT INTO Teren (nazivTerena, sport, opis, cijenaSata) "
+                        + "VALUES ('" + NazivTerena + "','" + Sport + "','" + Opis + "','" + CijenaSata + "')";
             }
             else                //Ako se radi o izmjeni postojećeg tada treba izvršiti UPDATE
             {
                 sqlUpit = "UPDATE Teren SET nazivTerena = '" + NazivTerena
-                + "', vrstaTerena = '" + VrstaTerena
-                + "', radnoVrijeme = '" + RadnoVrijeme
+                + "', sport = '" + Sport
                 + "', opis = '" + Opis
                 + "', cijenaSata = '" + CijenaSata
-                + "', dostupnost = '" + Dostupnost
                 + "' WHERE idTeren = " + IdTeren;
             }
 

@@ -38,6 +38,8 @@
             // 
             // dgvZaposlenici
             // 
+            this.dgvZaposlenici.AllowUserToAddRows = false;
+            this.dgvZaposlenici.AllowUserToDeleteRows = false;
             this.dgvZaposlenici.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -46,7 +48,10 @@
             this.dgvZaposlenici.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvZaposlenici.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvZaposlenici.Location = new System.Drawing.Point(12, 13);
+            this.dgvZaposlenici.MultiSelect = false;
             this.dgvZaposlenici.Name = "dgvZaposlenici";
+            this.dgvZaposlenici.ReadOnly = true;
+            this.dgvZaposlenici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvZaposlenici.Size = new System.Drawing.Size(660, 250);
             this.dgvZaposlenici.TabIndex = 0;
             // 
