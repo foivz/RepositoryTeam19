@@ -8,6 +8,10 @@ namespace RezervacijeSportskihTerena
 {
     public class TerminiClass
     {
+	
+		/// <summary> 
+		/// Konstruktor za kreiranje novog termina. 
+		/// </summary>
         public TerminiClass() { }
 
 
@@ -43,6 +47,10 @@ namespace RezervacijeSportskihTerena
             set { datumRezervacije = value; }
         }
 
+		/// <summary>
+		/// Sprema vrijednosti objekta u bazu podataka.
+		/// </summary>
+		/// <returns>Broj redaka koji su izmijenjeni ili dodani.</returns>
         public int Spremi()
         {
             string sqlUpit = "";

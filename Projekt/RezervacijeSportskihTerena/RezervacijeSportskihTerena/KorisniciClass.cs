@@ -9,9 +9,16 @@ using System.Collections;
 namespace RezervacijeSportskihTerena
 {
     public class KorisniciClass
-    {
+    {	
+		/// <summary>
+		/// Konstruktor za kreiranje novog korisnika
+		/// </summary>
         public KorisniciClass() {}
 
+		/// <summary>
+		/// Konstruktor koji kreira Korisnika s podacima iz DataReader objekta
+		/// </summary>
+		/// <param name="dr"> DataReader objekt s podacima za Korisnika.</param>
         public KorisniciClass (SQLiteDataReader dr)
         {
             if (dr != null)
@@ -52,7 +59,10 @@ namespace RezervacijeSportskihTerena
             set { telefonKorisnik = value; }
         }
 
-
+		/// <summary>
+		/// Sprema vrijednosti objekta u bazu podataka.
+		/// </summary>
+		/// <returns>Broj redaka koji su izmijenjeni ili dodani.</returns>
         public int Spremi()
         {
             string sqlUpit = "";
@@ -73,12 +83,20 @@ namespace RezervacijeSportskihTerena
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
 
+		/// <summary>
+		/// Briše objekt iz baze podataka.
+		/// </summary>
+		/// <returns>Broj obrisanih redaka.</returns>
         public int Obrisi()
         {
             string sqlDelete = "DELETE FROM Korisnik WHERE idKorisnik = " + IdKorisnik;
             return DB.Instance.IzvrsiUpit(sqlDelete);
         }
 
+		/// <summary>
+		/// Dohvaća sve korisnike iz baze podataka i vraća ih u obliku generičke liste.
+		/// </summary>
+		/// <returns>Lista korisnika.</returns>
         public static List<KorisniciClass> DohvatiKorisnike()
         {
             List<KorisniciClass> lista = new List<KorisniciClass>();

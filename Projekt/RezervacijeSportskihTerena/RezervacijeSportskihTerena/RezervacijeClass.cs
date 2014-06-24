@@ -10,8 +10,15 @@ namespace RezervacijeSportskihTerena
 {
     public class RezervacijeClass
     {
+		/// <summary> 
+		/// Konstruktor za kreiranje nove rezervacije. 
+		/// </summary>
         public RezervacijeClass() {}
 
+		/// <summary> 
+		/// Konstruktor koji kreira Rezervaciju s podacima iz DataReader objekta. 
+		/// </summary> 
+		/// <param name="dr">DataReader objekt sa podacima za Rezervaciju.</param>
         public RezervacijeClass(SQLiteDataReader dr)
         {
             if (dr != null)
@@ -84,6 +91,10 @@ namespace RezervacijeSportskihTerena
             set { datumRezervacije = value; }
         }
 
+		/// <summary> 
+		/// Dohvaća sve rezervacije iz baze i vraća ih u obliku generičke liste. 
+		/// </summary> 
+		/// <returns>Lista rezervacija.</returns> 
         public static List<RezervacijeClass> DohvatiRezervacije()
         {
             List<RezervacijeClass> lista = new List<RezervacijeClass>();

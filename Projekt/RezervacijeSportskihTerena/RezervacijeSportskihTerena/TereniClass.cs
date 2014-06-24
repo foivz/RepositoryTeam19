@@ -10,10 +10,18 @@ namespace RezervacijeSportskihTerena
 {
     public class TereniClass
     {
+		
+		/// <summary> 
+		/// Konstruktor za kreiranje novog terena. 
+		/// </summary>
         public TereniClass()
         {
         }
 
+		/// <summary> 
+		/// Konstruktor koji kreira Teren s podacima iz DataReader objekta. 
+		/// </summary> 
+		/// <param name="dr">DataReader objekt sa podacima za Terena.</param>
         public TereniClass(SQLiteDataReader dr)
         {
             if (dr != null)
@@ -59,6 +67,10 @@ namespace RezervacijeSportskihTerena
             set { cijenaSata = value; }
         }
 
+		/// <summary>
+		/// Sprema vrijednosti objekta u bazu podataka.
+		/// </summary>
+		/// <returns>Broj redaka koji su izmijenjeni ili dodani.</returns>
         public int Spremi()
         {
             string sqlUpit = "";
@@ -80,12 +92,20 @@ namespace RezervacijeSportskihTerena
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
 
+		/// <summary>
+		/// Briše objekt iz baze podataka.
+		/// </summary>
+		/// <returns>Broj obrisanih redaka.</returns>
         public int Obrisi()
         {
             string sqlDelete = "DELETE FROM Teren WHERE idTeren = " + IdTeren;
             return DB.Instance.IzvrsiUpit(sqlDelete);
         }
 
+		/// <summary>
+		/// Dohvaća sve terene iz baze podataka i vraća ih u obliku generičke liste.
+		/// </summary>
+		/// <returns>Lista terena.</returns>
         public static List<TereniClass> DohvatiTerene()
         {
             List<TereniClass> lista = new List<TereniClass>();
