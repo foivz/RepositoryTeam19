@@ -33,6 +33,12 @@ namespace RezervacijeSportskihTerena
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            if ((txtImePrezimeKorisnik.Text == "") || (txtTelefonKorisnik.Text == "") || (txtEmailKorisnik.Text == ""))
+            {
+                MessageBox.Show("Ispunite sva polja molim.");
+                return;
+            }
+
             if (korisnik == null)
             {
                 korisnik = new KorisniciClass();
