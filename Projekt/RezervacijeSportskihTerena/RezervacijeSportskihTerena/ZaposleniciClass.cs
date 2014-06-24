@@ -11,10 +11,17 @@ namespace RezervacijeSportskihTerena
     public class ZaposleniciClass
     {
 
+		/// <summary> 
+		/// Konstruktor za kreiranje novog zaposlenika. 
+		/// </summary>
         public ZaposleniciClass()
         {
         }
 
+		/// <summary> 
+		/// Konstruktor koji kreira Zaposlenika s podacima iz DataReader objekta. 
+		/// </summary> 
+		/// <param name="dr">DataReader objekt sa podacima za Zaposlenika.</param>
         public ZaposleniciClass(SQLiteDataReader dr)
         {
             if (dr != null)
@@ -66,6 +73,10 @@ namespace RezervacijeSportskihTerena
             set { email = value; }
         }
 
+		/// <summary>
+		/// Sprema vrijednosti objekta u bazu podataka.
+		/// </summary>
+		/// <returns>Broj redaka koji su izmijenjeni ili dodani.</returns>
         public int Spremi()
         {
             string sqlUpit = "";
@@ -88,6 +99,10 @@ namespace RezervacijeSportskihTerena
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
 
+		/// <summary>
+		/// Dohvaća sve zaposlenike iz baze podataka i vraća ih u obliku generičke liste.
+		/// </summary>
+		/// <returns>Lista zaposlenika.</returns>
         public static List<ZaposleniciClass> DohvatiZaposlenike()
         {
             List<ZaposleniciClass> lista = new List<ZaposleniciClass>();
@@ -102,6 +117,10 @@ namespace RezervacijeSportskihTerena
             return lista;
         }
 
+		/// <summary>
+		/// Briše objekt iz baze podataka.
+		/// </summary>
+		/// <returns>Broj obrisanih redaka.</returns>
         public int Obrisi()
         {
             string sqlDelete = "DELETE FROM Zaposlenik WHERE idZaposlenik = " + IdZaposlenik;
