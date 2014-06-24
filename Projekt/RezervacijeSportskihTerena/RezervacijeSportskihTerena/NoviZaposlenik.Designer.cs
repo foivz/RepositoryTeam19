@@ -42,6 +42,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSpremiZaposlenik = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnDohvatiZaposlenik = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -161,11 +162,22 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
+            // btnDohvatiZaposlenik
+            // 
+            this.btnDohvatiZaposlenik.Location = new System.Drawing.Point(89, 299);
+            this.btnDohvatiZaposlenik.Name = "btnDohvatiZaposlenik";
+            this.btnDohvatiZaposlenik.Size = new System.Drawing.Size(75, 23);
+            this.btnDohvatiZaposlenik.TabIndex = 14;
+            this.btnDohvatiZaposlenik.Text = "Dohvati zaposlenika";
+            this.btnDohvatiZaposlenik.UseVisualStyleBackColor = true;
+            this.btnDohvatiZaposlenik.Click += new System.EventHandler(this.btnDohvatiZaposlenik_Click);
+            // 
             // frmNoviZaposlenik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 352);
+            this.Controls.Add(this.btnDohvatiZaposlenik);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremiZaposlenik);
             this.Controls.Add(this.txtEmail);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSpremiZaposlenik;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.Button btnDohvatiZaposlenik;
     }
 }

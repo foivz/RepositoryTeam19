@@ -28,50 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIDTeren = new System.Windows.Forms.TextBox();
             this.txtNazivTerena = new System.Windows.Forms.TextBox();
             this.txtVrstaTerena = new System.Windows.Forms.TextBox();
-            this.txtRadnoVrijeme = new System.Windows.Forms.TextBox();
             this.txtOpis = new System.Windows.Forms.TextBox();
-            this.chkDostupnost = new System.Windows.Forms.CheckBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCijenaSata = new System.Windows.Forms.TextBox();
+            this.btnDohvatiTeren = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Dostupnost :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 228);
+            this.label5.Location = new System.Drawing.Point(27, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Opis : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Radno vrijeme :";
             // 
             // label3
             // 
@@ -122,33 +101,17 @@
             this.txtVrstaTerena.Size = new System.Drawing.Size(239, 20);
             this.txtVrstaTerena.TabIndex = 2;
             // 
-            // txtRadnoVrijeme
-            // 
-            this.txtRadnoVrijeme.Location = new System.Drawing.Point(116, 149);
-            this.txtRadnoVrijeme.Name = "txtRadnoVrijeme";
-            this.txtRadnoVrijeme.Size = new System.Drawing.Size(239, 20);
-            this.txtRadnoVrijeme.TabIndex = 3;
-            // 
             // txtOpis
             // 
-            this.txtOpis.Location = new System.Drawing.Point(116, 225);
+            this.txtOpis.Location = new System.Drawing.Point(116, 190);
             this.txtOpis.Multiline = true;
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(239, 76);
             this.txtOpis.TabIndex = 5;
             // 
-            // chkDostupnost
-            // 
-            this.chkDostupnost.AutoSize = true;
-            this.chkDostupnost.Location = new System.Drawing.Point(116, 42);
-            this.chkDostupnost.Name = "chkDostupnost";
-            this.chkDostupnost.Size = new System.Drawing.Size(15, 14);
-            this.chkDostupnost.TabIndex = 0;
-            this.chkDostupnost.UseVisualStyleBackColor = true;
-            // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(280, 317);
+            this.btnOdustani.Location = new System.Drawing.Point(280, 282);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 7;
@@ -158,7 +121,7 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(189, 317);
+            this.btnSpremi.Location = new System.Drawing.Point(189, 282);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(75, 23);
             this.btnSpremi.TabIndex = 6;
@@ -169,7 +132,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 191);
+            this.label7.Location = new System.Drawing.Point(27, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 9;
@@ -177,36 +140,43 @@
             // 
             // txtCijenaSata
             // 
-            this.txtCijenaSata.Location = new System.Drawing.Point(116, 188);
+            this.txtCijenaSata.Location = new System.Drawing.Point(116, 153);
             this.txtCijenaSata.Name = "txtCijenaSata";
             this.txtCijenaSata.Size = new System.Drawing.Size(239, 20);
             this.txtCijenaSata.TabIndex = 4;
+            // 
+            // btnDohvatiTeren
+            // 
+            this.btnDohvatiTeren.Location = new System.Drawing.Point(96, 282);
+            this.btnDohvatiTeren.Name = "btnDohvatiTeren";
+            this.btnDohvatiTeren.Size = new System.Drawing.Size(75, 23);
+            this.btnDohvatiTeren.TabIndex = 13;
+            this.btnDohvatiTeren.Text = "Dohvati";
+            this.btnDohvatiTeren.UseVisualStyleBackColor = true;
+            this.btnDohvatiTeren.Click += new System.EventHandler(this.btnDohvatiTeren_Click);
             // 
             // frmNoviTeren
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 352);
+            this.Controls.Add(this.btnDohvatiTeren);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.chkDostupnost);
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.txtCijenaSata);
-            this.Controls.Add(this.txtRadnoVrijeme);
             this.Controls.Add(this.txtVrstaTerena);
             this.Controls.Add(this.txtNazivTerena);
             this.Controls.Add(this.txtIDTeren);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmNoviTeren";
             this.Text = "Novi Teren";
-            this.Load += new System.EventHandler(this.frmNoviTeren_Load);
+            this.Load += new System.EventHandler(this.frmNoviTren_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,21 +184,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIDTeren;
         private System.Windows.Forms.TextBox txtNazivTerena;
         private System.Windows.Forms.TextBox txtVrstaTerena;
-        private System.Windows.Forms.TextBox txtRadnoVrijeme;
         private System.Windows.Forms.TextBox txtOpis;
-        private System.Windows.Forms.CheckBox chkDostupnost;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCijenaSata;
+        private System.Windows.Forms.Button btnDohvatiTeren;
     }
 }

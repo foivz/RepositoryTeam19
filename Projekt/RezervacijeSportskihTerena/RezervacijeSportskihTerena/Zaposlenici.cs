@@ -52,6 +52,7 @@ namespace RezervacijeSportskihTerena
                 ZaposleniciClass odabirZaposlenik = dgvZaposlenici.SelectedRows[0].DataBoundItem as ZaposleniciClass;
                 frmNoviZaposlenik noviZaposlenik = new frmNoviZaposlenik(odabirZaposlenik);
                 noviZaposlenik.ShowDialog();
+
                 OsvjeziZaposlenike();
             }
         }

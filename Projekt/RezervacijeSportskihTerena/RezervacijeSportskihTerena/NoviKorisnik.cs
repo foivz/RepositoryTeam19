@@ -18,6 +18,7 @@ namespace RezervacijeSportskihTerena
         public frmNoviKorisnik()
         {
             InitializeComponent();
+            btnDohvatiKorisnik.Visible = false;
         }
 
         public frmNoviKorisnik(KorisniciClass odabraniKorisnik)
@@ -42,6 +43,14 @@ namespace RezervacijeSportskihTerena
             korisnik.TelefonKorisnik = txtTelefonKorisnik.Text;
             korisnik.Spremi();
             this.Close();
+        }
+
+        private void btnDohvatiKorisnik_Click(object sender, EventArgs e)
+        {
+            txtIdKorisnik.Text = korisnik.IdKorisnik.ToString();
+            txtEmailKorisnik.Text = korisnik.EmailKorisnik.ToString();
+            txtTelefonKorisnik.Text = korisnik.TelefonKorisnik.ToString();
+            txtImePrezimeKorisnik.Text = korisnik.TelefonKorisnik.ToString();
         }
     }
 }

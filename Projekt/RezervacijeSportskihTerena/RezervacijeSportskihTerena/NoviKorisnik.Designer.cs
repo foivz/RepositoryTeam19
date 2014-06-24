@@ -38,6 +38,7 @@
             this.txtTelefonKorisnik = new System.Windows.Forms.TextBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnSpremi = new System.Windows.Forms.Button();
+            this.btnDohvatiKorisnik = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -126,11 +127,22 @@
             this.btnSpremi.UseVisualStyleBackColor = true;
             this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
+            // btnDohvatiKorisnik
+            // 
+            this.btnDohvatiKorisnik.Location = new System.Drawing.Point(71, 290);
+            this.btnDohvatiKorisnik.Name = "btnDohvatiKorisnik";
+            this.btnDohvatiKorisnik.Size = new System.Drawing.Size(75, 23);
+            this.btnDohvatiKorisnik.TabIndex = 5;
+            this.btnDohvatiKorisnik.Text = "Dohvati";
+            this.btnDohvatiKorisnik.UseVisualStyleBackColor = true;
+            this.btnDohvatiKorisnik.Click += new System.EventHandler(this.btnDohvatiKorisnik_Click);
+            // 
             // frmNoviKorisnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 352);
+            this.Controls.Add(this.btnDohvatiKorisnik);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.txtTelefonKorisnik);
@@ -160,5 +172,6 @@
         private System.Windows.Forms.TextBox txtTelefonKorisnik;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnSpremi;
+        private System.Windows.Forms.Button btnDohvatiKorisnik;
     }
 }

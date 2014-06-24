@@ -18,12 +18,13 @@ namespace RezervacijeSportskihTerena
         public frmNoviZaposlenik()
         {
             InitializeComponent();
+            btnDohvatiZaposlenik.Visible = false;
         }
 
          public frmNoviZaposlenik(ZaposleniciClass odabraniZaposlenik)
         {
             InitializeComponent();
-            zaposlenik = odabraniZaposlenik;
+            zaposlenik = odabraniZaposlenik;  
         }
 
         private void btnSpremiZaposlenik_Click(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace RezervacijeSportskihTerena
             this.Close();
         }
 
+
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -49,6 +51,16 @@ namespace RezervacijeSportskihTerena
         private void frmNoviZaposlenik_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtImeZaposlenik;
+        }
+
+        private void btnDohvatiZaposlenik_Click(object sender, EventArgs e)
+        {
+                txtIdZaposlenik.Text = zaposlenik.IdZaposlenik.ToString();
+                txtImeZaposlenik.Text = zaposlenik.ImeZaposlenik.ToString();
+                txtPrezimeZaposlenik.Text = zaposlenik.PrezimeZaposlenik.ToString();
+                txtEmail.Text = zaposlenik.Email.ToString();
+                txtLozinka.Text = zaposlenik.Lozinka.ToString();
+                txtKorisnickoIme.Text = zaposlenik.KorisnickoIme.ToString();
         }
     }
 }

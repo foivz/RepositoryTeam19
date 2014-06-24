@@ -18,6 +18,7 @@ namespace RezervacijeSportskihTerena
         public frmNoviTeren()
         {
             InitializeComponent();
+            btnDohvatiTeren.Visible = false;
         }
 
         public frmNoviTeren(TereniClass odabraniTeren)
@@ -26,20 +27,7 @@ namespace RezervacijeSportskihTerena
             teren = odabraniTeren;
         }
 
-        // provjerava dal je checkbox chekiran ili ne
-        private bool provjeriDostupnost()
-        {
-            bool imaNema;
-            if (chkDostupnost.Checked)
-            {
-                imaNema = true;
-            }
-            else
-            {
-                imaNema = false;
-            }
-            return imaNema;
-        }
+        
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
@@ -51,6 +39,11 @@ namespace RezervacijeSportskihTerena
             teren.Sport = txtVrstaTerena.Text;
             teren.Opis = txtOpis.Text;
             teren.CijenaSata = int.Parse(txtCijenaSata.Text);
+            if (teren.NazivTerena == "" || teren.Sport == "" || teren.CijenaSata == null)
+            {
+                MessageBox.Show("Naziv, cijena i sport moraju biti popunjeni.");
+                return;
+            }
             teren.Spremi();
             this.Close();
         }
@@ -60,9 +53,18 @@ namespace RezervacijeSportskihTerena
             this.Close();
         }
 
-        private void frmNoviTeren_Load(object sender, EventArgs e)
+        private void btnDohvatiTeren_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = chkDostupnost;
+            txtIDTeren.Text = teren.IdTeren.ToString();
+            txtOpis.Text = teren.Opis.ToString();
+            txtNazivTerena.Text = teren.NazivTerena.ToString();
+            txtVrstaTerena.Text = teren.Sport.ToString();
+            txtCijenaSata.Text  = teren.CijenaSata.ToString();
+        }
+
+        private void frmNoviTren_Load(object sender, EventArgs e)
+        {
+
         }
 
 
