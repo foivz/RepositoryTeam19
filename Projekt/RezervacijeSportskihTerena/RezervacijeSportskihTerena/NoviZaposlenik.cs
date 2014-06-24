@@ -28,6 +28,13 @@ namespace RezervacijeSportskihTerena
 
         private void btnSpremiZaposlenik_Click(object sender, EventArgs e)
         {
+            if ((txtImeZaposlenik.Text == "") || (txtPrezimeZaposlenik.Text == "") || (txtKorisnickoIme.Text == "") || (txtLozinka.Text == "") || (txtEmail.Text == ""))
+            {
+                MessageBox.Show("Ispunite sva polja molim.");
+                return;
+            }
+
+
             if (zaposlenik == null)
             {
                 zaposlenik = new ZaposleniciClass();

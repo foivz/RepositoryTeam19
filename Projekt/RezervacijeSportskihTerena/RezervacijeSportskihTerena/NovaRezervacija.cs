@@ -105,7 +105,7 @@ namespace RezervacijeSportskihTerena
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            int a, b, c;
+            int a, b;
             // dohvacanje idKorisnika preko selektiranog reda
             if (dgvKorisnici.SelectedRows.Count > 0)
             {
@@ -127,7 +127,9 @@ namespace RezervacijeSportskihTerena
             string sqlUpit = "SELECT MAX(idTermin) FROM Termin;";
             c = DB.Instance.IzvrsiUpit(sqlUpit);
             MessageBox.Show(c.ToString());
-             */
+             */           
         }
+
+
     }
 }
