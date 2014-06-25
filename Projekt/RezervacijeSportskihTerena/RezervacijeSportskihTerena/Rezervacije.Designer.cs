@@ -61,6 +61,7 @@
             this.btnObrisiRezervaciju.TabIndex = 1;
             this.btnObrisiRezervaciju.Text = "Obriši";
             this.btnObrisiRezervaciju.UseVisualStyleBackColor = true;
+            this.btnObrisiRezervaciju.Click += new System.EventHandler(this.btnObrisiRezervaciju_Click);
             // 
             // btnNovaRezervacija
             // 

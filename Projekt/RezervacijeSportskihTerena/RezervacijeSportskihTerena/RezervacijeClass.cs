@@ -23,15 +23,15 @@ namespace RezervacijeSportskihTerena
         {
             if (dr != null)
             {
-                rIdRezervacija = int.Parse(dr["idRezervacija"].ToString());
-                rImePrezimeKorisnik = dr["imePrezimeKorisnik"].ToString();
-                rEmailKorisnik = dr["emailKorisnik"].ToString();
-                rTelefonKorisnik = dr["telefonKorisnik"].ToString();
-                rNazivTerena = dr["nazivTerena"].ToString();
-                rCijenaSata = float.Parse(dr["cijenaSata"].ToString());
-                rVrijemePocetka = dr.GetString(dr.GetOrdinal("vrijemePocetka"));
-                rVrijemeZavrsetka = dr.GetString(dr.GetOrdinal("vrijemeZavrsetka"));
-                rDatumRezervacije = dr.GetDateTime(dr.GetOrdinal("datumRezervacije"));
+                IdRezervacija = int.Parse(dr["idRezervacija"].ToString());
+                ImePrezimeKorisnik = dr["imePrezimeKorisnik"].ToString();
+                EmailKorisnik = dr["emailKorisnik"].ToString();
+                TelefonKorisnik = dr["telefonKorisnik"].ToString();
+                NazivTerena = dr["nazivTerena"].ToString();
+                CijenaSata = float.Parse(dr["cijenaSata"].ToString());
+                VrijemePocetka = dr.GetString(dr.GetOrdinal("vrijemePocetka"));
+                VrijemeZavrsetka = dr.GetString(dr.GetOrdinal("vrijemeZavrsetka"));
+                DatumRezervacije = dr.GetDateTime(dr.GetOrdinal("datumRezervacije"));
             }
         }
 
@@ -45,51 +45,51 @@ namespace RezervacijeSportskihTerena
         private string vrijemeZavrsetka;
         private DateTime datumRezervacije;
 
-        public int rIdRezervacija
+        public int IdRezervacija
         {
             get { return idRezervacija; }
             set { idRezervacija = value; }
         }
-        public string rImePrezimeKorisnik
+        public string ImePrezimeKorisnik
         {
             get { return imePrezimeKorisnik; }
             set { imePrezimeKorisnik = value; }
         }
-        public string rEmailKorisnik
+        public string EmailKorisnik
         {
             get { return emailKorisnik; }
             set { emailKorisnik = value; }
         }
-        public string rTelefonKorisnik
+        public string TelefonKorisnik
         {
             get { return telefonKorisnik; }
             set { telefonKorisnik = value; }
         }
-        public string rNazivTerena
+        public string NazivTerena
         {
             get { return nazivTerena; }
             set { nazivTerena = value; }
         }
-        public float rCijenaSata
+        public float CijenaSata
         {
             get { return cijenaSata; }
             set { cijenaSata = value; }
         }
-        public string rVrijemePocetka
+        public string VrijemePocetka
         {
             get { return vrijemePocetka; }
             set {  vrijemePocetka = value.Substring(0, 5); }
         }
-        public string rVrijemeZavrsetka
+        public string VrijemeZavrsetka
         {
             get { return vrijemeZavrsetka; }
             set { vrijemeZavrsetka = value.Substring(0, 5); }
         }
-        public DateTime rDatumRezervacije
+        public DateTime DatumRezervacije
         {
             get { return datumRezervacije; }
             set { datumRezervacije = value; }
-        }
+        } 
 
 		/// <summary> 
 		/// Dohvaća sve rezervacije iz baze i vraća ih u obliku generičke liste. 
@@ -107,6 +107,63 @@ namespace RezervacijeSportskihTerena
             }
             dr.Close();  //DataReader treba obavezno zatvoriti nakon uporabe.
             return lista;
+        }
+    }
+
+    public class RezervacijeAkcijeClass 
+    {
+        public RezervacijeAkcijeClass() { }
+
+        /// <summary> 
+        /// Konstruktor za spremanje nove rezervacije. 
+        /// </summary>
+        public RezervacijeAkcijeClass(int idKor, int idTrn, int idTmn)
+        {
+            IdKorisnik = idKor;
+            IdTeren = idTrn;
+            IdTermin = idTmn;
+        }
+
+        private int idKorisnik;
+        private int idTeren;
+        private int idTermin;
+
+        public int IdKorisnik
+        {
+            get { return idKorisnik; }
+            set { idKorisnik = value; }
+        }
+        public int IdTeren
+        {
+            get { return idTeren; }
+            set { idTeren = value; }
+        }
+        public int IdTermin
+        {
+            get { return idTermin; }
+            set { idTermin = value; }
+        }
+
+        /// <summary>
+        /// Sprema vrijednosti objekta u bazu podataka.
+        /// </summary>
+        public int Spremi()
+        {
+            string sqlUpit = "";
+            sqlUpit = "INSERT INTO Rezervacija (idKorisnik, idTeren, idTermin) "
+                        + "VALUES ('" + IdKorisnik + "','" + IdTeren + "','" + IdTermin + "')";
+
+            return DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        /// <summary>
+        /// Briše objekt iz baze podataka.
+        /// </summary>
+        /// <returns>Broj obrisanih redaka.</returns>
+        public int Obrisi(int IdRezervacija)
+        {
+            string sqlDelete = "DELETE FROM Rezervacija WHERE idRezervacija = " + IdRezervacija;
+            return DB.Instance.IzvrsiUpit(sqlDelete);
         }
     }
 }

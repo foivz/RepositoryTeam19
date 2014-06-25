@@ -43,7 +43,6 @@
             this.btnObrisiKorisnika = new System.Windows.Forms.Button();
             this.numBrSati = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTereni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBrSati)).BeginInit();
@@ -110,6 +109,7 @@
             this.kalendar.ScrollChange = 1;
             this.kalendar.ShowTodayCircle = false;
             this.kalendar.TabIndex = 2;
+            this.kalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.kalendar_DateChanged);
             // 
             // label3
             // 
@@ -224,22 +224,11 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Odabirite broj sati:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(556, 537);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Pohrani termin u bazu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmNovaRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 711);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.numBrSati);
             this.Controls.Add(this.btnObrisiKorisnika);
             this.Controls.Add(this.btnIzmjeniKorisnika);
@@ -283,6 +272,5 @@
         private System.Windows.Forms.Button btnObrisiKorisnika;
         private System.Windows.Forms.NumericUpDown numBrSati;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
     }
 }

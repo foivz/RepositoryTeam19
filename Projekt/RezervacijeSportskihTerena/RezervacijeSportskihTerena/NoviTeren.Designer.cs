@@ -56,9 +56,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Vrsta :";
+            this.label3.Text = "Sport :";
             // 
             // label2
             // 

@@ -41,10 +41,24 @@ namespace RezervacijeSportskihTerena
         {
             frmNovaRezervacija rez = new frmNovaRezervacija();
             rez.ShowDialog();
+            OsvjeziRezervacije();
         }
 
         private void frmRezervacije_Load(object sender, EventArgs e)
         {
+            OsvjeziRezervacije();
+        }
+
+        private void btnObrisiRezervaciju_Click(object sender, EventArgs e)
+        {
+            // Iz selektiranog reda izvlači se vrijednost IdRezervacija i prosljeđuje na funkciju Obrisi
+            int selectedRowIndexR = dgvRezervacije.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRowR = dgvRezervacije.Rows[selectedRowIndexR];
+            int a = Convert.ToInt32(selectedRowR.Cells["IdRezervacija"].Value);
+
+            RezervacijeAkcijeClass rez = new RezervacijeAkcijeClass();
+            rez.Obrisi(a);
+               
             OsvjeziRezervacije();
         }
     }
