@@ -56,6 +56,17 @@ namespace RezervacijeSportskihTerena
         private void frmNoviZaposlenik_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtImeZaposlenik;
+
+            /* Popunjavanje trenutno upisanih podataka kod izmjene unešenog zaposlenika */
+            if (zaposlenik != null)
+            {
+                txtIdZaposlenik.Text = zaposlenik.IdZaposlenik.ToString();
+                txtImeZaposlenik.Text = zaposlenik.ImeZaposlenik.ToString();
+                txtPrezimeZaposlenik.Text = zaposlenik.PrezimeZaposlenik.ToString();
+                txtEmail.Text = zaposlenik.Email.ToString();
+                txtLozinka.Text = zaposlenik.Lozinka.ToString();
+                txtKorisnickoIme.Text = zaposlenik.KorisnickoIme.ToString();
+            }
         }
     }
 }

@@ -26,23 +26,14 @@ namespace RezervacijeSportskihTerena
             teren = odabraniTeren;
         }
 
-        // provjerava dal je checkbox chekiran ili ne
-        private bool provjeriDostupnost()
-        {
-            bool imaNema;
-            if (chkDostupnost.Checked)
-            {
-                imaNema = true;
-            }
-            else
-            {
-                imaNema = false;
-            }
-            return imaNema;
-        }
-
         private void btnSpremi_Click(object sender, EventArgs e)
         {
+            if ((txtNazivTerena.Text == "") || (txtCijenaSata.Text == ""))
+            {
+                MessageBox.Show("Polja za naziv i cijenu moraju biti ispunjena.");
+                return;
+            }
+
             if(teren == null)
             {
                 teren = new TereniClass();
@@ -62,7 +53,15 @@ namespace RezervacijeSportskihTerena
 
         private void frmNoviTeren_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = chkDostupnost;
+            /* Popunjavanje forme sa postojećim podacima unesenog terena */
+            if (teren != null)
+            {
+                txtIDTeren.Text = teren.IdTeren.ToString();
+                txtOpis.Text = teren.Opis.ToString();
+                txtNazivTerena.Text = teren.NazivTerena.ToString();
+                txtVrstaTerena.Text = teren.Sport.ToString();
+                txtCijenaSata.Text = teren.CijenaSata.ToString();
+            }
         }
 
 

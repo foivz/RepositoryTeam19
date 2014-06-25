@@ -143,6 +143,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNoviKorisnik";
             this.Text = "Novi Korisnik";
+            this.Load += new System.EventHandler(this.frmNoviKorisnik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

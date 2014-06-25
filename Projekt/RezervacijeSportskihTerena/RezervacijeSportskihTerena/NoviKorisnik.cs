@@ -49,5 +49,16 @@ namespace RezervacijeSportskihTerena
             korisnik.Spremi();
             this.Close();
         }
+
+        private void frmNoviKorisnik_Load(object sender, EventArgs e)
+        {
+            /* Popunjavanje forme sa postojećim podacima kod izmjene. */
+            if (korisnik != null) {
+                txtIdKorisnik.Text = korisnik.IdKorisnik.ToString();
+                txtEmailKorisnik.Text = korisnik.EmailKorisnik.ToString();
+                txtTelefonKorisnik.Text = korisnik.TelefonKorisnik.ToString();
+                txtImePrezimeKorisnik.Text = korisnik.ImePrezimeKorisnik.ToString();
+            }
+        }
     }
 }

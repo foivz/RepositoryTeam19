@@ -53,6 +53,7 @@ namespace RezervacijeSportskihTerena
                 frmNoviZaposlenik noviZaposlenik = new frmNoviZaposlenik(odabirZaposlenik);
                 noviZaposlenik.ShowDialog();
                 OsvjeziZaposlenike();
+
             }
         }
 
