@@ -44,6 +44,11 @@
             this.btnNajkoristenijiTermin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.prikaz = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblRez = new System.Windows.Forms.Label();
+            this.txtRez = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,6 +72,7 @@
             this.btnNajcesciSport.TabIndex = 1;
             this.btnNajcesciSport.Text = "Najviše rezerviran sport";
             this.btnNajcesciSport.UseVisualStyleBackColor = true;
+            this.btnNajcesciSport.Click += new System.EventHandler(this.btnNajcesciSport_Click);
             // 
             // btnNajviseKoristenTeren
             // 
@@ -76,6 +82,7 @@
             this.btnNajviseKoristenTeren.TabIndex = 1;
             this.btnNajviseKoristenTeren.Text = "Najviše korišten teren";
             this.btnNajviseKoristenTeren.UseVisualStyleBackColor = true;
+            this.btnNajviseKoristenTeren.Click += new System.EventHandler(this.btnNajviseKoristenTeren_Click);
             // 
             // label1
             // 
@@ -102,6 +109,7 @@
             this.btnNajviseRezervacija.TabIndex = 1;
             this.btnNajviseRezervacija.Text = "Korisnik sa najvećim brojem rezervacija";
             this.btnNajviseRezervacija.UseVisualStyleBackColor = true;
+            this.btnNajviseRezervacija.Click += new System.EventHandler(this.btnNajviseRezervacija_Click);
             // 
             // label2
             // 
@@ -129,6 +137,7 @@
             this.btnMjesecniPrihod.TabIndex = 1;
             this.btnMjesecniPrihod.Text = "Mjesečni prihod";
             this.btnMjesecniPrihod.UseVisualStyleBackColor = true;
+            this.btnMjesecniPrihod.Click += new System.EventHandler(this.btnMjesecniPrihod_Click);
             // 
             // btnUkupanPrihod
             // 
@@ -138,6 +147,7 @@
             this.btnUkupanPrihod.TabIndex = 1;
             this.btnUkupanPrihod.Text = "Ukupan prihod";
             this.btnUkupanPrihod.UseVisualStyleBackColor = true;
+            this.btnUkupanPrihod.Click += new System.EventHandler(this.btnUkupanPrihod_Click);
             // 
             // label3
             // 
@@ -164,6 +174,7 @@
             this.btnNajkoristenijiTermin.TabIndex = 1;
             this.btnNajkoristenijiTermin.Text = "Najviše korišten termin";
             this.btnNajkoristenijiTermin.UseVisualStyleBackColor = true;
+            this.btnNajkoristenijiTermin.Click += new System.EventHandler(this.btnNajkoristenijiTermin_Click);
             // 
             // label4
             // 
@@ -179,8 +190,50 @@
             this.prikaz.FormattingEnabled = true;
             this.prikaz.Location = new System.Drawing.Point(265, 22);
             this.prikaz.Name = "prikaz";
-            this.prikaz.Size = new System.Drawing.Size(266, 303);
+            this.prikaz.Size = new System.Drawing.Size(266, 134);
             this.prikaz.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(265, 186);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(455, 184);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Traži";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(268, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Pretraživanje korisnika";
+            // 
+            // lblRez
+            // 
+            this.lblRez.AutoSize = true;
+            this.lblRez.Location = new System.Drawing.Point(268, 216);
+            this.lblRez.Name = "lblRez";
+            this.lblRez.Size = new System.Drawing.Size(182, 13);
+            this.lblRez.TabIndex = 6;
+            this.lblRez.Text = "Broj rezervacija za traženog korisnika";
+            // 
+            // txtRez
+            // 
+            this.txtRez.Location = new System.Drawing.Point(455, 213);
+            this.txtRez.Name = "txtRez";
+            this.txtRez.Size = new System.Drawing.Size(75, 20);
+            this.txtRez.TabIndex = 7;
             // 
             // frmStatistika
             // 
@@ -188,6 +241,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(542, 342);
+            this.Controls.Add(this.txtRez);
+            this.Controls.Add(this.lblRez);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.prikaz);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel4);
@@ -228,5 +286,10 @@
         private System.Windows.Forms.Button btnNajkoristenijiTermin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox prikaz;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRez;
+        private System.Windows.Forms.TextBox txtRez;
     }
 }
