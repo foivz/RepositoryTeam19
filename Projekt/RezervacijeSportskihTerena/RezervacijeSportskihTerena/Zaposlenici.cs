@@ -26,11 +26,24 @@ namespace RezervacijeSportskihTerena
         public frmZaposlenici()
         {
             InitializeComponent();
+
+            this.idZaposlenik.DataPropertyName = "idZaposlenik";
+            this.imeZaposlenik.DataPropertyName = "imeZaposlenik";
+            this.prezimeZaposlenik.DataPropertyName = "prezimeZaposlenik";
+            this.korisnickoIme.DataPropertyName = "korisnickoIme";
+            this.lozinka.DataPropertyName = "lozinka";
+            this.email.DataPropertyName = "email";
+            
+            List<ZaposleniciClass> listaZap = ZaposleniciClass.DohvatiZaposlenike();
+            // omogucavanje sortiranja liste zaposlenika uz pomoc SortableBindingList klase
+            SortableBindingList<ZaposleniciClass> sortiranaListaZap = new SortableBindingList<ZaposleniciClass>(listaZap);
+            this.dgvZaposlenici.DataSource = sortiranaListaZap;
         }
         private void OsvjeziZaposlenike()
         {
             List<ZaposleniciClass> listaZap = ZaposleniciClass.DohvatiZaposlenike();
-            dgvZaposlenici.DataSource = listaZap;
+            SortableBindingList<ZaposleniciClass> sortiranaListaZap = new SortableBindingList<ZaposleniciClass>(listaZap);
+            this.dgvZaposlenici.DataSource = sortiranaListaZap;
         }
 
         private void frmZaposlenici_Load(object sender, EventArgs e)

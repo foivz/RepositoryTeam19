@@ -30,25 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistika));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNajcesciSport = new System.Windows.Forms.Button();
+            this.btnNajviseKoristenTeren = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnNajviseRezervacija = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnMjesecniPrihod = new System.Windows.Forms.Button();
+            this.btnUkupanPrihod = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnNajkoristenijiTermin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.prikaz = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,201 +52,143 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(15, 25);
+            this.panel1.Controls.Add(this.btnNajcesciSport);
+            this.panel1.Controls.Add(this.btnNajviseKoristenTeren);
+            this.panel1.Location = new System.Drawing.Point(12, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 206);
+            this.panel1.Size = new System.Drawing.Size(250, 86);
             this.panel1.TabIndex = 0;
             // 
-            // button2
+            // btnNajcesciSport
             // 
-            this.button2.Location = new System.Drawing.Point(3, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Najmanje korišten teren";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnNajcesciSport.Location = new System.Drawing.Point(3, 44);
+            this.btnNajcesciSport.Name = "btnNajcesciSport";
+            this.btnNajcesciSport.Size = new System.Drawing.Size(244, 35);
+            this.btnNajcesciSport.TabIndex = 1;
+            this.btnNajcesciSport.Text = "Najviše rezerviran sport";
+            this.btnNajcesciSport.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNajviseKoristenTeren
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Najviše korišten teren";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNajviseKoristenTeren.Location = new System.Drawing.Point(3, 3);
+            this.btnNajviseKoristenTeren.Name = "btnNajviseKoristenTeren";
+            this.btnNajviseKoristenTeren.Size = new System.Drawing.Size(244, 35);
+            this.btnNajviseKoristenTeren.TabIndex = 1;
+            this.btnNajviseKoristenTeren.Text = "Najviše korišten teren";
+            this.btnNajviseKoristenTeren.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(6, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Statistika terena";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 35);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Najviša cijena sata";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 126);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(244, 35);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Najniža cijena sata";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(3, 167);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(244, 35);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Najkorištenija vrsta terena";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label1.Text = "Tereni";
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button10);
-            this.panel2.Location = new System.Drawing.Point(18, 247);
+            this.panel2.Controls.Add(this.btnNajviseRezervacija);
+            this.panel2.Location = new System.Drawing.Point(12, 124);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 82);
+            this.panel2.Size = new System.Drawing.Size(250, 43);
             this.panel2.TabIndex = 0;
             // 
-            // button9
+            // btnNajviseRezervacija
             // 
-            this.button9.Location = new System.Drawing.Point(3, 44);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(244, 35);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Korisnik sa najvećim brojem rezervacija";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(3, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(244, 35);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Korisnik sa najvećim brojem rezervacija";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnNajviseRezervacija.Location = new System.Drawing.Point(3, 3);
+            this.btnNajviseRezervacija.Name = "btnNajviseRezervacija";
+            this.btnNajviseRezervacija.Size = new System.Drawing.Size(244, 35);
+            this.btnNajviseRezervacija.TabIndex = 1;
+            this.btnNajviseRezervacija.Text = "Korisnik sa najvećim brojem rezervacija";
+            this.btnNajviseRezervacija.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 234);
+            this.label2.Location = new System.Drawing.Point(9, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Statistika korisnika";
+            this.label2.Text = "Korisnici";
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Location = new System.Drawing.Point(18, 345);
+            this.panel3.Controls.Add(this.btnMjesecniPrihod);
+            this.panel3.Controls.Add(this.btnUkupanPrihod);
+            this.panel3.Location = new System.Drawing.Point(12, 245);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 82);
             this.panel3.TabIndex = 0;
             // 
-            // button6
+            // btnMjesecniPrihod
             // 
-            this.button6.Location = new System.Drawing.Point(3, 44);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(244, 35);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Mjesečni prihod";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnMjesecniPrihod.Location = new System.Drawing.Point(3, 44);
+            this.btnMjesecniPrihod.Name = "btnMjesecniPrihod";
+            this.btnMjesecniPrihod.Size = new System.Drawing.Size(244, 35);
+            this.btnMjesecniPrihod.TabIndex = 1;
+            this.btnMjesecniPrihod.Text = "Mjesečni prihod";
+            this.btnMjesecniPrihod.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnUkupanPrihod
             // 
-            this.button7.Location = new System.Drawing.Point(3, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(244, 35);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Ukupan prihod";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnUkupanPrihod.Location = new System.Drawing.Point(3, 3);
+            this.btnUkupanPrihod.Name = "btnUkupanPrihod";
+            this.btnUkupanPrihod.Size = new System.Drawing.Size(244, 35);
+            this.btnUkupanPrihod.TabIndex = 1;
+            this.btnUkupanPrihod.Text = "Ukupan prihod";
+            this.btnUkupanPrihod.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 332);
+            this.label3.Location = new System.Drawing.Point(9, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Statistika prihoda";
+            this.label3.Text = "Prihodi";
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.Controls.Add(this.button8);
-            this.panel4.Controls.Add(this.button11);
-            this.panel4.Location = new System.Drawing.Point(18, 443);
+            this.panel4.Controls.Add(this.btnNajkoristenijiTermin);
+            this.panel4.Location = new System.Drawing.Point(12, 186);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 82);
+            this.panel4.Size = new System.Drawing.Size(250, 43);
             this.panel4.TabIndex = 0;
             // 
-            // button8
+            // btnNajkoristenijiTermin
             // 
-            this.button8.Location = new System.Drawing.Point(3, 44);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(244, 35);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Najmanje korišten termin";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(3, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(244, 35);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Najviše korišten termin";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnNajkoristenijiTermin.Location = new System.Drawing.Point(3, 3);
+            this.btnNajkoristenijiTermin.Name = "btnNajkoristenijiTermin";
+            this.btnNajkoristenijiTermin.Size = new System.Drawing.Size(244, 35);
+            this.btnNajkoristenijiTermin.TabIndex = 1;
+            this.btnNajkoristenijiTermin.Text = "Najviše korišten termin";
+            this.btnNajkoristenijiTermin.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 430);
+            this.label4.Location = new System.Drawing.Point(12, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Statistika termina";
+            this.label4.Text = "Termini";
             // 
-            // listBox1
+            // prikaz
             // 
-            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(271, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(266, 498);
-            this.listBox1.TabIndex = 2;
+            this.prikaz.FormattingEnabled = true;
+            this.prikaz.Location = new System.Drawing.Point(265, 22);
+            this.prikaz.Name = "prikaz";
+            this.prikaz.Size = new System.Drawing.Size(266, 303);
+            this.prikaz.TabIndex = 2;
             // 
             // frmStatistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 536);
-            this.Controls.Add(this.listBox1);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(542, 342);
+            this.Controls.Add(this.prikaz);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
@@ -277,24 +214,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNajviseKoristenTeren;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnNajcesciSport;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnNajviseRezervacija;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnMjesecniPrihod;
+        private System.Windows.Forms.Button btnUkupanPrihod;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnNajkoristenijiTermin;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox prikaz;
     }
 }

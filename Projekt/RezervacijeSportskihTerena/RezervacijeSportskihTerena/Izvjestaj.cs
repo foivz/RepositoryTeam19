@@ -30,5 +30,11 @@ namespace RezervacijeSportskihTerena
         {
             instance = null;
         }
+
+        private void frmIzvjestaj_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

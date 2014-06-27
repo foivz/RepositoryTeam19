@@ -15,6 +15,26 @@ namespace RezervacijeSportskihTerena
         public frmNovaRezervacija()
         {
             InitializeComponent();
+
+            this.idKorisnik.DataPropertyName = "idKorisnik";
+            this.imePrezimeKorisnik.DataPropertyName = "imePrezimeKorisnik";
+            this.emailKorisnik.DataPropertyName = "emailKorisnik";
+            this.telefonKorisnik.DataPropertyName = "telefonKorisnik";
+
+            List<KorisniciClass> listaKor = KorisniciClass.DohvatiKorisnike();
+            // omogucavanje sortiranja liste korisnika uz pomoc SortableBindingList klase
+            SortableBindingList<KorisniciClass> sortiranaListaKor = new SortableBindingList<KorisniciClass>(listaKor);
+            this.dgvKorisnici.DataSource = sortiranaListaKor;
+
+            this.idTeren.DataPropertyName = "idTeren";
+            this.nazivTeren.DataPropertyName = "nazivTerena";
+            this.sport.DataPropertyName = "sport";
+            this.opis.DataPropertyName = "opis";
+            this.cijenaSata.DataPropertyName = "cijenaSata";
+
+            List<TereniClass> listaTer = TereniClass.DohvatiTerene();
+            SortableBindingList<TereniClass> sortiranaListaTer = new SortableBindingList<TereniClass>(listaTer);
+            this.dgvTereni.DataSource = sortiranaListaTer;
         }
 
         private void frmNovaRezervacija_Load(object sender, EventArgs e)
@@ -27,13 +47,15 @@ namespace RezervacijeSportskihTerena
         public void OsvjeziKorisnike()
         {
             List<KorisniciClass> listaKor = KorisniciClass.DohvatiKorisnike();
-            dgvKorisnici.DataSource = listaKor;
+            SortableBindingList<KorisniciClass> sortiranaListaKor = new SortableBindingList<KorisniciClass>(listaKor);
+            this.dgvKorisnici.DataSource = sortiranaListaKor;
         }
 
         public void OsvjeziTerene()
         {
             List<TereniClass> listaTer = TereniClass.DohvatiTerene();
-            dgvTereni.DataSource = listaTer;
+            SortableBindingList<TereniClass> sortiranaListaTer = new SortableBindingList<TereniClass>(listaTer);
+            this.dgvTereni.DataSource = sortiranaListaTer;
         }
 
         private void btnNoviKorisnik_Click(object sender, EventArgs e)

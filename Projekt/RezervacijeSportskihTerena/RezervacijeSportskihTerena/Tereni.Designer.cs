@@ -33,6 +33,11 @@
             this.btnObrisiTeren = new System.Windows.Forms.Button();
             this.btnIzmjeniTeren = new System.Windows.Forms.Button();
             this.btnNoviTeren = new System.Windows.Forms.Button();
+            this.idTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cijenaSata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTereni)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +50,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTereni.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTereni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTereni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idTeren,
+            this.nazivTeren,
+            this.sport,
+            this.opis,
+            this.cijenaSata});
             this.dgvTereni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTereni.Location = new System.Drawing.Point(12, 12);
             this.dgvTereni.MultiSelect = false;
@@ -87,6 +98,36 @@
             this.btnNoviTeren.UseVisualStyleBackColor = true;
             this.btnNoviTeren.Click += new System.EventHandler(this.btnNoviTeren_Click);
             // 
+            // idTeren
+            // 
+            this.idTeren.HeaderText = "ID terena";
+            this.idTeren.Name = "idTeren";
+            this.idTeren.ReadOnly = true;
+            // 
+            // nazivTeren
+            // 
+            this.nazivTeren.HeaderText = "Naziv terena";
+            this.nazivTeren.Name = "nazivTeren";
+            this.nazivTeren.ReadOnly = true;
+            // 
+            // sport
+            // 
+            this.sport.HeaderText = "Sport";
+            this.sport.Name = "sport";
+            this.sport.ReadOnly = true;
+            // 
+            // opis
+            // 
+            this.opis.HeaderText = "Opis";
+            this.opis.Name = "opis";
+            this.opis.ReadOnly = true;
+            // 
+            // cijenaSata
+            // 
+            this.cijenaSata.HeaderText = "Cijena sata";
+            this.cijenaSata.Name = "cijenaSata";
+            this.cijenaSata.ReadOnly = true;
+            // 
             // frmTereni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,5 +153,10 @@
         private System.Windows.Forms.Button btnObrisiTeren;
         private System.Windows.Forms.Button btnIzmjeniTeren;
         private System.Windows.Forms.Button btnNoviTeren;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTeren;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivTeren;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cijenaSata;
     }
 }

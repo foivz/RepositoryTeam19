@@ -24,12 +24,28 @@ namespace RezervacijeSportskihTerena
         public frmRezervacije()
         {
             InitializeComponent();
+
+            this.idRezervacija.DataPropertyName = "idRezervacija";
+            this.imePrezimeKorisnik.DataPropertyName = "imePrezimeKorisnik";
+            this.emailKorisnik.DataPropertyName = "emailKorisnik";
+            this.telefonKorisnik.DataPropertyName = "telefonKorisnik";
+            this.nazivTerena.DataPropertyName = "nazivTerena";
+            this.cijenaSata.DataPropertyName = "cijenaSata";
+            this.vrijemePocetka.DataPropertyName = "vrijemePocetka";
+            this.vrijemeZavrsetka.DataPropertyName = "vrijemeZavrsetka";
+            this.datumRezervacije.DataPropertyName = "datumRezervacije";
+
+            List<RezervacijeClass> listaRez = RezervacijeClass.DohvatiRezervacije();
+            // omogucavanje sortiranja liste rezervacija uz pomoc SortableBindingList klase
+            SortableBindingList<RezervacijeClass> sortiranaListaRez = new SortableBindingList<RezervacijeClass>(listaRez);
+            this.dgvRezervacije.DataSource = sortiranaListaRez;
         }
 
         public void OsvjeziRezervacije()
         {
             List<RezervacijeClass> listaRez = RezervacijeClass.DohvatiRezervacije();
-            dgvRezervacije.DataSource = listaRez;
+            SortableBindingList<RezervacijeClass> sortiranaListaRez = new SortableBindingList<RezervacijeClass>(listaRez);
+            this.dgvRezervacije.DataSource = sortiranaListaRez;
         }
 
         private void frmRezervacije_FormClosing(object sender, FormClosingEventArgs e)

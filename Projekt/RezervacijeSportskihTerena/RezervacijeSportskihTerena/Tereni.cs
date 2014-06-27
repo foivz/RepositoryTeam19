@@ -24,6 +24,17 @@ namespace RezervacijeSportskihTerena
         public frmTereni()
         {
             InitializeComponent();
+
+            this.idTeren.DataPropertyName = "idTeren";
+            this.nazivTeren.DataPropertyName = "nazivTeren";
+            this.sport.DataPropertyName = "sport";
+            this.opis.DataPropertyName = "opis";
+            this.cijenaSata.DataPropertyName = "cijenaSata";
+            
+            List<TereniClass> listaTer = TereniClass.DohvatiTerene();
+            // omogucavanje sortiranja liste terena uz pomoc SortableBindingList klase
+            SortableBindingList<TereniClass> sortiranaListaTer = new SortableBindingList<TereniClass>(listaTer);
+            this.dgvTereni.DataSource = sortiranaListaTer;
         }
 
         private void frmTereni_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,7 +46,8 @@ namespace RezervacijeSportskihTerena
         public void OsvjeziTerene()
         {
             List<TereniClass> listaTer = TereniClass.DohvatiTerene();
-            dgvTereni.DataSource = listaTer;
+            SortableBindingList<TereniClass> sortiranaListaTer = new SortableBindingList<TereniClass>(listaTer);
+            this.dgvTereni.DataSource = sortiranaListaTer;
         }
 
         private void frmTereni_Load(object sender, EventArgs e)
