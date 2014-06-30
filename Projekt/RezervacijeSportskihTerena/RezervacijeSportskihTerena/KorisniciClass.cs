@@ -111,5 +111,20 @@ namespace RezervacijeSportskihTerena
             return lista;
         }
 
+        public static string DohvatiNazivKorisnika(int idTrmn)
+        {
+            try
+            {
+                string sqlUpit = "SELECT idKorisnik FROM Rezervacija WHERE idTermin IS " + idTrmn + ";";
+                string idKor = (DB.Instance.DohvatiVrijednost(sqlUpit)).ToString();
+                string sqlUpitTwo = "SELECT imePrezimeKorisnik FROM Korisnik WHERE idKorisnik IS " + idKor + ";";
+                return (DB.Instance.DohvatiVrijednost(sqlUpitTwo)).ToString();
+            }
+            catch (NullReferenceException)
+            {
+                return "Prazan termin!";
+            }
+        }
+
     }
 }

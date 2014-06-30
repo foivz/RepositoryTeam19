@@ -34,7 +34,7 @@
             this.btnIzmjeniTeren = new System.Windows.Forms.Button();
             this.btnNoviTeren = new System.Windows.Forms.Button();
             this.idTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivTerena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaSata = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             this.dgvTereni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTereni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idTeren,
-            this.nazivTeren,
+            this.nazivTerena,
             this.sport,
             this.opis,
             this.cijenaSata});
@@ -104,11 +104,11 @@
             this.idTeren.Name = "idTeren";
             this.idTeren.ReadOnly = true;
             // 
-            // nazivTeren
+            // nazivTerena
             // 
-            this.nazivTeren.HeaderText = "Naziv terena";
-            this.nazivTeren.Name = "nazivTeren";
-            this.nazivTeren.ReadOnly = true;
+            this.nazivTerena.HeaderText = "Naziv terena";
+            this.nazivTerena.Name = "nazivTerena";
+            this.nazivTerena.ReadOnly = true;
             // 
             // sport
             // 
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Button btnIzmjeniTeren;
         private System.Windows.Forms.Button btnNoviTeren;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTeren;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivTeren;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivTerena;
         private System.Windows.Forms.DataGridViewTextBoxColumn sport;
         private System.Windows.Forms.DataGridViewTextBoxColumn opis;
         private System.Windows.Forms.DataGridViewTextBoxColumn cijenaSata;

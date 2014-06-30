@@ -92,6 +92,7 @@
             this.txtNazivTerena.Name = "txtNazivTerena";
             this.txtNazivTerena.Size = new System.Drawing.Size(239, 20);
             this.txtNazivTerena.TabIndex = 1;
+            this.txtNazivTerena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNazivTerena_KeyPress);
             // 
             // txtVrstaTerena
             // 
@@ -99,6 +100,7 @@
             this.txtVrstaTerena.Name = "txtVrstaTerena";
             this.txtVrstaTerena.Size = new System.Drawing.Size(239, 20);
             this.txtVrstaTerena.TabIndex = 2;
+            this.txtVrstaTerena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVrstaTerena_KeyPress);
             // 
             // txtOpis
             // 
@@ -143,6 +145,7 @@
             this.txtCijenaSata.Name = "txtCijenaSata";
             this.txtCijenaSata.Size = new System.Drawing.Size(239, 20);
             this.txtCijenaSata.TabIndex = 4;
+            this.txtCijenaSata.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCijenaSata_KeyPress);
             // 
             // frmNoviTeren
             // 

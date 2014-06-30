@@ -26,7 +26,7 @@ namespace RezervacijeSportskihTerena
             InitializeComponent();
 
             this.idTeren.DataPropertyName = "idTeren";
-            this.nazivTeren.DataPropertyName = "nazivTeren";
+            this.nazivTerena.DataPropertyName = "nazivTerena";
             this.sport.DataPropertyName = "sport";
             this.opis.DataPropertyName = "opis";
             this.cijenaSata.DataPropertyName = "cijenaSata";

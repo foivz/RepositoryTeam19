@@ -12,6 +12,10 @@ namespace RezervacijeSportskihTerena
 {
     public partial class frmNovaRezervacija : Form
     {
+
+        private List<TerminiClass> listaTermina;
+        private List<RezervacijeAkcijeClass> listaTrmn;
+
         public frmNovaRezervacija()
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace RezervacijeSportskihTerena
             this.cijenaSata.DataPropertyName = "cijenaSata";
 
             List<TereniClass> listaTer = TereniClass.DohvatiTerene();
+            // omogucavanje sortiranja liste terena uz pomoc SortableBindingList klase
             SortableBindingList<TereniClass> sortiranaListaTer = new SortableBindingList<TereniClass>(listaTer);
             this.dgvTereni.DataSource = sortiranaListaTer;
         }
@@ -96,31 +101,57 @@ namespace RezervacijeSportskihTerena
 
         private void OsvjeziListu()
         {
-            DateTime start = new DateTime(2010, 1, 1, 0, 0, 0);
-            DateTime end = new DateTime(2100, 1, 1, 0, 0, 0);
-            DateTime selection = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            DateTime now = DateTime.Now;
+            listaVremena.Items.Clear();
+            // dohvacanje idTerena preko selektiranog reda
+            int selectedRowIndexT = dgvTereni.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRowT = dgvTereni.Rows[selectedRowIndexT];
+            int idTrn = Convert.ToInt32(selectedRowT.Cells["IdTeren"].Value);
+            // dohvacanje liste sa id-evima termina
+            listaTrmn = TerminiClass.DohvatiTermineIzRezervacije(kalendar.SelectionRange.Start, idTrn); 
+            // dohvacanje liste sa terminima za ispis
+            listaTermina = TerminiClass.DohvatiIspravneTermine(kalendar.SelectionRange.Start, listaTrmn);
+            bool test = false;
             int vrijeme = 6;
-            for (;vrijeme <= 23; vrijeme++)
+            for (; vrijeme <= 23; vrijeme++)
             {
-                if ((selection > start) && (selection < now))
-                   listaVremena.Items.Add(vrijeme.ToString() + ":00 Termin je istekao.");
-                if ((selection > now) && (selection < end))
-                    listaVremena.Items.Add(vrijeme.ToString() + ":00 Prazan termin !");
+                test = true;
+                foreach (TerminiClass t in listaTermina)
+                {
+                    String value = t.VrijemePocetka;
+                    String[] token = value.Split(',');
+                    String[] datetime = token[0].Split(' ');
+                    String timeText = datetime[1];
+                    DateTime time = Convert.ToDateTime(timeText);
+                    if (time.Hour == vrijeme) 
+                    {
+                        KorisniciClass nazivKor = new KorisniciClass();
+                        nazivKor.ImePrezimeKorisnik = KorisniciClass.DohvatiNazivKorisnika(t.IdTermin);
+                        listaVremena.Items.Add(time.ToString("HH:mm") + " " + nazivKor.ImePrezimeKorisnik);
+                        test = false;
+                        break;
+                    }
+                }
+                        
+                if (test)
+                {
+                    if ((vrijeme > 5) && (vrijeme < 10))
+                        listaVremena.Items.Add("0" + vrijeme.ToString() + ":00 Prazan termin!");
+                    else
+                        listaVremena.Items.Add(vrijeme.ToString() + ":00 Prazan termin!");
+                }
             }
+     
         }
 
         private void UnosTermina() // unosim termine u bazu podataka
         {
             DateTime datumRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 6, 0, 0);
             DateTime vrijemePocRez = datumRez;
-            int trajanjeRez = (int)numBrSati.Value;
-            DateTime vrijemeZavRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 6 + trajanjeRez, 0, 0);
+            DateTime vrijemeZavRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 7, 0, 0);
             
             TerminiClass noviTermin = new TerminiClass();
             noviTermin.VrijemePocetka = vrijemePocRez.ToString("HH:mm:ss");
             noviTermin.VrijemeZavrsetka = vrijemeZavRez.ToString("HH:mm:ss");
-            noviTermin.Trajanje = trajanjeRez;
             noviTermin.DatumRezervacije = datumRez.ToString("yyyy-MM-dd");
             noviTermin.Spremi();
 
@@ -128,31 +159,49 @@ namespace RezervacijeSportskihTerena
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            int a, b, c;
-            // dohvacanje idKorisnika preko selektiranog reda
-            int selectedRowIndexK = dgvKorisnici.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRowK = dgvKorisnici.Rows[selectedRowIndexK];
-            a = Convert.ToInt32(selectedRowK.Cells["IdKorisnik"].Value);
+            if (this.listaVremena.SelectedIndex == -1) // nijedan termin iz liste termina nije odabran
+            {
+                MessageBox.Show("Odaberite jedan od slobodnih termina.");
+                return;
+            }
+            string vrijednostLV = listaVremena.GetItemText(listaVremena.SelectedItem);
+            if (vrijednostLV.Contains("Prazan termin!") == false) // odabrani termin je zauzet
+            {
+                MessageBox.Show("Odabrani termin je zauzet. Pokusajte ponovo molim.");
+                return;
+            }
+            else
+            {
+                int a, b, c;
+                // dohvacanje idKorisnika preko selektiranog reda
+                int selectedRowIndexK = dgvKorisnici.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRowK = dgvKorisnici.Rows[selectedRowIndexK];
+                a = Convert.ToInt32(selectedRowK.Cells["IdKorisnik"].Value);
 
-            // dohvacanje idTerena preko selektiranog reda
-            int selectedRowIndexT = dgvTereni.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRowT = dgvTereni.Rows[selectedRowIndexT];
-            b = Convert.ToInt32(selectedRowT.Cells["IdTeren"].Value);
+                // dohvacanje idTerena preko selektiranog reda
+                int selectedRowIndexT = dgvTereni.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRowT = dgvTereni.Rows[selectedRowIndexT];
+                b = Convert.ToInt32(selectedRowT.Cells["IdTeren"].Value);
 
-            UnosTermina();
-            // Dohvačanje najveceg idTeren
-            string sqlUpit = "SELECT MAX(idTermin) FROM Termin;";
-            c = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit));
-            // spremanje dohvacenih id-eva u bazu
-            RezervacijeAkcijeClass rez = new RezervacijeAkcijeClass(a, b, c);
-            rez.Spremi();
+                UnosTermina();
+                // Dohvačanje najveceg idTeren
+                string sqlUpit = "SELECT MAX(idTermin) FROM Termin;";
+                c = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit));
 
+                // spremanje dohvacenih id-eva u bazu
+                RezervacijeAkcijeClass rez = new RezervacijeAkcijeClass(a, b, c);
+                rez.Spremi();
+            }
             this.Close();          
         }
 
         private void kalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-            listaVremena.Items.Clear();
+            OsvjeziListu();
+        }
+
+        private void dgvTereni_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             OsvjeziListu();
         }
 

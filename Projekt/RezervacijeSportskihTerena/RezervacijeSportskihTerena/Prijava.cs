@@ -33,7 +33,6 @@ namespace RezervacijeSportskihTerena
 
             if (count == 1)
             {
-                MessageBox.Show("Prijava je uspješna.");
                 UspjesnaPrijava = true;
                 this.Close();
             }

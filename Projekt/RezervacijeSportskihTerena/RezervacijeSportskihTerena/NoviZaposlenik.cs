@@ -68,5 +68,24 @@ namespace RezervacijeSportskihTerena
                 txtKorisnickoIme.Text = zaposlenik.KorisnickoIme.ToString();
             }
         }
+
+        private void txtImeZaposlenik_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo slova i backspace
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtPrezimeZaposlenik_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo slova i backspace
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+
+
     }
 }

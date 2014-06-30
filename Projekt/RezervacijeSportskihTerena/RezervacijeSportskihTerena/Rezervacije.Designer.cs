@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRezervacije));
             this.dgvRezervacije = new System.Windows.Forms.DataGridView();
-            this.btnObrisiRezervaciju = new System.Windows.Forms.Button();
-            this.btnNovaRezervacija = new System.Windows.Forms.Button();
             this.idRezervacija = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imePrezimeKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +39,8 @@
             this.vrijemePocetka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrijemeZavrsetka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumRezervacije = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnObrisiRezervaciju = new System.Windows.Forms.Button();
+            this.btnNovaRezervacija = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,30 +68,8 @@
             this.dgvRezervacije.Name = "dgvRezervacije";
             this.dgvRezervacije.ReadOnly = true;
             this.dgvRezervacije.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRezervacije.Size = new System.Drawing.Size(991, 418);
+            this.dgvRezervacije.Size = new System.Drawing.Size(981, 373);
             this.dgvRezervacije.TabIndex = 0;
-            // 
-            // btnObrisiRezervaciju
-            // 
-            this.btnObrisiRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObrisiRezervaciju.Location = new System.Drawing.Point(903, 436);
-            this.btnObrisiRezervaciju.Name = "btnObrisiRezervaciju";
-            this.btnObrisiRezervaciju.Size = new System.Drawing.Size(100, 35);
-            this.btnObrisiRezervaciju.TabIndex = 1;
-            this.btnObrisiRezervaciju.Text = "Obriši";
-            this.btnObrisiRezervaciju.UseVisualStyleBackColor = true;
-            this.btnObrisiRezervaciju.Click += new System.EventHandler(this.btnObrisiRezervaciju_Click);
-            // 
-            // btnNovaRezervacija
-            // 
-            this.btnNovaRezervacija.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovaRezervacija.Location = new System.Drawing.Point(790, 436);
-            this.btnNovaRezervacija.Name = "btnNovaRezervacija";
-            this.btnNovaRezervacija.Size = new System.Drawing.Size(100, 35);
-            this.btnNovaRezervacija.TabIndex = 1;
-            this.btnNovaRezervacija.Text = "Nova rezervacija";
-            this.btnNovaRezervacija.UseVisualStyleBackColor = true;
-            this.btnNovaRezervacija.Click += new System.EventHandler(this.btnNovaRezervacija_Click);
             // 
             // idRezervacija
             // 
@@ -147,11 +125,33 @@
             this.datumRezervacije.Name = "datumRezervacije";
             this.datumRezervacije.ReadOnly = true;
             // 
+            // btnObrisiRezervaciju
+            // 
+            this.btnObrisiRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnObrisiRezervaciju.Location = new System.Drawing.Point(893, 391);
+            this.btnObrisiRezervaciju.Name = "btnObrisiRezervaciju";
+            this.btnObrisiRezervaciju.Size = new System.Drawing.Size(100, 35);
+            this.btnObrisiRezervaciju.TabIndex = 1;
+            this.btnObrisiRezervaciju.Text = "Obriši";
+            this.btnObrisiRezervaciju.UseVisualStyleBackColor = true;
+            this.btnObrisiRezervaciju.Click += new System.EventHandler(this.btnObrisiRezervaciju_Click);
+            // 
+            // btnNovaRezervacija
+            // 
+            this.btnNovaRezervacija.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovaRezervacija.Location = new System.Drawing.Point(787, 391);
+            this.btnNovaRezervacija.Name = "btnNovaRezervacija";
+            this.btnNovaRezervacija.Size = new System.Drawing.Size(100, 35);
+            this.btnNovaRezervacija.TabIndex = 1;
+            this.btnNovaRezervacija.Text = "Nova rezervacija";
+            this.btnNovaRezervacija.UseVisualStyleBackColor = true;
+            this.btnNovaRezervacija.Click += new System.EventHandler(this.btnNovaRezervacija_Click);
+            // 
             // frmRezervacije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 483);
+            this.ClientSize = new System.Drawing.Size(1005, 438);
             this.Controls.Add(this.btnNovaRezervacija);
             this.Controls.Add(this.btnObrisiRezervaciju);
             this.Controls.Add(this.dgvRezervacije);

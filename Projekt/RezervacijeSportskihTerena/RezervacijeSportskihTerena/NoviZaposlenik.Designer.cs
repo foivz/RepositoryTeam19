@@ -112,6 +112,7 @@
             this.txtImeZaposlenik.Name = "txtImeZaposlenik";
             this.txtImeZaposlenik.Size = new System.Drawing.Size(219, 20);
             this.txtImeZaposlenik.TabIndex = 7;
+            this.txtImeZaposlenik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImeZaposlenik_KeyPress);
             // 
             // txtPrezimeZaposlenik
             // 
@@ -119,6 +120,7 @@
             this.txtPrezimeZaposlenik.Name = "txtPrezimeZaposlenik";
             this.txtPrezimeZaposlenik.Size = new System.Drawing.Size(219, 20);
             this.txtPrezimeZaposlenik.TabIndex = 8;
+            this.txtPrezimeZaposlenik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezimeZaposlenik_KeyPress);
             // 
             // txtKorisnickoIme
             // 

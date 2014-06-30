@@ -124,6 +124,20 @@ namespace RezervacijeSportskihTerena
             IdTermin = idTmn;
         }
 
+        /// <summary> 
+		/// Konstruktor koji kreira id-eve iz Rezervacija s podacima iz DataReader objekta. 
+		/// </summary> 
+		/// <param name="dr">DataReader objekt sa podacima za Terena.</param>
+        public RezervacijeAkcijeClass(SQLiteDataReader dr)
+        {
+            if (dr != null)
+            {
+                IdKorisnik = int.Parse(dr["idKorisnik"].ToString());
+                IdTeren = int.Parse(dr["idTeren"].ToString());
+                IdTermin = int.Parse(dr["idTermin"].ToString());
+            }
+        }
+
         private int idKorisnik;
         private int idTeren;
         private int idTermin;
@@ -166,4 +180,7 @@ namespace RezervacijeSportskihTerena
             return DB.Instance.IzvrsiUpit(sqlDelete);
         }
     }
+
+    
+    
 }

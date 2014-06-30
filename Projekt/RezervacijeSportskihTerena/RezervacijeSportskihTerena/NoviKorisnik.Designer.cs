@@ -73,6 +73,7 @@
             this.txtImePrezimeKorisnik.Name = "txtImePrezimeKorisnik";
             this.txtImePrezimeKorisnik.Size = new System.Drawing.Size(236, 20);
             this.txtImePrezimeKorisnik.TabIndex = 0;
+            this.txtImePrezimeKorisnik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImePrezimeKorisnik_KeyPress);
             // 
             // label3
             // 
@@ -105,6 +106,7 @@
             this.txtTelefonKorisnik.Name = "txtTelefonKorisnik";
             this.txtTelefonKorisnik.Size = new System.Drawing.Size(236, 20);
             this.txtTelefonKorisnik.TabIndex = 2;
+            this.txtTelefonKorisnik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonKorisnik_KeyPress);
             // 
             // btnOdustani
             // 

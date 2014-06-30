@@ -64,6 +64,30 @@ namespace RezervacijeSportskihTerena
             }
         }
 
+        private void txtNazivTerena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo slova, brojeve i backspace
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtVrstaTerena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo slova i backspace
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtCijenaSata_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo brojeve i backspace
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
 
     }
 }
