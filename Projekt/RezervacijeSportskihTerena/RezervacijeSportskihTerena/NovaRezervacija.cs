@@ -184,7 +184,7 @@ namespace RezervacijeSportskihTerena
                 b = Convert.ToInt32(selectedRowT.Cells["IdTeren"].Value);
 
                 UnosTermina();
-                // Dohvačanje najveceg idTeren
+                // Dohvaćanje najvećeg idTeren
                 string sqlUpit = "SELECT MAX(idTermin) FROM Termin;";
                 c = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit));
 
