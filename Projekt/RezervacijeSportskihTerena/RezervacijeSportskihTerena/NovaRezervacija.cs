@@ -159,13 +159,27 @@ namespace RezervacijeSportskihTerena
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            if (this.listaVremena.SelectedIndex == -1) // nijedan termin iz liste termina nije odabran
+            // Nijedan termin iz liste termina nije odabran
+            if (this.listaVremena.SelectedIndex == -1) 
             {
                 MessageBox.Show("Odaberite jedan od slobodnih termina.");
                 return;
             }
+            // Provjera dali korisnik želi unjeti termin koji je istekao
+            DateTime datumRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 6, 0, 0);
+            DateTime datumDns = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, 0, 0);
+            if (datumRez < datumDns)
+            {
+                DialogResult result = MessageBox.Show("Odabrani termin je istekao. Želite li svejedno unjeti rezervaciju?", "Provjera unosa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+                if (result == DialogResult.Yes){}
+                if (result == DialogResult.No){return;}
+            }
+            // Provjera dali je termin zauzet/slobodan
             string vrijednostLV = listaVremena.GetItemText(listaVremena.SelectedItem);
-            if (vrijednostLV.Contains("Prazan termin!") == false) // odabrani termin je zauzet
+            if (vrijednostLV.Contains("Prazan termin!") == false)
             {
                 MessageBox.Show("Odabrani termin je zauzet. Pokusajte ponovo molim.");
                 return;

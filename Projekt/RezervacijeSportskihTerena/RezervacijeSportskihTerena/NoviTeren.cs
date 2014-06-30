@@ -66,7 +66,7 @@ namespace RezervacijeSportskihTerena
 
         private void txtNazivTerena_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo slova, brojeve i backspace
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == ' ')     // Dozvoljava samo slova, brojeve, space i backspace
                 e.Handled = false;
             else
                 e.Handled = true;

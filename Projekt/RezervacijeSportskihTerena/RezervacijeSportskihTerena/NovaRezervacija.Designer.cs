@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNovaRezervacija));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvKorisnici = new System.Windows.Forms.DataGridView();
             this.idKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +82,7 @@
             this.dgvKorisnici.Name = "dgvKorisnici";
             this.dgvKorisnici.ReadOnly = true;
             this.dgvKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKorisnici.Size = new System.Drawing.Size(920, 180);
+            this.dgvKorisnici.Size = new System.Drawing.Size(920, 177);
             this.dgvKorisnici.TabIndex = 1;
             // 
             // idKorisnik
@@ -111,7 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 236);
+            this.label2.Location = new System.Drawing.Point(9, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 0;
@@ -131,12 +132,12 @@
             this.sport,
             this.opis,
             this.cijenaSata});
-            this.dgvTereni.Location = new System.Drawing.Point(12, 252);
+            this.dgvTereni.Location = new System.Drawing.Point(12, 249);
             this.dgvTereni.MultiSelect = false;
             this.dgvTereni.Name = "dgvTereni";
             this.dgvTereni.ReadOnly = true;
             this.dgvTereni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTereni.Size = new System.Drawing.Size(920, 180);
+            this.dgvTereni.Size = new System.Drawing.Size(920, 177);
             this.dgvTereni.TabIndex = 1;
             this.dgvTereni.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTereni_CellClick);
             // 
@@ -173,7 +174,7 @@
             // kalendar
             // 
             this.kalendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.kalendar.Location = new System.Drawing.Point(12, 467);
+            this.kalendar.Location = new System.Drawing.Point(12, 460);
             this.kalendar.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
             this.kalendar.MaxSelectionCount = 1;
             this.kalendar.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
@@ -185,7 +186,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 445);
+            this.label3.Location = new System.Drawing.Point(12, 438);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 0;
@@ -194,7 +195,7 @@
             // listaVremena
             // 
             this.listaVremena.FormattingEnabled = true;
-            this.listaVremena.Location = new System.Drawing.Point(223, 469);
+            this.listaVremena.Location = new System.Drawing.Point(223, 462);
             this.listaVremena.Name = "listaVremena";
             this.listaVremena.Size = new System.Drawing.Size(189, 160);
             this.listaVremena.TabIndex = 3;
@@ -202,7 +203,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 445);
+            this.label4.Location = new System.Drawing.Point(220, 438);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 13);
             this.label4.TabIndex = 0;
@@ -211,7 +212,7 @@
             // btnOdustani
             // 
             this.btnOdustani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOdustani.Location = new System.Drawing.Point(832, 594);
+            this.btnOdustani.Location = new System.Drawing.Point(832, 587);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(100, 35);
             this.btnOdustani.TabIndex = 4;
@@ -222,7 +223,7 @@
             // btnSpremi
             // 
             this.btnSpremi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSpremi.Location = new System.Drawing.Point(726, 594);
+            this.btnSpremi.Location = new System.Drawing.Point(726, 587);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(100, 35);
             this.btnSpremi.TabIndex = 4;
@@ -233,7 +234,7 @@
             // btnNoviKorisnik
             // 
             this.btnNoviKorisnik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNoviKorisnik.Location = new System.Drawing.Point(620, 211);
+            this.btnNoviKorisnik.Location = new System.Drawing.Point(620, 208);
             this.btnNoviKorisnik.Name = "btnNoviKorisnik";
             this.btnNoviKorisnik.Size = new System.Drawing.Size(100, 35);
             this.btnNoviKorisnik.TabIndex = 4;
@@ -244,7 +245,7 @@
             // btnIzmjeniKorisnika
             // 
             this.btnIzmjeniKorisnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIzmjeniKorisnika.Location = new System.Drawing.Point(726, 211);
+            this.btnIzmjeniKorisnika.Location = new System.Drawing.Point(726, 208);
             this.btnIzmjeniKorisnika.Name = "btnIzmjeniKorisnika";
             this.btnIzmjeniKorisnika.Size = new System.Drawing.Size(100, 35);
             this.btnIzmjeniKorisnika.TabIndex = 5;
@@ -255,7 +256,7 @@
             // btnObrisiKorisnika
             // 
             this.btnObrisiKorisnika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObrisiKorisnika.Location = new System.Drawing.Point(832, 211);
+            this.btnObrisiKorisnika.Location = new System.Drawing.Point(832, 208);
             this.btnObrisiKorisnika.Name = "btnObrisiKorisnika";
             this.btnObrisiKorisnika.Size = new System.Drawing.Size(100, 35);
             this.btnObrisiKorisnika.TabIndex = 5;
@@ -267,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 640);
+            this.ClientSize = new System.Drawing.Size(944, 630);
             this.Controls.Add(this.btnObrisiKorisnika);
             this.Controls.Add(this.btnIzmjeniKorisnika);
             this.Controls.Add(this.btnSpremi);
@@ -281,6 +282,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvKorisnici);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNovaRezervacija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nova Rezervacija";
