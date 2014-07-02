@@ -32,7 +32,7 @@ namespace RezervacijeSportskihTerena
 
             this.idTeren.DataPropertyName = "idTeren";
             this.nazivTeren.DataPropertyName = "nazivTerena";
-            this.sport.DataPropertyName = "sport";
+            this.nazivVrsta.DataPropertyName = "nazivVrsta";
             this.opis.DataPropertyName = "opis";
             this.cijenaSata.DataPropertyName = "cijenaSata";
 

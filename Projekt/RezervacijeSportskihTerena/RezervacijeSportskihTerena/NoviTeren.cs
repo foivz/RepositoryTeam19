@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace RezervacijeSportskihTerena
 {
@@ -18,6 +19,21 @@ namespace RezervacijeSportskihTerena
         public frmNoviTeren()
         {
             InitializeComponent();
+            OsvjeziComboBox();
+            comboBox1.SelectedIndex = 0;
+        }
+
+        void OsvjeziComboBox()
+        {
+            comboBox1.Items.Clear();
+            string sqlUpit = "SELECT * FROM VrstaSporta";
+            SQLiteDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            while (dr.Read())
+            {
+                string str = dr["nazivVrsta"].ToString();
+                comboBox1.Items.Add(str);
+            }
+            dr.Close();
         }
 
         public frmNoviTeren(TereniClass odabraniTeren)
@@ -28,9 +44,9 @@ namespace RezervacijeSportskihTerena
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            if ((txtNazivTerena.Text == "") || (txtCijenaSata.Text == ""))
+            if ((txtNazivTerena.Text == "") || (txtCijenaSata.Text == "") || (comboBox1.SelectedIndex < 0))
             {
-                MessageBox.Show("Polja za naziv i cijenu moraju biti ispunjena.");
+                MessageBox.Show("Polja za naziv, cijenu i vrstu terena moraju biti ispunjena.");
                 return;
             }
 
@@ -39,10 +55,10 @@ namespace RezervacijeSportskihTerena
                 teren = new TereniClass();
             }
             teren.NazivTerena = txtNazivTerena.Text;
-            teren.Sport = txtVrstaTerena.Text;
             teren.Opis = txtOpis.Text;
             teren.CijenaSata = int.Parse(txtCijenaSata.Text);
-            teren.Spremi();
+            int IdVrsta = Convert.ToInt32(comboBox1.SelectedIndex + 1);
+            teren.Spremi(IdVrsta);
             this.Close();
         }
 
@@ -53,13 +69,13 @@ namespace RezervacijeSportskihTerena
 
         private void frmNoviTeren_Load(object sender, EventArgs e)
         {
+            OsvjeziComboBox();
             /* Popunjavanje forme sa postojećim podacima unesenog terena */
             if (teren != null)
             {
                 txtIDTeren.Text = teren.IdTeren.ToString();
                 txtOpis.Text = teren.Opis.ToString();
                 txtNazivTerena.Text = teren.NazivTerena.ToString();
-                txtVrstaTerena.Text = teren.Sport.ToString();
                 txtCijenaSata.Text = teren.CijenaSata.ToString();
             }
         }
@@ -86,6 +102,13 @@ namespace RezervacijeSportskihTerena
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void btnDodajVrstuTerena_Click(object sender, EventArgs e)
+        {
+            string sqlUpit = "INSERT INTO VrstaSporta ('nazivVrsta') " + "VALUES ('" + txtVrsta.Text +"');"; 
+            DB.Instance.IzvrsiUpit(sqlUpit);
+            OsvjeziComboBox();
         }
 
 

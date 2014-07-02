@@ -35,7 +35,7 @@
             this.btnNoviTeren = new System.Windows.Forms.Button();
             this.idTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivTerena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivVrsta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaSata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTereni)).BeginInit();
@@ -53,7 +53,7 @@
             this.dgvTereni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idTeren,
             this.nazivTerena,
-            this.sport,
+            this.nazivVrsta,
             this.opis,
             this.cijenaSata});
             this.dgvTereni.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -64,6 +64,7 @@
             this.dgvTereni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTereni.Size = new System.Drawing.Size(760, 250);
             this.dgvTereni.TabIndex = 0;
+            this.dgvTereni.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTereni_CellContentClick);
             // 
             // btnObrisiTeren
             // 
@@ -110,11 +111,11 @@
             this.nazivTerena.Name = "nazivTerena";
             this.nazivTerena.ReadOnly = true;
             // 
-            // sport
+            // nazivVrsta
             // 
-            this.sport.HeaderText = "Sport";
-            this.sport.Name = "sport";
-            this.sport.ReadOnly = true;
+            this.nazivVrsta.HeaderText = "Sport";
+            this.nazivVrsta.Name = "nazivVrsta";
+            this.nazivVrsta.ReadOnly = true;
             // 
             // opis
             // 
@@ -155,7 +156,7 @@
         private System.Windows.Forms.Button btnNoviTeren;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTeren;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivTerena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivVrsta;
         private System.Windows.Forms.DataGridViewTextBoxColumn opis;
         private System.Windows.Forms.DataGridViewTextBoxColumn cijenaSata;
     }

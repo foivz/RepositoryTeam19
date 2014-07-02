@@ -129,7 +129,7 @@
             // 
             // btnObrisiRezervaciju
             // 
-            this.btnObrisiRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnObrisiRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnObrisiRezervaciju.Location = new System.Drawing.Point(787, 391);
             this.btnObrisiRezervaciju.Name = "btnObrisiRezervaciju";
             this.btnObrisiRezervaciju.Size = new System.Drawing.Size(100, 35);
@@ -140,7 +140,7 @@
             // 
             // btnNovaRezervacija
             // 
-            this.btnNovaRezervacija.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovaRezervacija.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovaRezervacija.Location = new System.Drawing.Point(681, 391);
             this.btnNovaRezervacija.Name = "btnNovaRezervacija";
             this.btnNovaRezervacija.Size = new System.Drawing.Size(100, 35);
@@ -151,6 +151,7 @@
             // 
             // btnIspisiRezervaciju
             // 
+            this.btnIspisiRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIspisiRezervaciju.Image = global::RezervacijeSportskihTerena.Properties.Resources.print_icon_28p;
             this.btnIspisiRezervaciju.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIspisiRezervaciju.Location = new System.Drawing.Point(893, 391);

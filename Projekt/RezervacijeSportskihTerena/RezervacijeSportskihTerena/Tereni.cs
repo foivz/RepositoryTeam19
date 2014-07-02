@@ -27,7 +27,7 @@ namespace RezervacijeSportskihTerena
 
             this.idTeren.DataPropertyName = "idTeren";
             this.nazivTerena.DataPropertyName = "nazivTerena";
-            this.sport.DataPropertyName = "sport";
+            this.nazivVrsta.DataPropertyName = "nazivVrsta";
             this.opis.DataPropertyName = "opis";
             this.cijenaSata.DataPropertyName = "cijenaSata";
             
@@ -84,6 +84,11 @@ namespace RezervacijeSportskihTerena
                 }
                 OsvjeziTerene();
             }
+        }
+
+        private void dgvTereni_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
 

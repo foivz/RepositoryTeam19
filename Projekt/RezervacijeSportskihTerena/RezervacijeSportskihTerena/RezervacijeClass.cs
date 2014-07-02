@@ -92,7 +92,7 @@ namespace RezervacijeSportskihTerena
             {
                 string str = value;
                 DateTime dt = DateTime.Parse(str);
-                datumRezervacije = dt.ToString("dd-MM-yyyy");
+                datumRezervacije = dt.ToString("dd.MM.yyyy");
             }
         } 
 

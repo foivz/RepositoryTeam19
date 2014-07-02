@@ -28,7 +28,7 @@ namespace RezervacijeSportskihTerena
             {
                 IdTeren = int.Parse(dr["idTeren"].ToString());
                 NazivTerena = dr["nazivTerena"].ToString();
-                Sport = dr["sport"].ToString();
+                NazivVrsta = dr["nazivVrsta"].ToString();
                 Opis = dr["opis"].ToString();
                 CijenaSata = int.Parse(dr["cijenaSata"].ToString());
             }
@@ -36,7 +36,7 @@ namespace RezervacijeSportskihTerena
 
         private int idTeren;
         private string nazivTerena;
-        private string sport;
+        private string nazivVrsta;
         private string opis;
         private int cijenaSata;
 
@@ -51,10 +51,10 @@ namespace RezervacijeSportskihTerena
             get { return nazivTerena; }
             set { nazivTerena = value; }
         }
-        public string Sport
+        public string NazivVrsta
         {
-            get { return sport; }
-            set { sport = value; }
+            get { return nazivVrsta; }
+            set { nazivVrsta = value; }
         }
         public string Opis
         {
@@ -66,26 +66,27 @@ namespace RezervacijeSportskihTerena
             get { return cijenaSata; }
             set { cijenaSata = value; }
         }
-
+        
 		/// <summary>
 		/// Sprema vrijednosti objekta u bazu podataka.
 		/// </summary>
 		/// <returns>Broj redaka koji su izmijenjeni ili dodani.</returns>
-        public int Spremi()
+        public int Spremi(int IdVrsta)
         {
             string sqlUpit = "";
 
             if (IdTeren == 0)        //Ako se radi o novokreiranom timu tada treba izvršiti INSERT
             {
-                sqlUpit = "INSERT INTO Teren (nazivTerena, sport, opis, cijenaSata) "
-                        + "VALUES ('" + NazivTerena + "','" + Sport + "','" + Opis + "','" + CijenaSata + "')";
+                sqlUpit = "INSERT INTO Teren (nazivTerena, opis, cijenaSata, idVrsta) " //, sport
+                        + "VALUES ('" + NazivTerena + "','" + Opis + "','" + CijenaSata + "','" + IdVrsta + "')"; //+ "','" + Sport
             }
             else                //Ako se radi o izmjeni postojećeg tada treba izvršiti UPDATE
             {
                 sqlUpit = "UPDATE Teren SET nazivTerena = '" + NazivTerena
-                + "', sport = '" + Sport
+                //+ "', sport = '" + Sport
                 + "', opis = '" + Opis
                 + "', cijenaSata = '" + CijenaSata
+                + "', idVrsta = '" + IdVrsta
                 + "' WHERE idTeren = " + IdTeren;
             }
 
@@ -109,7 +110,7 @@ namespace RezervacijeSportskihTerena
         public static List<TereniClass> DohvatiTerene()
         {
             List<TereniClass> lista = new List<TereniClass>();
-            string sqlUpit = "SELECT * FROM Teren";
+            string sqlUpit = "select idTeren, nazivTerena, nazivVrsta, opis, cijenaSata from teren join VrstaSporta on teren.idvrsta=VrstaSporta.idvrsta;";
             SQLiteDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
