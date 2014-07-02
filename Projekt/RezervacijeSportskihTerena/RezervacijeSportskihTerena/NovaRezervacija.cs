@@ -147,8 +147,16 @@ namespace RezervacijeSportskihTerena
         {
             DateTime datumRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 6, 0, 0);
             DateTime vrijemePocRez = datumRez;
-            DateTime vrijemeZavRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 7, 0, 0);
-            
+            DateTime vrijemeZavRez;
+            try 
+            { 
+                vrijemeZavRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 7, 0, 0);  
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                vrijemeZavRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, 0, 0, 0);  
+            }
+
             TerminiClass noviTermin = new TerminiClass();
             noviTermin.VrijemePocetka = vrijemePocRez.ToString("HH:mm:ss");
             noviTermin.VrijemeZavrsetka = vrijemeZavRez.ToString("HH:mm:ss");

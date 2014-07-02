@@ -41,6 +41,8 @@
             this.datumRezervacije = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnObrisiRezervaciju = new System.Windows.Forms.Button();
             this.btnNovaRezervacija = new System.Windows.Forms.Button();
+            this.btnIspisiRezervaciju = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +130,7 @@
             // btnObrisiRezervaciju
             // 
             this.btnObrisiRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnObrisiRezervaciju.Location = new System.Drawing.Point(893, 391);
+            this.btnObrisiRezervaciju.Location = new System.Drawing.Point(787, 391);
             this.btnObrisiRezervaciju.Name = "btnObrisiRezervaciju";
             this.btnObrisiRezervaciju.Size = new System.Drawing.Size(100, 35);
             this.btnObrisiRezervaciju.TabIndex = 1;
@@ -139,7 +141,7 @@
             // btnNovaRezervacija
             // 
             this.btnNovaRezervacija.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovaRezervacija.Location = new System.Drawing.Point(787, 391);
+            this.btnNovaRezervacija.Location = new System.Drawing.Point(681, 391);
             this.btnNovaRezervacija.Name = "btnNovaRezervacija";
             this.btnNovaRezervacija.Size = new System.Drawing.Size(100, 35);
             this.btnNovaRezervacija.TabIndex = 1;
@@ -147,11 +149,29 @@
             this.btnNovaRezervacija.UseVisualStyleBackColor = true;
             this.btnNovaRezervacija.Click += new System.EventHandler(this.btnNovaRezervacija_Click);
             // 
+            // btnIspisiRezervaciju
+            // 
+            this.btnIspisiRezervaciju.Image = global::RezervacijeSportskihTerena.Properties.Resources.print_icon_28p;
+            this.btnIspisiRezervaciju.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIspisiRezervaciju.Location = new System.Drawing.Point(893, 391);
+            this.btnIspisiRezervaciju.Name = "btnIspisiRezervaciju";
+            this.btnIspisiRezervaciju.Size = new System.Drawing.Size(100, 35);
+            this.btnIspisiRezervaciju.TabIndex = 2;
+            this.btnIspisiRezervaciju.Text = "Ispiši";
+            this.btnIspisiRezervaciju.UseVisualStyleBackColor = true;
+            this.btnIspisiRezervaciju.Click += new System.EventHandler(this.btnIspisiRezervaciju_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
+            // 
             // frmRezervacije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 438);
+            this.Controls.Add(this.btnIspisiRezervaciju);
             this.Controls.Add(this.btnNovaRezervacija);
             this.Controls.Add(this.btnObrisiRezervaciju);
             this.Controls.Add(this.dgvRezervacije);
@@ -179,5 +199,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vrijemePocetka;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrijemeZavrsetka;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumRezervacije;
+        private System.Windows.Forms.Button btnIspisiRezervaciju;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

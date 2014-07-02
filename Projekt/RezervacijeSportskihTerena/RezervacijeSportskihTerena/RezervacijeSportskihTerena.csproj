@@ -211,6 +211,7 @@
   <ItemGroup>
     <Content Include="Resources\bright_geometric.png" />
     <Content Include="Resources\favicon.ico" />
+    <None Include="Resources\print_icon_28p.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

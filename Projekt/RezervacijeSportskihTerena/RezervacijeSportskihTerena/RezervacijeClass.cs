@@ -31,7 +31,7 @@ namespace RezervacijeSportskihTerena
                 CijenaSata = float.Parse(dr["cijenaSata"].ToString());
                 VrijemePocetka = dr.GetString(dr.GetOrdinal("vrijemePocetka"));
                 VrijemeZavrsetka = dr.GetString(dr.GetOrdinal("vrijemeZavrsetka"));
-                DatumRezervacije = dr.GetDateTime(dr.GetOrdinal("datumRezervacije"));
+                DatumRezervacije = dr.GetString(dr.GetOrdinal("datumRezervacije")); 
             }
         }
 
@@ -43,7 +43,7 @@ namespace RezervacijeSportskihTerena
         private float cijenaSata;
         private string vrijemePocetka;
         private string vrijemeZavrsetka;
-        private DateTime datumRezervacije;
+        private string datumRezervacije;
 
         public int IdRezervacija
         {
@@ -85,10 +85,15 @@ namespace RezervacijeSportskihTerena
             get { return vrijemeZavrsetka; }
             set { vrijemeZavrsetka = value.Substring(0, 5); }
         }
-        public DateTime DatumRezervacije
+        public string DatumRezervacije
         {
             get { return datumRezervacije; }
-            set { datumRezervacije = value; }
+            set 
+            {
+                string str = value;
+                DateTime dt = DateTime.Parse(str);
+                datumRezervacije = dt.ToString("dd-MM-yyyy");
+            }
         } 
 
 		/// <summary> 

@@ -71,7 +71,11 @@ namespace RezervacijeSportskihTerena
 
         private void txtTelefonKorisnik_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '\b')     // Dozvoljava samo brojeve i backspace
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '\b' // Dozvoljava samo brojeve, backspace, ( ) + i -
+                || e.KeyChar == '-'
+                || e.KeyChar == '+'
+                || e.KeyChar == '('
+                || e.KeyChar == ')')     
                 e.Handled = false;
             else
                 e.Handled = true;

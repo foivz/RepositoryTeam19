@@ -42,9 +42,11 @@ namespace RezervacijeSportskihTerena
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
            // prikaz.Items.Add(DB.Instance.DohvatiVrijednost(sqlUpit).ToString());
             lblNaslovRubrike.Text = "Najkorišteniji termini";
+            int br = 1;
             while (popis.Read())
             {
-              prikaz.Items.Add(popis.GetString(0));
+              prikaz.Items.Add(br.ToString() + ". " + popis.GetString(0));
+              br++;
             }  
         }
 
