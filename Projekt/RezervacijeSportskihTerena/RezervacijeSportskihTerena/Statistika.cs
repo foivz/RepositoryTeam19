@@ -26,6 +26,7 @@ namespace RezervacijeSportskihTerena
         {
             InitializeComponent();
             AutoComplete();
+            GraphLoad();
         }
 
         private void frmStatistika_FormClosing(object sender, FormClosingEventArgs e)
@@ -155,6 +156,19 @@ namespace RezervacijeSportskihTerena
             txtTrazi.AutoCompleteCustomSource = prijedlozi;
         }
 
+
+        private void GraphLoad()
+        {
+            string sqlUpit = "select distinct nazivTerena, datumRezervacije, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin on rezervacija.idTermin = termin.idTermin group by teren.idteren having substr(datumRezervacije, 6,2) = substr(current_date,6,2)";
+            SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+
+            while (popis.Read())
+            {
+                //MessageBox.Show(br.ToString() + ". " + popis.GetString(0)+" "+popis.GetValue(2));
+                chartMjesecniPrihodi.Series["Prihod (kn)"].Points.AddXY(popis.GetString(0), popis.GetValue(2));
+
+            } 
+        }
         private void btnTrazi_Click(object sender, EventArgs e)
         {
             // SQL upit za brojanje rezervacija prema korisniku  

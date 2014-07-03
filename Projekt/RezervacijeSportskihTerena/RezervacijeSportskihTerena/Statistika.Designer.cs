@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistika));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNajcesciSport = new System.Windows.Forms.Button();
@@ -53,11 +57,13 @@
             this.lblRez = new System.Windows.Forms.Label();
             this.txtRez = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.chartMjesecniPrihodi = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMjesecniPrihodi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -212,9 +218,8 @@
             this.lblNaslovRubrike.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNaslovRubrike.Location = new System.Drawing.Point(281, 22);
             this.lblNaslovRubrike.Name = "lblNaslovRubrike";
-            this.lblNaslovRubrike.Size = new System.Drawing.Size(46, 13);
+            this.lblNaslovRubrike.Size = new System.Drawing.Size(0, 13);
             this.lblNaslovRubrike.TabIndex = 8;
-            this.lblNaslovRubrike.Text = "Naslov";
             // 
             // txtPrihod
             // 
@@ -287,17 +292,40 @@
             this.panel5.Controls.Add(this.lblRez);
             this.panel5.Controls.Add(this.btnTrazi);
             this.panel5.Controls.Add(this.txtTrazi);
-            this.panel5.Location = new System.Drawing.Point(278, 199);
+            this.panel5.Location = new System.Drawing.Point(632, 18);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(331, 127);
             this.panel5.TabIndex = 11;
+            // 
+            // chartMjesecniPrihodi
+            // 
+            this.chartMjesecniPrihodi.BackColor = System.Drawing.Color.Transparent;
+            this.chartMjesecniPrihodi.BorderlineColor = System.Drawing.Color.Gray;
+            chartArea1.Name = "ChartArea1";
+            this.chartMjesecniPrihodi.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            legend1.TitleAlignment = System.Drawing.StringAlignment.Near;
+            this.chartMjesecniPrihodi.Legends.Add(legend1);
+            this.chartMjesecniPrihodi.Location = new System.Drawing.Point(278, 189);
+            this.chartMjesecniPrihodi.Name = "chartMjesecniPrihodi";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Prihod (kn)";
+            this.chartMjesecniPrihodi.Series.Add(series1);
+            this.chartMjesecniPrihodi.Size = new System.Drawing.Size(627, 300);
+            this.chartMjesecniPrihodi.TabIndex = 13;
+            this.chartMjesecniPrihodi.Text = "chartMjesecniPrihodi";
+            title1.Name = "Title1";
+            title1.Text = "Mjesečni prihodi po terenu";
+            this.chartMjesecniPrihodi.Titles.Add(title1);
             // 
             // frmStatistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(623, 394);
+            this.ClientSize = new System.Drawing.Size(1009, 510);
+            this.Controls.Add(this.chartMjesecniPrihodi);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.lblNaslovRubrike);
             this.Controls.Add(this.prikaz);
@@ -320,6 +348,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMjesecniPrihodi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,5 +380,6 @@
         private System.Windows.Forms.Label lblRez;
         private System.Windows.Forms.TextBox txtRez;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMjesecniPrihodi;
     }
 }
