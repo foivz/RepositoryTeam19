@@ -60,9 +60,11 @@ namespace RezervacijeSportskihTerena
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
 
             lblNaslovRubrike.Text = "Najkorišteniji tereni";
+            int br = 1;
             while (popis.Read())
             {
-                prikaz.Items.Add(popis.GetString(0));
+                prikaz.Items.Add(br + ". " + popis.GetString(0));
+                br++;
             }  
         }
 
@@ -71,11 +73,13 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
             
             /* pretraga sporta čiji su tereni najkorišteniji */
-            string sqlUpit = "SELECT teren.[sport], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren left join rezervacija on rezervacija.[idTeren] = teren.[idTeren] GROUP BY teren.[nazivTerena] ORDER BY brojRezervacijaPoTerenu DESC LIMIT 5";
+            string sqlUpit = "SELECT vrstaSporta.[nazivVrsta], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren left join rezervacija on rezervacija.[idTeren] = teren.[idTeren] join vrstaSporta on vrstaSporta.idVrsta = teren.idVrsta GROUP BY teren.[nazivTerena] ORDER BY brojRezervacijaPoTerenu DESC LIMIT 5";
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+            int br = 1;
             while (popis.Read())
             {
-                prikaz.Items.Add(popis.GetString(0));
+                prikaz.Items.Add(br+". "+popis.GetString(0));
+                br++;
             }  
             lblNaslovRubrike.Text = "Najčešći sportovi";
         }
@@ -87,9 +91,11 @@ namespace RezervacijeSportskihTerena
             string sqlUpit = "SELECT korisnik.[imePrezimeKorisnik], COUNT(rezervacija.[idKorisnik]) brojRezervacija FROM korisnik left join rezervacija on rezervacija.[idKorisnik] = korisnik.[idKorisnik] GROUP BY korisnik.[imePrezimeKorisnik] ORDER BY brojRezervacija DESC LIMIT 5";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+            int br = 1;
             while (popis.Read())
             {
-                prikaz.Items.Add(popis.GetString(0));
+                prikaz.Items.Add(br + ". " + popis.GetString(0));
+                br++;
             }
             lblNaslovRubrike.Text = "Korisnici s najviše rezervacija";
         }
@@ -97,7 +103,7 @@ namespace RezervacijeSportskihTerena
         private void btnUkupanPrihod_Click(object sender, EventArgs e)
         {
             prikaz.Items.Clear();
-            string sqlUpit = "select sum((substr(vrijemeZavrsetka,0,3)-substr(vrijemePocetka, 0,3))*cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin;";
+            string sqlUpit = "select sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin;";
             prikaz.Items.Add(DB.Instance.DohvatiVrijednost(sqlUpit).ToString()+" kuna");
             lblNaslovRubrike.Text = "Ukupan ostvaren prihod";
         }
@@ -107,12 +113,13 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
 
             /* dohvaćanje terena i mjesečne sume za taj teren */
-            string sqlUpit = "select distinct nazivTerena, sum((substr(vrijemeZavrsetka,0,3)-substr(vrijemePocetka, 0,3))*cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin GROUP BY termin.[idTermin]";
+            string sqlUpit = "select distinct nazivTerena, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin GROUP BY teren.[idTeren]";
 
             /* dohvaćanje ukupne mjesečne sume */
-            string sqlUpit2 = "select sum((substr(vrijemeZavrsetka,0,3)-substr(vrijemePocetka, 0,3))*cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where rezervacija.[idTermin] =  termin.[idTermin]";
+            string sqlUpit2 = "select sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where rezervacija.[idTermin] =  termin.[idTermin]";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+
             while (popis.Read())
             {
                 prikaz.Items.Add(popis.GetString(0)+": "+popis.GetValue(1)+" kuna");

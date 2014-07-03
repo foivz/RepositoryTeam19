@@ -57,8 +57,15 @@ namespace RezervacijeSportskihTerena
             teren.NazivTerena = txtNazivTerena.Text;
             teren.Opis = txtOpis.Text;
             teren.CijenaSata = int.Parse(txtCijenaSata.Text);
-            int IdVrsta = Convert.ToInt32(comboBox1.SelectedIndex + 1);
-            teren.Spremi(IdVrsta);
+            // dohvaćamo id iz tablice s vrstom sportova te ga prosljeđujemo kod spremanja novog terena
+            try
+            {
+                string sqlUpit = "SELECT idVrsta, nazivVrsta FROM VrstaSporta where nazivVrsta ='" + comboBox1.SelectedItem.ToString() + "'";
+                int IdVrsta = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit).ToString());
+                teren.Spremi(IdVrsta);  
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             this.Close();
         }
 
@@ -77,6 +84,7 @@ namespace RezervacijeSportskihTerena
                 txtOpis.Text = teren.Opis.ToString();
                 txtNazivTerena.Text = teren.NazivTerena.ToString();
                 txtCijenaSata.Text = teren.CijenaSata.ToString();
+                comboBox1.SelectedItem = teren.NazivVrsta.ToString();
             }
         }
 

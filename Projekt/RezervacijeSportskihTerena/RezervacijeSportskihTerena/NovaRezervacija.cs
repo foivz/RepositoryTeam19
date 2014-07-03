@@ -173,7 +173,7 @@ namespace RezervacijeSportskihTerena
                 MessageBox.Show("Odaberite jedan od slobodnih termina.");
                 return;
             }
-            // Provjera dali korisnik želi unjeti termin koji je istekao
+            // Provjera da li korisnik želi unjeti termin koji je istekao
             DateTime datumRez = new DateTime(kalendar.SelectionRange.Start.Year, kalendar.SelectionRange.Start.Month, kalendar.SelectionRange.Start.Day, listaVremena.SelectedIndex + 6, 0, 0);
             DateTime datumDns = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, 0, 0);
             if (datumRez < datumDns)
