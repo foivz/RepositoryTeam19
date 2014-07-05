@@ -61,18 +61,6 @@ namespace RezervacijeSportskihTerena
                 obj.BringToFront();
         }
 
-        private void izvještajToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
-            frmIzvjestaj obj = frmIzvjestaj.GetInstance();
-            obj.MdiParent = this;
-
-            if (!obj.Visible)
-                obj.Show();
-            else
-                obj.BringToFront();
-        }
-
         private void zaposleniciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /* poziv metode koja provjerava je li forma već pokrenuta i ako je postavlja je na vrh kao aktivnu */
@@ -85,7 +73,6 @@ namespace RezervacijeSportskihTerena
                 obj.BringToFront();
             
         }
-
 
         /// <summary>
         /// Na pritisak tipke escape nudi izbor izlaza iz aplikacije ili povratak u meni.

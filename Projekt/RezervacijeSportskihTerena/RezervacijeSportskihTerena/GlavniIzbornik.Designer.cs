@@ -34,7 +34,6 @@
             this.tereniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izvještajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -52,7 +51,6 @@
             this.tereniToolStripMenuItem,
             this.rezervacijeToolStripMenuItem,
             this.statistikaToolStripMenuItem,
-            this.izvještajToolStripMenuItem,
             this.odjavaToolStripMenuItem,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -88,13 +86,6 @@
             this.statistikaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.statistikaToolStripMenuItem.Text = "&Statistika";
             this.statistikaToolStripMenuItem.Click += new System.EventHandler(this.statistikaToolStripMenuItem_Click);
-            // 
-            // izvještajToolStripMenuItem
-            // 
-            this.izvještajToolStripMenuItem.Name = "izvještajToolStripMenuItem";
-            this.izvještajToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.izvještajToolStripMenuItem.Text = "&Izvještaj";
-            this.izvještajToolStripMenuItem.Click += new System.EventHandler(this.izvještajToolStripMenuItem_Click);
             // 
             // odjavaToolStripMenuItem
             // 
@@ -162,7 +153,6 @@
         private System.Windows.Forms.ToolStripMenuItem tereniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rezervacijeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statistikaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem izvještajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

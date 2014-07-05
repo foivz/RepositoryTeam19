@@ -74,7 +74,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 18);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 103);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // btnNajcesciSport
             // 
@@ -91,7 +91,7 @@
             this.btnNajviseKoristenTeren.Location = new System.Drawing.Point(3, 23);
             this.btnNajviseKoristenTeren.Name = "btnNajviseKoristenTeren";
             this.btnNajviseKoristenTeren.Size = new System.Drawing.Size(244, 35);
-            this.btnNajviseKoristenTeren.TabIndex = 1;
+            this.btnNajviseKoristenTeren.TabIndex = 0;
             this.btnNajviseKoristenTeren.Text = "Najviše korišten teren";
             this.btnNajviseKoristenTeren.UseVisualStyleBackColor = true;
             this.btnNajviseKoristenTeren.Click += new System.EventHandler(this.btnNajviseKoristenTeren_Click);
@@ -113,14 +113,14 @@
             this.panel2.Location = new System.Drawing.Point(12, 130);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 57);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 2;
             // 
             // btnNajviseRezervacija
             // 
             this.btnNajviseRezervacija.Location = new System.Drawing.Point(3, 19);
             this.btnNajviseRezervacija.Name = "btnNajviseRezervacija";
             this.btnNajviseRezervacija.Size = new System.Drawing.Size(244, 35);
-            this.btnNajviseRezervacija.TabIndex = 1;
+            this.btnNajviseRezervacija.TabIndex = 0;
             this.btnNajviseRezervacija.Text = "Korisnik sa najvećim brojem rezervacija";
             this.btnNajviseRezervacija.UseVisualStyleBackColor = true;
             this.btnNajviseRezervacija.Click += new System.EventHandler(this.btnNajviseRezervacija_Click);
@@ -143,7 +143,7 @@
             this.panel3.Location = new System.Drawing.Point(12, 266);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 99);
-            this.panel3.TabIndex = 0;
+            this.panel3.TabIndex = 4;
             // 
             // btnMjesecniPrihod
             // 
@@ -160,7 +160,7 @@
             this.btnUkupanPrihod.Location = new System.Drawing.Point(3, 21);
             this.btnUkupanPrihod.Name = "btnUkupanPrihod";
             this.btnUkupanPrihod.Size = new System.Drawing.Size(244, 35);
-            this.btnUkupanPrihod.TabIndex = 1;
+            this.btnUkupanPrihod.TabIndex = 0;
             this.btnUkupanPrihod.Text = "Ukupan prihod";
             this.btnUkupanPrihod.UseVisualStyleBackColor = true;
             this.btnUkupanPrihod.Click += new System.EventHandler(this.btnUkupanPrihod_Click);
@@ -182,14 +182,14 @@
             this.panel4.Location = new System.Drawing.Point(12, 198);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 56);
-            this.panel4.TabIndex = 0;
+            this.panel4.TabIndex = 3;
             // 
             // btnNajkoristenijiTermin
             // 
             this.btnNajkoristenijiTermin.Location = new System.Drawing.Point(3, 18);
             this.btnNajkoristenijiTermin.Name = "btnNajkoristenijiTermin";
             this.btnNajkoristenijiTermin.Size = new System.Drawing.Size(244, 35);
-            this.btnNajkoristenijiTermin.TabIndex = 1;
+            this.btnNajkoristenijiTermin.TabIndex = 0;
             this.btnNajkoristenijiTermin.Text = "Najviše korišten termin";
             this.btnNajkoristenijiTermin.UseVisualStyleBackColor = true;
             this.btnNajkoristenijiTermin.Click += new System.EventHandler(this.btnNajkoristenijiTermin_Click);
@@ -207,10 +207,10 @@
             // prikaz
             // 
             this.prikaz.FormattingEnabled = true;
-            this.prikaz.Location = new System.Drawing.Point(278, 38);
+            this.prikaz.Location = new System.Drawing.Point(278, 40);
             this.prikaz.Name = "prikaz";
-            this.prikaz.Size = new System.Drawing.Size(333, 134);
-            this.prikaz.TabIndex = 2;
+            this.prikaz.Size = new System.Drawing.Size(310, 134);
+            this.prikaz.TabIndex = 5;
             // 
             // lblNaslovRubrike
             // 
@@ -223,16 +223,16 @@
             // 
             // txtPrihod
             // 
-            this.txtPrihod.Location = new System.Drawing.Point(198, 84);
+            this.txtPrihod.Location = new System.Drawing.Point(213, 88);
             this.txtPrihod.Name = "txtPrihod";
             this.txtPrihod.ReadOnly = true;
             this.txtPrihod.Size = new System.Drawing.Size(75, 20);
-            this.txtPrihod.TabIndex = 9;
+            this.txtPrihod.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 87);
+            this.label6.Location = new System.Drawing.Point(9, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 10;
@@ -240,18 +240,18 @@
             // 
             // txtTrazi
             // 
-            this.txtTrazi.Location = new System.Drawing.Point(8, 31);
+            this.txtTrazi.Location = new System.Drawing.Point(6, 35);
             this.txtTrazi.Name = "txtTrazi";
             this.txtTrazi.Size = new System.Drawing.Size(185, 20);
-            this.txtTrazi.TabIndex = 3;
+            this.txtTrazi.TabIndex = 0;
             this.txtTrazi.TextChanged += new System.EventHandler(this.txtTrazi_TextChanged);
             // 
             // btnTrazi
             // 
-            this.btnTrazi.Location = new System.Drawing.Point(198, 29);
+            this.btnTrazi.Location = new System.Drawing.Point(213, 33);
             this.btnTrazi.Name = "btnTrazi";
             this.btnTrazi.Size = new System.Drawing.Size(75, 23);
-            this.btnTrazi.TabIndex = 4;
+            this.btnTrazi.TabIndex = 1;
             this.btnTrazi.Text = "Traži";
             this.btnTrazi.UseVisualStyleBackColor = true;
             this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
@@ -269,7 +269,7 @@
             // lblRez
             // 
             this.lblRez.AutoSize = true;
-            this.lblRez.Location = new System.Drawing.Point(11, 61);
+            this.lblRez.Location = new System.Drawing.Point(9, 65);
             this.lblRez.Name = "lblRez";
             this.lblRez.Size = new System.Drawing.Size(182, 13);
             this.lblRez.TabIndex = 6;
@@ -277,11 +277,11 @@
             // 
             // txtRez
             // 
-            this.txtRez.Location = new System.Drawing.Point(198, 58);
+            this.txtRez.Location = new System.Drawing.Point(213, 62);
             this.txtRez.Name = "txtRez";
             this.txtRez.ReadOnly = true;
             this.txtRez.Size = new System.Drawing.Size(75, 20);
-            this.txtRez.TabIndex = 7;
+            this.txtRez.TabIndex = 2;
             // 
             // panel5
             // 
@@ -292,10 +292,11 @@
             this.panel5.Controls.Add(this.lblRez);
             this.panel5.Controls.Add(this.btnTrazi);
             this.panel5.Controls.Add(this.txtTrazi);
-            this.panel5.Location = new System.Drawing.Point(632, 18);
+            this.panel5.Location = new System.Drawing.Point(605, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(331, 127);
-            this.panel5.TabIndex = 11;
+            this.panel5.Size = new System.Drawing.Size(310, 168);
+            this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // chartMjesecniPrihodi
             // 
@@ -312,8 +313,8 @@
             series1.Legend = "Legend1";
             series1.Name = "Prihod (kn)";
             this.chartMjesecniPrihodi.Series.Add(series1);
-            this.chartMjesecniPrihodi.Size = new System.Drawing.Size(627, 300);
-            this.chartMjesecniPrihodi.TabIndex = 13;
+            this.chartMjesecniPrihodi.Size = new System.Drawing.Size(637, 300);
+            this.chartMjesecniPrihodi.TabIndex = 6;
             this.chartMjesecniPrihodi.Text = "chartMjesecniPrihodi";
             title1.Name = "Title1";
             title1.Text = "Mjesečni prihodi po terenu";
@@ -324,7 +325,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1009, 510);
+            this.ClientSize = new System.Drawing.Size(931, 507);
             this.Controls.Add(this.chartMjesecniPrihodi);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.lblNaslovRubrike);
