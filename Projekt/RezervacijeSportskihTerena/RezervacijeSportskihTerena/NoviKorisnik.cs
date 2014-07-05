@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace RezervacijeSportskihTerena
 {
@@ -39,6 +40,12 @@ namespace RezervacijeSportskihTerena
                 return;
             }
 
+            if(ProvjeriEmail(txtEmailKorisnik.Text) == false)
+            {
+                MessageBox.Show("Uneseni email je u neispravnom formatu. Pokusajte ponovo molim.");
+                return;
+            }
+
             if (korisnik == null)
             {
                 korisnik = new KorisniciClass();
@@ -58,6 +65,19 @@ namespace RezervacijeSportskihTerena
                 txtEmailKorisnik.Text = korisnik.EmailKorisnik.ToString();
                 txtTelefonKorisnik.Text = korisnik.TelefonKorisnik.ToString();
                 txtImePrezimeKorisnik.Text = korisnik.ImePrezimeKorisnik.ToString();
+            }
+        }
+
+        public bool ProvjeriEmail(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
             }
         }
 
