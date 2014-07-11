@@ -12,10 +12,12 @@ namespace RezervacijeSportskihTerena
 {
     public partial class frmGlavniIzbornik : Form
     {
-        public frmGlavniIzbornik(string strLogin)
+        
+        public frmGlavniIzbornik(string strLogin, int idAktivnog)
         {
             InitializeComponent();
             toolStripImePrezime.Text = strLogin;
+            AktivniZaposlenikClass aktivni = new AktivniZaposlenikClass(idAktivnog);
         }
  
         private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)

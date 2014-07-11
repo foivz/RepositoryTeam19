@@ -37,6 +37,11 @@
             this.telefonKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTereni = new System.Windows.Forms.DataGridView();
+            this.idTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivVrsta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cijenaSata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kalendar = new System.Windows.Forms.MonthCalendar();
             this.label3 = new System.Windows.Forms.Label();
             this.listaVremena = new System.Windows.Forms.ListBox();
@@ -46,11 +51,7 @@
             this.btnNoviKorisnik = new System.Windows.Forms.Button();
             this.btnIzmjeniKorisnika = new System.Windows.Forms.Button();
             this.btnObrisiKorisnika = new System.Windows.Forms.Button();
-            this.idTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivTeren = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivVrsta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cijenaSata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTereni)).BeginInit();
             this.SuspendLayout();
@@ -140,6 +141,36 @@
             this.dgvTereni.Size = new System.Drawing.Size(920, 177);
             this.dgvTereni.TabIndex = 1;
             this.dgvTereni.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTereni_CellClick);
+            // 
+            // idTeren
+            // 
+            this.idTeren.HeaderText = "ID terena";
+            this.idTeren.Name = "idTeren";
+            this.idTeren.ReadOnly = true;
+            // 
+            // nazivTeren
+            // 
+            this.nazivTeren.HeaderText = "Naziv terena";
+            this.nazivTeren.Name = "nazivTeren";
+            this.nazivTeren.ReadOnly = true;
+            // 
+            // nazivVrsta
+            // 
+            this.nazivVrsta.HeaderText = "Sport";
+            this.nazivVrsta.Name = "nazivVrsta";
+            this.nazivVrsta.ReadOnly = true;
+            // 
+            // opis
+            // 
+            this.opis.HeaderText = "Opis";
+            this.opis.Name = "opis";
+            this.opis.ReadOnly = true;
+            // 
+            // cijenaSata
+            // 
+            this.cijenaSata.HeaderText = "Cijena sata";
+            this.cijenaSata.Name = "cijenaSata";
+            this.cijenaSata.ReadOnly = true;
             // 
             // kalendar
             // 
@@ -234,41 +265,22 @@
             this.btnObrisiKorisnika.UseVisualStyleBackColor = true;
             this.btnObrisiKorisnika.Click += new System.EventHandler(this.btnObrisiKorisnika_Click);
             // 
-            // idTeren
+            // button1
             // 
-            this.idTeren.HeaderText = "ID terena";
-            this.idTeren.Name = "idTeren";
-            this.idTeren.ReadOnly = true;
-            // 
-            // nazivTeren
-            // 
-            this.nazivTeren.HeaderText = "Naziv terena";
-            this.nazivTeren.Name = "nazivTeren";
-            this.nazivTeren.ReadOnly = true;
-            // 
-            // nazivVrsta
-            // 
-            this.nazivVrsta.HeaderText = "Sport";
-            this.nazivVrsta.Name = "nazivVrsta";
-            this.nazivVrsta.ReadOnly = true;
-            // 
-            // opis
-            // 
-            this.opis.HeaderText = "Opis";
-            this.opis.Name = "opis";
-            this.opis.ReadOnly = true;
-            // 
-            // cijenaSata
-            // 
-            this.cijenaSata.HeaderText = "Cijena sata";
-            this.cijenaSata.Name = "cijenaSata";
-            this.cijenaSata.ReadOnly = true;
+            this.button1.Location = new System.Drawing.Point(735, 487);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmNovaRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 630);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnObrisiKorisnika);
             this.Controls.Add(this.btnIzmjeniKorisnika);
             this.Controls.Add(this.btnSpremi);
@@ -318,5 +330,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivVrsta;
         private System.Windows.Forms.DataGridViewTextBoxColumn opis;
         private System.Windows.Forms.DataGridViewTextBoxColumn cijenaSata;
+        private System.Windows.Forms.Button button1;
     }
 }

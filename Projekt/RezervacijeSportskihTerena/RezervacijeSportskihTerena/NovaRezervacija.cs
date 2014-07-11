@@ -210,8 +210,11 @@ namespace RezervacijeSportskihTerena
                 string sqlUpit = "SELECT MAX(idTermin) FROM Termin;";
                 c = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit));
 
+                // Dohvaćanje id aktivnog zaposlenika
+                int idAktivnog = AktivniZaposlenikClass.aktivniZaposlenik;
+
                 // spremanje dohvacenih id-eva u bazu
-                RezervacijeAkcijeClass rez = new RezervacijeAkcijeClass(a, b, c);
+                RezervacijeAkcijeClass rez = new RezervacijeAkcijeClass(a, b, c, idAktivnog);
                 rez.Spremi();
             }
             this.Close();          
@@ -225,6 +228,13 @@ namespace RezervacijeSportskihTerena
         private void dgvTereni_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             OsvjeziListu();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int aktiv = AktivniZaposlenikClass.aktivniZaposlenik;
+            MessageBox.Show(aktiv.ToString());
+
         }
 
     }

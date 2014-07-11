@@ -122,11 +122,12 @@ namespace RezervacijeSportskihTerena
         /// <summary> 
         /// Konstruktor za spremanje nove rezervacije. 
         /// </summary>
-        public RezervacijeAkcijeClass(int idKor, int idTrn, int idTmn)
+        public RezervacijeAkcijeClass(int idKor, int idTrn, int idTmn, int idZap)
         {
             IdKorisnik = idKor;
             IdTeren = idTrn;
             IdTermin = idTmn;
+            IdZaposlenik = idZap;
         }
 
         /// <summary> 
@@ -140,12 +141,14 @@ namespace RezervacijeSportskihTerena
                 IdKorisnik = int.Parse(dr["idKorisnik"].ToString());
                 IdTeren = int.Parse(dr["idTeren"].ToString());
                 IdTermin = int.Parse(dr["idTermin"].ToString());
+                IdZaposlenik = int.Parse(dr["idZaposlenik"].ToString());
             }
         }
 
         private int idKorisnik;
         private int idTeren;
         private int idTermin;
+        private int idZaposlenik;
 
         public int IdKorisnik
         {
@@ -162,6 +165,11 @@ namespace RezervacijeSportskihTerena
             get { return idTermin; }
             set { idTermin = value; }
         }
+        public int IdZaposlenik
+        {
+            get { return idZaposlenik; }
+            set { idZaposlenik = value; }
+        }
 
         /// <summary>
         /// Sprema vrijednosti objekta u bazu podataka.
@@ -169,8 +177,8 @@ namespace RezervacijeSportskihTerena
         public int Spremi()
         {
             string sqlUpit = "";
-            sqlUpit = "INSERT INTO Rezervacija (idKorisnik, idTeren, idTermin) "
-                        + "VALUES ('" + IdKorisnik + "','" + IdTeren + "','" + IdTermin + "')";
+            sqlUpit = "INSERT INTO Rezervacija (idKorisnik, idTeren, idTermin, idZaposlenik) "
+                        + "VALUES ('" + IdKorisnik + "','" + IdTeren + "','" + IdTermin + "','" + IdZaposlenik + "')";
 
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
@@ -186,6 +194,13 @@ namespace RezervacijeSportskihTerena
         }
     }
 
-    
+    public class AktivniZaposlenikClass
+    {
+        public AktivniZaposlenikClass(int idAktivnog)
+        {
+            aktivniZaposlenik = idAktivnog;
+        }
+        public static int aktivniZaposlenik{ get; set; }
+    }
     
 }

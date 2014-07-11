@@ -21,11 +21,9 @@ namespace RezervacijeSportskihTerena
            
             frmPrijava prijava = new frmPrijava();
             Application.Run(prijava);
-
             if (prijava.UspjesnaPrijava)
             {
-                Application.Run(new frmGlavniIzbornik(prijava.strImePrezime));
-                
+                Application.Run(new frmGlavniIzbornik(prijava.strImePrezime, prijava.idAktivnogZaposlenika));
             }
         }
     }
