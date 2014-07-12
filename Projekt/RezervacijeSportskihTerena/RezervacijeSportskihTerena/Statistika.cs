@@ -26,7 +26,6 @@ namespace RezervacijeSportskihTerena
         {
             InitializeComponent();
             AutoComplete();
-            GraphLoad();
         }
 
         private void frmStatistika_FormClosing(object sender, FormClosingEventArgs e)
@@ -38,7 +37,7 @@ namespace RezervacijeSportskihTerena
         {
             // SQL upit za brojanje rezervacija prema korisniku  
             prikaz.Items.Clear();
-            string sqlUpit = "SELECT termin.[vrijemePocetka], COUNT(rezervacija.[idTermin]) brojRezervacija FROM termin left join rezervacija on rezervacija.[idTermin] = termin.[idTermin] GROUP BY termin.[vrijemePocetka] ORDER BY brojRezervacija DESC limit 5;";
+            string sqlUpit = "SELECT termin.[vrijemePocetka], COUNT(rezervacija.[idTermin]) brojRezervacija FROM termin join rezervacija on rezervacija.[idTermin] = termin.[idTermin] GROUP BY termin.[vrijemePocetka] ORDER BY brojRezervacija DESC;";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
            // prikaz.Items.Add(DB.Instance.DohvatiVrijednost(sqlUpit).ToString());
@@ -56,7 +55,7 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
 
             /* dohvaćanje najkorištenijih terena */
-            string sqlUpit = "SELECT teren.[nazivTerena], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren left join rezervacija on rezervacija.[idTeren] = teren.[idTeren] GROUP BY teren.[nazivTerena] ORDER BY brojRezervacijaPoTerenu DESC LIMIT 5";
+            string sqlUpit = "SELECT teren.[nazivTerena], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren join rezervacija on rezervacija.[idTeren] = teren.[idTeren] GROUP BY teren.[nazivTerena] ORDER BY brojRezervacijaPoTerenu DESC";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
 
@@ -66,7 +65,31 @@ namespace RezervacijeSportskihTerena
             {
                 prikaz.Items.Add(br + ". " + popis.GetString(0));
                 br++;
-            }  
+            }
+            chartTeren.Visible = true;
+            chartTeren.BringToFront();
+            TereniGraf();
+
+        }
+        private void TereniGraf()
+        {
+            // dohvaćanje broja rezervacija prema terenu
+            string sqlUpit = "SELECT teren.[nazivTerena], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren join rezervacija on rezervacija.[idTeren] = teren.[idTeren] join termin on rezervacija.idtermin = termin.idtermin GROUP BY teren.[nazivTerena] having substr(datumRezervacije, 6,2) = substr(current_date,6,2);";
+            SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+            string sqlUpit2 = "SELECT count(*) from teren";
+            int ukupno = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit2));
+
+            /* resetiranje grafa kako bi se izbjegli duplikati */
+            foreach (var series in chartTeren.Series)
+            {
+                series.Points.Clear();
+            }
+            /* punjenje grafa podacima */
+            while (popis.Read())
+            {
+                decimal a = decimal.Round((Convert.ToDecimal(popis.GetValue(1).ToString()) / ukupno) * 100, 2, MidpointRounding.AwayFromZero);
+                chartTeren.Series["Tereni"].Points.AddXY(popis.GetString(0), a);
+            }     
         }
 
         private void btnNajcesciSport_Click(object sender, EventArgs e)
@@ -74,7 +97,7 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
             
             /* pretraga sporta čiji su tereni najkorišteniji */
-            string sqlUpit = "SELECT vrstaSporta.[nazivVrsta], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren left join rezervacija on rezervacija.[idTeren] = teren.[idTeren] join vrstaSporta on vrstaSporta.idVrsta = teren.idVrsta GROUP BY teren.[nazivTerena] ORDER BY brojRezervacijaPoTerenu DESC LIMIT 5";
+            string sqlUpit = "SELECT vrstaSporta.[nazivVrsta], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren join rezervacija on rezervacija.[idTeren] = teren.[idTeren] join vrstaSporta on vrstaSporta.idVrsta = teren.idVrsta GROUP BY teren.[nazivTerena] order by brojRezervacijaPoTerenu DESC";
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
             int br = 1;
             while (popis.Read())
@@ -83,13 +106,36 @@ namespace RezervacijeSportskihTerena
                 br++;
             }  
             lblNaslovRubrike.Text = "Najčešći sportovi";
+            chartSport.Visible = true;
+            chartSport.BringToFront();
+            SportGraf();     
+        }
+
+        private void SportGraf()
+        {
+            string sqlUpit = "SELECT nazivvrsta, count(rezervacija.idteren) from vrstasporta join teren on teren.idvrsta = vrstasporta.idvrsta join rezervacija on rezervacija.idteren = teren.idteren join termin on termin.idtermin = rezervacija.idtermin group by rezervacija.[idTeren] having substr(datumRezervacije, 6,2) = substr(current_date,6,2)";
+            SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+            string sqlUpit2 = "SELECT count(*) from vrstaSporta";
+            int ukupno = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit2));
+
+            /* resetiranje grafa kako bi se izbjegli duplikati */
+            foreach (var series in chartSport.Series)
+            {
+                series.Points.Clear();
+            }
+            /* punjenje grafa podacima */
+            while (popis.Read())
+            {
+                decimal a = decimal.Round((Convert.ToDecimal(popis.GetValue(1).ToString()) / ukupno) * 100, 2, MidpointRounding.AwayFromZero);
+                chartSport.Series["Sport"].Points.AddXY(popis.GetString(0), a);
+            }
         }
 
         private void btnNajviseRezervacija_Click(object sender, EventArgs e)
         {
             // SQL upit za brojanje rezervacija prema korisniku  
             prikaz.Items.Clear();
-            string sqlUpit = "SELECT korisnik.[imePrezimeKorisnik], COUNT(rezervacija.[idKorisnik]) brojRezervacija FROM korisnik left join rezervacija on rezervacija.[idKorisnik] = korisnik.[idKorisnik] GROUP BY korisnik.[imePrezimeKorisnik] ORDER BY brojRezervacija DESC LIMIT 5";
+            string sqlUpit = "SELECT korisnik.[imePrezimeKorisnik], COUNT(rezervacija.[idKorisnik]) brojRezervacija FROM korisnik join rezervacija on rezervacija.[idKorisnik] = korisnik.[idKorisnik] GROUP BY korisnik.[imePrezimeKorisnik] ORDER BY brojRezervacija DESC";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
             int br = 1;
@@ -99,6 +145,28 @@ namespace RezervacijeSportskihTerena
                 br++;
             }
             lblNaslovRubrike.Text = "Korisnici s najviše rezervacija";
+            chartKorisnik.Visible = true;
+            chartKorisnik.BringToFront();
+            KorisniciGraf();
+        }
+
+        private void KorisniciGraf()
+        {
+            string sqlUpit = "SELECT korisnik.[imePrezimeKorisnik], COUNT(rezervacija.[idKorisnik]), sum(cijenaSata) brojRezervacija FROM korisnik join rezervacija on rezervacija.[idKorisnik] = korisnik.[idKorisnik] join teren on teren.idteren = rezervacija.idteren join termin on rezervacija.idtermin = termin.idtermin GROUP BY korisnik.[imePrezimeKorisnik] having substr(datumRezervacije, 6,2) = substr(current_date,6,2)";
+            SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+
+            /* resetiranje grafa kako bi se izbjegli duplikati */
+            foreach (var series in chartKorisnik.Series)
+            {
+                series.Points.Clear();
+            }
+            /* punjenje grafa podacima */
+            while (popis.Read())
+            {
+                chartKorisnik.Series["Prihod po korisniku (kn)"].Points.AddXY(popis.GetString(0), popis.GetValue(2));
+                chartKorisnik.Series["Broj rezervacija"].Points.AddXY(popis.GetString(0), popis.GetValue(1));
+                                       
+            }
         }
 
         private void btnUkupanPrihod_Click(object sender, EventArgs e)
@@ -114,7 +182,7 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
 
             /* dohvaćanje terena i mjesečne sume za taj teren */
-            string sqlUpit = "select distinct nazivTerena, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin GROUP BY teren.[idTeren]";
+            string sqlUpit = "select distinct nazivTerena, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin  GROUP BY teren.[idTeren]";
 
             /* dohvaćanje ukupne mjesečne sume */
             string sqlUpit2 = "select sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where rezervacija.[idTermin] =  termin.[idTermin]";
@@ -128,9 +196,32 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Add("");
             prikaz.Items.Add("\nUkupno: "+DB.Instance.DohvatiVrijednost(sqlUpit2).ToString()+" kuna");
             lblNaslovRubrike.Text = "Prikaz mjesečnih prihoda po terenima";
-            
-        }
 
+            chartMjesecniPrihodi.Visible = true; 
+            chartMjesecniPrihodi.BringToFront();
+
+            MjesecniPrihodGraf();
+        }
+        private void MjesecniPrihodGraf()
+        {
+           string sqlUpit = "select distinct nazivTerena, datumRezervacije, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin on rezervacija.idTermin = termin.idTermin group by teren.idteren having substr(datumRezervacije,6,2) = substr(current_date,6,2)";
+
+            SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+
+            /* brisanje dosadašnjih podataka iz grafa kako bi se izbjegli duplikati */
+            foreach (var series in chartMjesecniPrihodi.Series)
+            {
+                series.Points.Clear();
+            }
+
+            /* dohvat podataka i punjenje grafa */
+            while (popis.Read())
+            {
+                chartMjesecniPrihodi.Series["Prihod (kn)"].Points.AddXY(popis.GetString(0), popis.GetValue(2));
+            }
+
+        }
+       
         /* metoda za automatsko završavanje stringa kod pretrage*/
         void AutoComplete()
         {
@@ -157,31 +248,22 @@ namespace RezervacijeSportskihTerena
         }
 
 
-        private void GraphLoad()
-        {
-            string sqlUpit = "select distinct nazivTerena, datumRezervacije, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin on rezervacija.idTermin = termin.idTermin group by teren.idteren having substr(datumRezervacije, 6,2) = substr(current_date,6,2)";
-            SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
-
-            while (popis.Read())
-            {
-                //MessageBox.Show(br.ToString() + ". " + popis.GetString(0)+" "+popis.GetValue(2));
-                chartMjesecniPrihodi.Series["Prihod (kn)"].Points.AddXY(popis.GetString(0), popis.GetValue(2));
-
-            } 
-        }
+        
         private void btnTrazi_Click(object sender, EventArgs e)
         {
             // SQL upit za brojanje rezervacija prema korisniku  
             prikaz.Items.Clear();
+            txtPrihod.Text = "";
+            txtRez.Text = "";
             string tekstZaPretragu = txtTrazi.Text;
             try
             {
                 /* dohvat broja rezervacija prema odabranom korisniku */
-                string sqlUpit = "SELECT COUNT(rezervacija.[idKorisnik]) brojRezervacija FROM korisnik left join rezervacija on rezervacija.[idKorisnik] = korisnik.[idKorisnik] where korisnik.imePrezimeKorisnik LIKE UPPER('" + tekstZaPretragu + "%') GROUP BY korisnik.[imePrezimeKorisnik]";
+                string sqlUpit = "SELECT COUNT(rezervacija.[idKorisnik]) brojRezervacija FROM korisnik join rezervacija on rezervacija.[idKorisnik] = korisnik.[idKorisnik] where korisnik.imePrezimeKorisnik LIKE UPPER('" + tekstZaPretragu + "%') GROUP BY korisnik.[imePrezimeKorisnik]";
                 txtRez.Text = DB.Instance.DohvatiVrijednost(sqlUpit).ToString();
 
                 /* dohvat sume prihoda ostvarenog za odabranog korisnika */
-                string sqlUpit2 = "select sum((substr(vrijemeZavrsetka,0,3)-substr(vrijemePocetka, 0,3))*cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin join korisnik on korisnik.idKorisnik = rezervacija.idKorisnik GROUP BY korisnik.[idKorisnik]";
+                string sqlUpit2 = "select sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin join korisnik on korisnik.idKorisnik = rezervacija.idKorisnik where korisnik.imePrezimeKorisnik LIKE UPPER('" + tekstZaPretragu + "%') GROUP BY korisnik.[imePrezimeKorisnik]";
                 if (tekstZaPretragu == "")
                 {
                     txtPrihod.Text = "";
@@ -213,11 +295,6 @@ namespace RezervacijeSportskihTerena
                 MessageBox.Show("Nema takvog korisnika.", ex.Message);
                 txtTrazi.Text = "";
             }
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

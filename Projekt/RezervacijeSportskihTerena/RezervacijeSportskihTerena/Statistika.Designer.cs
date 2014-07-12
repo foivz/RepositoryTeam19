@@ -32,6 +32,19 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistika));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNajcesciSport = new System.Windows.Forms.Button();
@@ -58,12 +71,18 @@
             this.txtRez = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chartMjesecniPrihodi = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSport = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartKorisnik = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartTeren = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMjesecniPrihodi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartKorisnik)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTeren)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -207,7 +226,7 @@
             // prikaz
             // 
             this.prikaz.FormattingEnabled = true;
-            this.prikaz.Location = new System.Drawing.Point(278, 40);
+            this.prikaz.Location = new System.Drawing.Point(278, 44);
             this.prikaz.Name = "prikaz";
             this.prikaz.Size = new System.Drawing.Size(310, 134);
             this.prikaz.TabIndex = 5;
@@ -223,7 +242,7 @@
             // 
             // txtPrihod
             // 
-            this.txtPrihod.Location = new System.Drawing.Point(213, 88);
+            this.txtPrihod.Location = new System.Drawing.Point(213, 90);
             this.txtPrihod.Name = "txtPrihod";
             this.txtPrihod.ReadOnly = true;
             this.txtPrihod.Size = new System.Drawing.Size(75, 20);
@@ -232,7 +251,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 91);
+            this.label6.Location = new System.Drawing.Point(9, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 10;
@@ -240,7 +259,7 @@
             // 
             // txtTrazi
             // 
-            this.txtTrazi.Location = new System.Drawing.Point(6, 35);
+            this.txtTrazi.Location = new System.Drawing.Point(6, 37);
             this.txtTrazi.Name = "txtTrazi";
             this.txtTrazi.Size = new System.Drawing.Size(185, 20);
             this.txtTrazi.TabIndex = 0;
@@ -248,7 +267,7 @@
             // 
             // btnTrazi
             // 
-            this.btnTrazi.Location = new System.Drawing.Point(213, 33);
+            this.btnTrazi.Location = new System.Drawing.Point(213, 35);
             this.btnTrazi.Name = "btnTrazi";
             this.btnTrazi.Size = new System.Drawing.Size(75, 23);
             this.btnTrazi.TabIndex = 1;
@@ -260,7 +279,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(3, 12);
+            this.label5.Location = new System.Drawing.Point(3, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 13);
             this.label5.TabIndex = 5;
@@ -269,7 +288,7 @@
             // lblRez
             // 
             this.lblRez.AutoSize = true;
-            this.lblRez.Location = new System.Drawing.Point(9, 65);
+            this.lblRez.Location = new System.Drawing.Point(9, 67);
             this.lblRez.Name = "lblRez";
             this.lblRez.Size = new System.Drawing.Size(182, 13);
             this.lblRez.TabIndex = 6;
@@ -277,7 +296,7 @@
             // 
             // txtRez
             // 
-            this.txtRez.Location = new System.Drawing.Point(213, 62);
+            this.txtRez.Location = new System.Drawing.Point(213, 64);
             this.txtRez.Name = "txtRez";
             this.txtRez.ReadOnly = true;
             this.txtRez.Size = new System.Drawing.Size(75, 20);
@@ -292,11 +311,10 @@
             this.panel5.Controls.Add(this.lblRez);
             this.panel5.Controls.Add(this.btnTrazi);
             this.panel5.Controls.Add(this.txtTrazi);
-            this.panel5.Location = new System.Drawing.Point(605, 6);
+            this.panel5.Location = new System.Drawing.Point(605, 9);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(310, 168);
+            this.panel5.Size = new System.Drawing.Size(310, 156);
             this.panel5.TabIndex = 0;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // chartMjesecniPrihodi
             // 
@@ -310,15 +328,98 @@
             this.chartMjesecniPrihodi.Location = new System.Drawing.Point(278, 189);
             this.chartMjesecniPrihodi.Name = "chartMjesecniPrihodi";
             series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
             series1.Legend = "Legend1";
             series1.Name = "Prihod (kn)";
             this.chartMjesecniPrihodi.Series.Add(series1);
             this.chartMjesecniPrihodi.Size = new System.Drawing.Size(637, 300);
             this.chartMjesecniPrihodi.TabIndex = 6;
             this.chartMjesecniPrihodi.Text = "chartMjesecniPrihodi";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             title1.Name = "Title1";
             title1.Text = "Mjesečni prihodi po terenu";
             this.chartMjesecniPrihodi.Titles.Add(title1);
+            this.chartMjesecniPrihodi.Visible = false;
+            // 
+            // chartSport
+            // 
+            this.chartSport.BackColor = System.Drawing.Color.Transparent;
+            this.chartSport.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.chartSport.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chartSport.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartSport.Legends.Add(legend2);
+            this.chartSport.Location = new System.Drawing.Point(278, 189);
+            this.chartSport.Name = "chartSport";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.IsValueShownAsLabel = true;
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Sport";
+            this.chartSport.Series.Add(series2);
+            this.chartSport.Size = new System.Drawing.Size(637, 300);
+            this.chartSport.TabIndex = 9;
+            this.chartSport.Text = "chart1";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title2.Name = "Title1";
+            title2.Text = "Najčešće rezerviran sport (%)";
+            this.chartSport.Titles.Add(title2);
+            this.chartSport.Visible = false;
+            // 
+            // chartKorisnik
+            // 
+            this.chartKorisnik.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartKorisnik.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartKorisnik.Legends.Add(legend3);
+            this.chartKorisnik.Location = new System.Drawing.Point(278, 189);
+            this.chartKorisnik.Name = "chartKorisnik";
+            series3.ChartArea = "ChartArea1";
+            series3.EmptyPointStyle.IsValueShownAsLabel = true;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Broj rezervacija";
+            series4.ChartArea = "ChartArea1";
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "Prihod po korisniku (kn)";
+            this.chartKorisnik.Series.Add(series3);
+            this.chartKorisnik.Series.Add(series4);
+            this.chartKorisnik.Size = new System.Drawing.Size(637, 300);
+            this.chartKorisnik.TabIndex = 10;
+            this.chartKorisnik.Text = "chartKorisnik";
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title3.Name = "Title1";
+            title3.Text = "Broj rezervacija po korisniku";
+            this.chartKorisnik.Titles.Add(title3);
+            this.chartKorisnik.Visible = false;
+            // 
+            // chartTeren
+            // 
+            this.chartTeren.BackColor = System.Drawing.Color.Transparent;
+            chartArea4.Name = "ChartArea1";
+            this.chartTeren.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartTeren.Legends.Add(legend4);
+            this.chartTeren.Location = new System.Drawing.Point(278, 189);
+            this.chartTeren.Name = "chartTeren";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "Tereni";
+            this.chartTeren.Series.Add(series5);
+            this.chartTeren.Size = new System.Drawing.Size(637, 300);
+            this.chartTeren.TabIndex = 11;
+            this.chartTeren.Text = "chartTeren";
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title4.Name = "Title1";
+            title4.Text = "Najčešće rezervirani tereni (%)";
+            this.chartTeren.Titles.Add(title4);
+            this.chartTeren.Visible = false;
             // 
             // frmStatistika
             // 
@@ -326,7 +427,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(931, 507);
-            this.Controls.Add(this.chartMjesecniPrihodi);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.lblNaslovRubrike);
             this.Controls.Add(this.prikaz);
@@ -334,6 +434,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.chartSport);
+            this.Controls.Add(this.chartMjesecniPrihodi);
+            this.Controls.Add(this.chartTeren);
+            this.Controls.Add(this.chartKorisnik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStatistika";
@@ -350,6 +454,9 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMjesecniPrihodi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartKorisnik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTeren)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +489,8 @@
         private System.Windows.Forms.TextBox txtRez;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMjesecniPrihodi;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSport;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartKorisnik;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTeren;
     }
 }

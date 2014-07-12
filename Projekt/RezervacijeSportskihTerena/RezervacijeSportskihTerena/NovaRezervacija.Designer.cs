@@ -51,7 +51,6 @@
             this.btnNoviKorisnik = new System.Windows.Forms.Button();
             this.btnIzmjeniKorisnika = new System.Windows.Forms.Button();
             this.btnObrisiKorisnika = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTereni)).BeginInit();
             this.SuspendLayout();
@@ -265,22 +264,11 @@
             this.btnObrisiKorisnika.UseVisualStyleBackColor = true;
             this.btnObrisiKorisnika.Click += new System.EventHandler(this.btnObrisiKorisnika_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(735, 487);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmNovaRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 630);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnObrisiKorisnika);
             this.Controls.Add(this.btnIzmjeniKorisnika);
             this.Controls.Add(this.btnSpremi);
@@ -330,6 +318,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivVrsta;
         private System.Windows.Forms.DataGridViewTextBoxColumn opis;
         private System.Windows.Forms.DataGridViewTextBoxColumn cijenaSata;
-        private System.Windows.Forms.Button button1;
     }
 }
