@@ -101,24 +101,16 @@ namespace RezervacijeSportskihTerena
 
             if (e.KeyCode == Keys.F1)
             {
-                DialogResult result1 = MessageBox.Show("Želite li otvoriti korisničku dokumentaciju?", "Help",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1);
+                DialogResult result1 = MessageBox.Show("Za pomoć koristite korisničku dokumentaciju", "Help",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
-                if (result1 == DialogResult.Yes)
-                {
-                    System.Diagnostics.Process.Start(@"help.docx");
-                }
-                if (result1 == DialogResult.No)
+                if (result1 == DialogResult.OK)
                 {
                     return;
                 }
             }
-
-        }
-
-            
+        }      
 
     }
 }
