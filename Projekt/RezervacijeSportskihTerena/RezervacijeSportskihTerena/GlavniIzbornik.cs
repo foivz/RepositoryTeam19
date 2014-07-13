@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+
 namespace RezervacijeSportskihTerena
 {
     public partial class frmGlavniIzbornik : Form
@@ -97,6 +98,24 @@ namespace RezervacijeSportskihTerena
                     return;
                 }               
             }
+
+            if (e.KeyCode == Keys.F1)
+            {
+                DialogResult result1 = MessageBox.Show("Želite li otvoriti korisničku dokumentaciju?", "Help",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+
+                if (result1 == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(@"help.docx");
+                }
+                if (result1 == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
         }
 
             
