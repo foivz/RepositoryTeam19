@@ -112,12 +112,7 @@ namespace RezervacijeSportskihTerena
                 e.Handled = true;
         }
 
-        private void btnDodajVrstuTerena_Click(object sender, EventArgs e)
-        {
-            string sqlUpit = "INSERT INTO VrstaSporta ('nazivVrsta') " + "VALUES ('" + txtVrsta.Text +"');"; 
-            DB.Instance.IzvrsiUpit(sqlUpit);
-            OsvjeziComboBox();
-        }
+        
 
 
     }

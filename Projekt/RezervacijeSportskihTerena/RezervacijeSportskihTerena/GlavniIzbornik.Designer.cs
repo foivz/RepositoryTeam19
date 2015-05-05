@@ -137,6 +137,7 @@
             this.Name = "frmGlavniIzbornik";
             this.Text = "Rezervacija Sportskih Terena";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmGlavniIzbornik_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGlavniIzbornik_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

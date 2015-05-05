@@ -22,7 +22,7 @@ namespace RezervacijeSportskihTerena
                 instance = new frmStatistika();
             return instance;
         }
-        public frmStatistika()
+        private frmStatistika()
         {
             InitializeComponent();
             AutoComplete();
@@ -74,9 +74,12 @@ namespace RezervacijeSportskihTerena
         private void TereniGraf()
         {
             // dohvaćanje broja rezervacija prema terenu
-            string sqlUpit = "SELECT teren.[nazivTerena], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren join rezervacija on rezervacija.[idTeren] = teren.[idTeren] join termin on rezervacija.idtermin = termin.idtermin GROUP BY teren.[nazivTerena] having substr(datumRezervacije, 6,2) = substr(current_date,6,2);";
+            string sqlUpit = "select distinct nazivTerena, count(idrezervacija) as broj from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where substr(datumrezervacije,0,8) = substr(current_date,0,8)  GROUP BY teren.idvrsta";
+
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
-            string sqlUpit2 = "SELECT count(*) from teren";
+
+            string sqlUpit2 = "SELECT count(*) from teren join rezervacija on rezervacija.idTeren = teren.IdTeren JOIN termin on rezervacija.idtermin = termin.idtermin where substr(datumRezervacije, 0,8) = substr(current_date,0,8);";
+            
             int ukupno = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit2));
 
             /* resetiranje grafa kako bi se izbjegli duplikati */
@@ -97,8 +100,10 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
             
             /* pretraga sporta čiji su tereni najkorišteniji */
-            string sqlUpit = "SELECT vrstaSporta.[nazivVrsta], COUNT(rezervacija.[idTeren]) brojRezervacijaPoTerenu FROM teren join rezervacija on rezervacija.[idTeren] = teren.[idTeren] join vrstaSporta on vrstaSporta.idVrsta = teren.idVrsta GROUP BY teren.[nazivTerena] order by brojRezervacijaPoTerenu DESC";
+            string sqlUpit = "select distinct VrstaSporta.[nazivVrsta], count(idrezervacija) as broj from rezervacija join teren on rezervacija.idteren = teren.idteren join vrstaSporta on teren.idvrsta = vrstasporta.idvrsta join termin on termin.idTermin = rezervacija.idTermin where substr(datumrezervacije,0,8) = substr(current_date,0,8)  GROUP BY vrstasporta.idvrsta;";
+
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
+
             int br = 1;
             while (popis.Read())
             {
@@ -113,9 +118,14 @@ namespace RezervacijeSportskihTerena
 
         private void SportGraf()
         {
-            string sqlUpit = "SELECT nazivvrsta, count(rezervacija.idteren) from vrstasporta join teren on teren.idvrsta = vrstasporta.idvrsta join rezervacija on rezervacija.idteren = teren.idteren join termin on termin.idtermin = rezervacija.idtermin group by rezervacija.[idTeren] having substr(datumRezervacije, 6,2) = substr(current_date,6,2)";
+            string sqlUpit = "select distinct VrstaSporta.[nazivVrsta], count(idrezervacija) as broj from rezervacija join teren on rezervacija.idteren = teren.idteren join vrstaSporta on teren.idvrsta = vrstasporta.idvrsta join termin on termin.idTermin = rezervacija.idTermin where substr(datumrezervacije,0,8) = substr(current_date,0,8)  GROUP BY vrstasporta.idvrsta";
+
+
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
-            string sqlUpit2 = "SELECT count(*) from vrstaSporta";
+
+            //string sqlUpit2 = "SELECT count(*) from teren join VrstaSporta on teren.idVrsta = VrstaSporta.idVrsta JOIN rezervacija on rezervacija.idTeren = teren.IdTeren JOIN termin on rezervacija.idtermin = termin.idtermin where substr(datumRezervacije, 6,2) = substr(current_date,6,2);";
+
+            string sqlUpit2 = "select count(*) from rezervacija join termin on termin.idtermin = rezervacija.idtermin where substr(datumRezervacije, 0,8) = substr(current_date,0,8);";
             int ukupno = Convert.ToInt32(DB.Instance.DohvatiVrijednost(sqlUpit2));
 
             /* resetiranje grafa kako bi se izbjegli duplikati */
@@ -182,10 +192,10 @@ namespace RezervacijeSportskihTerena
             prikaz.Items.Clear();
 
             /* dohvaćanje terena i mjesečne sume za taj teren */
-            string sqlUpit = "select distinct nazivTerena, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin  GROUP BY teren.[idTeren]";
+            string sqlUpit = "select distinct nazivTerena, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where substr(datumrezervacije,0,8) = substr(current_date,0,8) GROUP BY teren.[idTeren]";
 
             /* dohvaćanje ukupne mjesečne sume */
-            string sqlUpit2 = "select sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where rezervacija.[idTermin] =  termin.[idTermin]";
+            string sqlUpit2 = "select sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where rezervacija.[idTermin] =  termin.[idTermin] and substr(datumrezervacije,0,8) = substr(current_date,0,8)";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
 
@@ -204,7 +214,7 @@ namespace RezervacijeSportskihTerena
         }
         private void MjesecniPrihodGraf()
         {
-           string sqlUpit = "select distinct nazivTerena, datumRezervacije, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin on rezervacija.idTermin = termin.idTermin group by teren.idteren having substr(datumRezervacije,6,2) = substr(current_date,6,2)";
+           string sqlUpit = "select distinct nazivTerena, sum(cijenaSata) from teren join rezervacija on rezervacija.idTeren = teren.idTeren join termin  on termin.idTermin = rezervacija.idTermin where substr(datumrezervacije,0,8) = substr(current_date,0,8) GROUP BY teren.[idTeren]";
 
             SQLiteDataReader popis = DB.Instance.DohvatiDataReader(sqlUpit);
 
@@ -217,7 +227,7 @@ namespace RezervacijeSportskihTerena
             /* dohvat podataka i punjenje grafa */
             while (popis.Read())
             {
-                chartMjesecniPrihodi.Series["Prihod (kn)"].Points.AddXY(popis.GetString(0), popis.GetValue(2));
+                chartMjesecniPrihodi.Series["Prihod (kn)"].Points.AddXY(popis.GetString(0), popis.GetValue(1));
             }
 
         }

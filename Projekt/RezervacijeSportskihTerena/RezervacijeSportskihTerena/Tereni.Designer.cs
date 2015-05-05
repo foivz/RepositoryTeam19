@@ -64,7 +64,6 @@
             this.dgvTereni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTereni.Size = new System.Drawing.Size(760, 250);
             this.dgvTereni.TabIndex = 0;
-            this.dgvTereni.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTereni_CellContentClick);
             // 
             // btnObrisiTeren
             // 

@@ -110,6 +110,11 @@ namespace RezervacijeSportskihTerena
                     return;
                 }
             }
+        }
+
+        private void frmGlavniIzbornik_Load(object sender, EventArgs e)
+        {
+
         }      
 
     }

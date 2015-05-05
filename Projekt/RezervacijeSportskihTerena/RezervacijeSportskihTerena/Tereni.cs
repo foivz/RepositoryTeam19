@@ -86,10 +86,7 @@ namespace RezervacijeSportskihTerena
             }
         }
 
-        private void dgvTereni_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
 
 

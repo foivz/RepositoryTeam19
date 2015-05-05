@@ -38,13 +38,10 @@ namespace RezervacijeSportskihTerena
                 UspjesnaPrijava = true;
                 this.Close();
             }
-            else if (count > 1)
-            {
-                MessageBox.Show("Pronađeno je duplo korisnicko ime i lozinka. Pokušajte ponovo.");
-            }
+           
             else if(count < 1)
             {
-                MessageBox.Show("Korisničko ime i lozinka su ne ispravni. Pokušajte ponovo.");
+                MessageBox.Show("Korisničko ime i lozinka su neispravni. Pokušajte ponovo.");
             }
             
         }
